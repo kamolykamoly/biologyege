@@ -745,6 +745,8 @@ function q3nx(){if(!$('#lv'))return clearInterval(q3tm);q3sw(q3k+1)}
 function q3i(){q3sw(q3k);clearInterval(q3tm);if(!q3rm)q3tm=setInterval(q3nx,9000);requestAnimationFrame(q3L)}
 V.home=(f=>()=>q3card()+f())(V.home);B.home=(f=>()=>{if(f)f();q3i()})(B.home);
 V.lab=(f=>()=>f()+q3card())(V.lab);B.lab=(f=>()=>{if(f)f();q3i()})(B.lab);
+/* первый показ: страница уже отрисована до подключения карточки — перерисовываем текущий раздел */
+if(cur=='home'||cur=='lab')go(cur);
 document.head.insertAdjacentHTML('beforeend','<style>@keyframes bob{50%{transform:translateY(-4px)}}.st b{animation:bob 3.2s ease-in-out infinite}#lsv svg{animation:pop .5s}.ld.u{transform:scale(.92)}.th[open]>summary{color:var(--ac)}@media(prefers-reduced-motion:reduce){.st b{animation:none}}</style>');
 </script>
 <style id="anim3d">
