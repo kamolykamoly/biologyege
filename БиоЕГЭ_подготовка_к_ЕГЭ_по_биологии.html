@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>БиоЕГЭ — подготовка к ЕГЭ по биологии</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f6f8f5;--cd:#fff;--tx:#1d2a22;--mu:#5d6b62;--ac:#2f7d4f;--a2:#e6f2ea;--bd:#d9e2db;--bad:#c0392b;--ok:#1f8a4c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121a15;--cd:#1a251e;--tx:#e8efe9;--mu:#9bab9f;--ac:#5fc088;--a2:#223329;--bd:#2c3b31;--bad:#ef7d70;--ok:#5fc088;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#121a15;--cd:#1a251e;--tx:#e8efe9;--mu:#9bab9f;--ac:#5fc088;--a2:#223329;--bd:#2c3b31;--bad:#ef7d70;--ok:#5fc088;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:18px 16px 4px;max-width:900px;margin:auto}h1{margin:0;font-size:24px}header p{margin:2px 0 0;color:var(--mu)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;max-width:900px;margin:auto}
+nav button{flex:none;border:1px solid var(--bd);background:var(--cd);color:var(--tx);padding:8px 13px;border-radius:20px;font:inherit;cursor:pointer}
+nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+main{max-width:900px;margin:auto;padding:4px 16px 40px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:14px 16px;margin:12px 0}
+.card small{color:var(--mu)}h2{font-size:20px;margin:10px 0}h3{margin:6px 0;font-size:17px}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:9px 16px;font:inherit;cursor:pointer;margin:4px 6px 4px 0}
+.btn.g{background:var(--a2);color:var(--tx);border:1px solid var(--bd)}
+.op{display:block;padding:7px 10px;border:1px solid var(--bd);border-radius:9px;margin:5px 0;cursor:pointer}
+.chip{border:1px solid var(--bd);background:var(--a2);color:var(--tx);border-radius:9px;padding:7px 10px;margin:4px 4px 4px 0;font:inherit;cursor:pointer}
+.chip.u{opacity:.35}
+textarea,input[type=text],select{width:100%;font:inherit;background:var(--cd);color:var(--tx);border:1px solid var(--bd);border-radius:9px;padding:8px}
+td select{min-width:130px}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--bd);padding:6px 9px;text-align:left;vertical-align:top}th{background:var(--a2)}
+.ok{color:var(--ok);font-weight:600}.no{color:var(--bad);font-weight:600}
+.bar{height:10px;background:var(--a2);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+.ex{margin-top:8px;padding:8px 10px;background:var(--a2);border-radius:9px;font-size:15px}
+.fc{font-size:19px;min-height:70px}.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+details{margin:6px 0}summary{cursor:pointer;font-weight:600}code{background:var(--a2);padding:1px 5px;border-radius:5px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes pop{0%{transform:scale(.94);opacity:0}60%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}@keyframes shk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}@keyframes fl{from{transform:rotateX(90deg);opacity:0}to{transform:none;opacity:1}}@keyframes gr{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}@keyframes gw{from{width:0}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+header{position:relative;background:linear-gradient(120deg,#1f6b43,#2f7d4f,#2a8f99,#2f7d4f);background-size:300% 300%;animation:gr 12s ease infinite;color:#fff;border-radius:20px;width:calc(100% - 32px);max-width:868px;margin:12px auto 4px;padding:18px 18px 8px;overflow:hidden}header h1{font-size:30px}header p{color:#e3f4ea}#hx{display:block;margin-top:6px}#sk{font-size:14px;color:#e3f4ea;margin:2px 0 8px}
+.tg{position:absolute;right:12px;top:12px;z-index:2;background:rgba(255,255,255,.22);border:0;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;color:#fff}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg)}nav button{transition:.2s}nav button:hover{transform:translateY(-2px);border-color:var(--ac)}
+.card{animation:up .45s both;transition:transform .2s,box-shadow .2s,border-color .2s}.card:nth-child(2){animation-delay:.07s}.card:nth-child(3){animation-delay:.14s}.card:nth-child(n+4){animation-delay:.2s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.09)}
+.btn,.chip,.op{transition:.15s}.btn:active,.chip:active{transform:scale(.94)}.op:hover{border-color:var(--ac);background:var(--a2)}.btn:hover{filter:brightness(1.1)}
+.ex{animation:pop .35s}.fc{animation:fl .4s}.no,.ok{display:inline-block}.no{animation:shk .4s}.ok{animation:pop .4s}.bar i{animation:gw 1s ease-out;transition:width 1s}
+.st{text-align:center}.st b{display:block;font-size:32px;color:var(--ac)}
+.th summary{font-size:18px}.th[open]{border-color:var(--ac)}.th ul{padding-left:20px}.th p{margin:6px 0}.th>*:not(summary){animation:up .3s}
+.ce{fill:var(--a2);stroke:var(--ac);stroke-width:3;transition:opacity .8s}.ch{x:0;y:0;transition:transform .9s cubic-bezier(.5,0,.2,1)}
+.fb{position:fixed;bottom:-50px;opacity:.13;pointer-events:none;z-index:0;font-style:normal;animation:fbf linear infinite}@keyframes fbf{to{transform:translateY(-115vh) rotate(360deg)}}
+main{position:relative;z-index:1}
+#sb{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,#5fc088,#2a8f99);z-index:40}
+.cf{position:fixed;top:25vh;z-index:99;pointer-events:none;font-size:22px;animation:cf 1.6s ease-in both}@keyframes cf{to{transform:translate(var(--dx),75vh) rotate(var(--r));opacity:0}}
+.op.good{border-color:var(--ok);background:rgba(31,138,76,.16);animation:pop .4s}.op.bad{border-color:var(--bad);background:rgba(192,57,43,.14);animation:shk .4s}.op:has(input:checked){border-color:var(--ac);background:var(--a2)}
+.xb{display:inline-block;width:80px;height:7px;background:rgba(255,255,255,.3);border-radius:5px;vertical-align:middle;overflow:hidden}.xb i{display:block;height:100%;background:#fff;transition:width .6s}.fire{display:inline-block;animation:pulse 1.2s infinite}@keyframes pulse{50%{transform:scale(1.25)}}
+.chip.pp{background:var(--ac);color:#fff;animation:pop .4s}.bd{display:inline-block;padding:6px 10px;border:1px solid var(--bd);border-radius:20px;margin:3px;animation:pop .4s both}.bd.l{opacity:.35;filter:grayscale(1)}
+</style></head><body>
+<header><button class=tg onclick="tgl()" aria-label="Сменить тему">🌓</button><h1>🧬 БиоЕГЭ</h1><p>Теория, тренажёр и разбор критериев — всё для ЕГЭ по биологии</p><svg id="hx" viewBox="0 0 380 60" width="100%" height="60" preserveAspectRatio="xMidYMid slice"></svg><div id="sk"></div></header>
+<nav id="nav"></nav><main id="m"></main>
+<script>
+const $=s=>document.querySelector(s);
+let S={};try{S=JSON.parse(localStorage.getItem('bio')||'{}')}catch(e){}
+S.st=S.st||{};S.box=S.box||{};
+const sv=()=>{try{localStorage.setItem('bio',JSON.stringify(S))}catch(e){}};
+const rec=(t,ok)=>{const x=S.st[t]=S.st[t]||[0,0];x[1]++;if(ok){x[0]++;S.xp=(S.xp||0)+10;fx()}sv();hdr()};
+/* ---------- данные ---------- */
+const C=[
+["Цитология","Функция рибосом?","Синтез белка (трансляция)."],
+["Цитология","Что происходит в S-периоде интерфазы?","Репликация (удвоение) ДНК: 2n2c → 2n4c."],
+["Цитология","Функции комплекса Гольджи?","Модификация, накопление, упаковка и вывод веществ; образование лизосом."],
+["Цитология","Набор хромосом и ДНК в анафазе митоза (клетка 2n2c)?","4n4c: хромосом 4n (сестринские хроматиды разошлись), ДНК 4c."],
+["Генетика","Закон независимого наследования?","Гены разных пар лежат в разных парах хромосом и наследуются независимо; у дигетерозигот расщепление 9:3:3:1."],
+["Генетика","Расщепление при Aa × Aa?","По фенотипу 3:1, по генотипу 1:2:1."],
+["Генетика","Анализирующее скрещивание?","Скрещивание с рецессивной гомозиготой — выясняют генотип особи."],
+["Генетика","Что такое кроссинговер?","Обмен участками гомологичных хромосом в профазе мейоза I; нарушает полное сцепление генов."],
+["Молекулярная биология","Правило Чаргаффа?","А = Т, Г = Ц; А + Г = Т + Ц (в ДНК)."],
+["Молекулярная биология","Свойства генетического кода?","Триплетность, вырожденность, однозначность, универсальность, непрерывность, неперекрываемость."],
+["Энергетический обмен","Итог гликолиза?","2 ПВК, 2 АТФ, 2 НАДН (в цитоплазме, без кислорода)."],
+["Энергетический обмен","Где проходит кислородный этап и сколько даёт АТФ?","Матрикс и кристы митохондрий (цикл Кребса, ЭТЦ): 34 АТФ; всего с гликолизом 36."],
+["Фотосинтез","Световая фаза?","Тилакоиды гран: фотолиз воды, выделение O₂, синтез АТФ и НАДФ·Н."],
+["Фотосинтез","Тёмновая фаза?","Строма хлоропласта: цикл Кальвина, фиксация CO₂ и синтез глюкозы за счёт АТФ и НАДФ·Н."],
+["Ботаника","Какие ткани растений различают?","Образовательные, покровные, механические, проводящие (ксилема — вода и соли вверх, флоэма — органика вниз), основные."],
+["Анатомия","Функции печени?","Образование желчи, обезвреживание ядов, запас гликогена, синтез белков плазмы."],
+["Эволюция","Движущие силы эволюции?","Наследственная изменчивость, борьба за существование, естественный отбор; также дрейф генов, изоляция, волны жизни."],
+["Экология","Правило экологической пирамиды?","На следующий трофический уровень переходит около 10% энергии."],
+["Зоология","Признаки класса Млекопитающие?","Волосяной покров, диафрагма, четырёхкамерное сердце, молочные железы, теплокровность, дифференцированные зубы."]];
+C.forEach(c=>c[2]=c[2].replace('Тёмновая','Тёмная'));
+const Q=[
+{t:"Цитология",k:"c",q:"Какой органоид отвечает за синтез АТФ в клетке?",o:["Лизосома","Митохондрия","Комплекс Гольджи","Вакуоль"],a:1,e:"АТФ синтезируется на кристах митохондрий (кислородный этап)."},
+{t:"Цитология",k:"c",q:"Сколько АТФ образуется (чистый выход) при гликолизе одной молекулы глюкозы?",o:["2","4","18","36"],a:0,e:"Затрачено 2, образовано 4 → чистый выход 2 АТФ."},
+{t:"Генетика",k:"c",q:"Какое расщепление по фенотипу получится при скрещивании дигетерозигот AaBb × AaBb (полное доминирование, гены не сцеплены)?",o:["3:1","1:1:1:1","9:3:3:1","1:2:1"],a:2,e:"Закон независимого наследования: 9:3:3:1."},
+{t:"Рисунки и данные",k:"c",q:"Данные об активности фермента: <div class=w><table><tr><th>t, °C</th><td>10</td><td>20</td><td>37</td><td>50</td><td>70</td></tr><tr><th>Активность, %</th><td>15</td><td>45</td><td>100</td><td>30</td><td>0</td></tr></table></div>Какой вывод верен?",o:["Оптимум около 37 °C, при 70 °C фермент денатурирует","Активность растёт при любом нагревании","При 10 °C фермент разрушается","Фермент работает только при 70 °C"],a:0,e:"Максимум активности при 37 °C; при высоких температурах белок денатурирует, активность падает до 0. При низких температурах фермент не разрушается, а замедляется."},
+{t:"Соответствие",k:"m",q:"Установите соответствие между признаком и процессом.",c:["митоз","мейоз"],r:["конъюгация и кроссинговер","образуются две диплоидные клетки","образуются четыре гаплоидные клетки","лежит в основе бесполого размножения","происходит редукция числа хромосом"],a:[1,0,1,0,1],e:"Мейоз: конъюгация, кроссинговер, 4 гаплоидные клетки, редукция. Митоз: 2 диплоидные клетки, бесполое размножение."},
+{t:"Соответствие",k:"m",q:"Установите соответствие между признаком и способом питания.",c:["фотосинтез","хемосинтез"],r:["источник энергии — свет","окисление неорганических веществ","выделяется кислород","нитрифицирующие бактерии","участвует хлорофилл"],a:[0,1,0,1,0],e:"Хемосинтез использует энергию окисления неорганики (серо-, железо-, нитрифицирующие бактерии)."},
+{t:"Последовательность",k:"s",q:"Расположите фазы митоза в правильном порядке.",items:["профаза","метафаза","анафаза","телофаза"],e:"Профаза → метафаза → анафаза → телофаза."},
+{t:"Последовательность",k:"s",q:"Расположите в порядке движения кровь по малому кругу.",items:["правый желудочек","лёгочная артерия","капилляры лёгких","лёгочные вены","левое предсердие"],e:"Малый круг начинается в правом желудочке и заканчивается в левом предсердии."},
+{t:"Последовательность",k:"s",q:"Расположите этапы биосинтеза белка.",items:["транскрипция","созревание иРНК","выход иРНК из ядра","соединение иРНК с рибосомой","трансляция"],e:"Сначала в ядре синтезируется иРНК, затем она созревает, выходит в цитоплазму и считывается рибосомой."},
+{t:"Эволюция",k:"c",q:"Какая форма отбора сохраняет среднее значение признака в стабильных условиях?",o:["Движущий","Дизруптивный","Стабилизирующий","Половой"],a:2,e:"Стабилизирующий отбор отсекает крайние отклонения."}];
+const P2=[
+{q:"Почему при недостатке йода в пище развивается зоб?",el:[["Йод нужен для синтеза тироксина щитовидной железой; его недостаток снижает уровень гормона",["тироксин","гормон"]],["Низкий тироксин стимулирует гипофиз к выработке ТТГ",["гипофиз","тиреотроп","ттг"]],["Действует механизм обратной связи",["обратн"]],["ТТГ вызывает разрастание ткани железы (зоб)",["разраст","увеличи","гипертроф"]]]},
+{q:"Какие приспособления имеют растения пустынь к недостатку воды?",el:[["Толстая кутикула, воск, опушение снижают испарение",["кутикул","воск","опушен"]],["Листья редуцированы (колючки, иголки)",["колюч","редукц","игл","мелк"]],["Мощная глубокая корневая система",["глубок","корн"]],["Запас воды в тканях (суккуленты)",["запас","сочн","суккулент"]]]},
+{q:"Почему применение антибиотиков приводит к появлению устойчивых форм бактерий?",el:[["В популяции есть особи с мутациями, дающими устойчивость",["мутац","изменчив"]],["Антибиотик — фактор естественного отбора",["отбор"]],["Устойчивые бактерии выживают и размножаются",["выжив","размнож","потомств"]],["Доля устойчивых форм в популяции растёт",["доля","частот","увелич","накопл"]]]}];
+const CT="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG",AA={F:'Фен',L:'Лей',S:'Сер',Y:'Тир','*':'СТОП',C:'Цис',W:'Трп',P:'Про',H:'Гис',Q:'Глн',R:'Арг',I:'Иле',M:'Мет',T:'Тре',N:'Асн',K:'Лиз',V:'Вал',A:'Ала',D:'Асп',E:'Глу',G:'Гли'};
+/* ---------- вкладки ---------- */
+const T=[["home","Главная"],["th","Теория"],["lab","Лаборатория"],["cards","Карточки"],["tab","Сравнения"],["quiz","Тренажёр"],["p2","Часть 2"],["gen","Генетика"],["fig","Рисунки"],["var","Вариант"],["prog","Прогресс"]];
+let cur="home";
+function go(id){cur=id;$("#nav").innerHTML=T.map(t=>`<button class="${t[0]==id?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('');$("#m").innerHTML=V[id]();if(B[id])B[id]();scrollTo(0,0)}
+const V={},B={};
+V.home=()=>`<div class="card g2 st"><div><b class=cu data-n=${TH.length}>0</b>тем теории</div><div><b class=cu data-n=${C.length}>0</b>карточек</div><div><b class=cu data-n=${Q.length+P2.length}>0</b>заданий</div><div><b class=cu data-n=${Object.values(S.th||{}).filter(Boolean).length}>0</b>тем изучено</div></div><div class=card><h2>Как устроен сайт</h2><p>Каждая сложность ЕГЭ по биологии закрыта отдельным разделом:</p>
+<table><tr><th>Проблема</th><th>Раздел</th></tr>
+<tr><td>Огромный объём материала</td><td>Теория по 10 блокам и карточки по всем темам</td></tr>
+<tr><td>Путаница близких понятий</td><td>Сравнения (митоз/мейоз, фото-/хемосинтез, ткани)</td></tr>
+<tr><td>Соответствие и последовательность</td><td>Тренажёр с заданиями обоих типов</td></tr>
+<tr><td>Часть 2: неточные формулировки</td><td>Часть 2: пишешь ответ — сверяешь по элементам критериев</td></tr>
+<tr><td>Задачи по генетике и цитологии</td><td>Генетика: алгоритмы, решётка Пеннета, транскрипция и трансляция</td></tr>
+<tr><td>Рисунки, схемы, графики</td><td>Рисунки: подписи к клетке и анализ данных</td></tr>
+<tr><td>Забывание</td><td>Карточки с интервальными повторениями</td></tr>
+<tr><td>Нет практики в формате ЕГЭ</td><td>Вариант на время и общий прогресс</td></tr></table></div>
+<div class=card><h3>Совет по режиму</h3><p>10–15 минут карточек каждый день, 2–3 раза в неделю задания части 2 и один вариант в неделю. Прогресс сохраняется в этом браузере.</p></div>`;
+const TH=[
+["🔬","Клетка и органоиды",`<p><b>Мембрана</b> — двойной слой фосфолипидов с белками; избирательная проницаемость, диффузия, осмос, активный транспорт (за счёт АТФ), эндо- и экзоцитоз.</p><ul><li><b>Ядро</b> — хранение ДНК, синтез РНК, ядрышко — рибосомные субъединицы.</li><li><b>ЭПС</b> — шероховатая (белки), гладкая (липиды, углеводы).</li><li><b>Комплекс Гольджи</b> — модификация и упаковка веществ, образование лизосом.</li><li><b>Лизосомы</b> — внутриклеточное пищеварение.</li><li><b>Митохондрии</b> — две мембраны, кристы, синтез АТФ, собственные ДНК и рибосомы.</li><li><b>Пластиды</b> — хлоропласты (фотосинтез), хромопласты, лейкопласты.</li><li><b>Рибосомы</b> — синтез белка; <b>центриоли</b> — веретено деления.</li></ul><p>Растительная клетка: стенка из целлюлозы, пластиды, крупная вакуоль. Грибная: стенка из хитина, запас гликогена. Прокариоты: нет ядра, кольцевая ДНК, мелкие рибосомы, стенка из муреина.</p>`],
+["♻️","Деление клетки: митоз и мейоз",`<p><b>Интерфаза:</b> G₁ (рост, 2n2c), S (репликация ДНК, 2n4c), G₂ (подготовка, 2n4c).</p><p><b>Митоз:</b> профаза → метафаза → анафаза → телофаза; две генетически одинаковые клетки 2n2c.</p><p><b>Мейоз:</b> I деление редукционное — в профазе I конъюгация и кроссинговер, в анафазе I расходятся гомологичные хромосомы (n2c). II деление похоже на митоз, расходятся хроматиды (nc). Итог — 4 гаплоидные клетки.</p><p>Значение: образование гамет, комбинативная изменчивость, постоянство числа хромосом при оплодотворении.</p>`],
+["🧪","Химия клетки",`<ul><li><b>Белки</b> — полимеры аминокислот (пептидная связь). Структуры: первичная (последовательность), вторичная (α-спираль), третичная (глобула), четвертичная (несколько цепей). Функции: ферментативная, строительная, транспортная, защитная, двигательная, регуляторная. Денатурация обратима, пока цела первичная структура.</li><li><b>Углеводы:</b> глюкоза, сахароза; полисахариды — крахмал, гликоген, целлюлоза, хитин.</li><li><b>Липиды:</b> мембраны, энергия (1 г — 38,9 кДж), теплоизоляция, гормоны.</li><li><b>ДНК</b> — двойная спираль, А–Т, Г–Ц, дезоксирибоза. <b>РНК</b> — одна цепь, рибоза, У вместо Т (иРНК, тРНК, рРНК).</li><li><b>АТФ</b> — аденин, рибоза, три фосфата, макроэргические связи.</li></ul>`],
+["🧬","Биосинтез белка",`<ul><li><b>Репликация</b> — полуконсервативная, в S-периоде, ДНК-полимераза.</li><li><b>Транскрипция</b> — синтез иРНК по матричной цепи ДНК (РНК-полимераза). У эукариот — процессинг: вырезание интронов, сшивание экзонов.</li><li><b>Трансляция</b> — на рибосоме; антикодон тРНК комплементарен кодону иРНК. Старт — АУГ, стоп — УАА, УАГ, УГА.</li></ul><p>В задачах: аминокислота = кодон = 3 нуклеотида иРНК. Белок из n аминокислот кодируют 3n нуклеотидов иРНК и 6n нуклеотидов двуцепочечной ДНК (без стоп-кодона).</p>`],
+["⚡","Энергетический обмен и фотосинтез",`<ul><li><b>Гликолиз</b> (цитоплазма, без O₂): глюкоза → 2 ПВК, +2 АТФ.</li><li><b>Кислородный этап</b> (митохондрии): цикл Кребса и ЭТЦ, +34 АТФ; продукты CO₂ и H₂O. Итого 36 АТФ.</li><li><b>Брожение</b> — анаэробно: молочная кислота или спирт с CO₂, всего 2 АТФ.</li><li><b>Световая фаза</b> (тилакоиды гран): фотолиз воды, O₂, АТФ, НАДФ·Н.</li><li><b>Тёмная фаза</b> (строма): цикл Кальвина, CO₂ → глюкоза.</li></ul>`],
+["🐭","Генетика и изменчивость",`<ul><li><b>I закон Менделя</b> (единообразие): АА × аа → все Аа.</li><li><b>II закон</b> (расщепление): Аа × Аа → 3:1 по фенотипу, 1:2:1 по генотипу.</li><li><b>III закон</b> (независимое наследование): AaBb × AaBb → 9:3:3:1.</li><li><b>Сцепленное наследование</b> (Морган): гены одной хромосомы наследуются вместе; кроссинговер нарушает сцепление.</li><li><b>Неполное доминирование</b> — 1:2:1; <b>кодоминирование</b> — IV группа крови.</li><li><b>Сцепленное с полом:</b> гены в X-хромосоме, у мужчин один аллель.</li><li><b>Изменчивость:</b> комбинативная, мутационная (генные, хромосомные, геномные), модификационная (в пределах нормы реакции).</li></ul>`],
+["🌿","Растения и грибы",`<ul><li><b>Ткани:</b> образовательная, покровная, механическая, проводящая, основная.</li><li><b>Корень:</b> зоны деления, роста, всасывания (корневые волоски), проведения.</li><li><b>Лист:</b> устьица (газообмен, испарение), столбчатая и губчатая ткань.</li><li><b>Двойное оплодотворение:</b> один спермий + яйцеклетка → зигота (2n), второй + центральная клетка → эндосперм (3n).</li><li><b>Циклы:</b> у мхов преобладает гаметофит, у папоротников, голосеменных и покрытосеменных — спорофит.</li><li><b>Грибы</b> — отдельное царство: гетеротрофы, хитин, гликоген, гифы и мицелий.</li></ul>`],
+["🐸","Животные",`<ul><li>Типы: кишечнополостные, плоские, круглые и кольчатые черви, моллюски, членистоногие, хордовые.</li><li><b>Сердце:</b> рыбы — 2 камеры, земноводные — 3 (смешанная кровь), рептилии — 3 с неполной перегородкой, птицы и млекопитающие — 4 камеры, два круга.</li><li><b>Членистоногие:</b> хитиновый покров, членистые конечности. <b>Кольчатые:</b> вторичная полость, замкнутая кровеносная система.</li><li><b>Птицы:</b> полые кости, перья, воздушные мешки (двойное дыхание).</li><li><b>Рефлексы:</b> безусловные (врождённые) и условные (приобретённые, угасают без подкрепления).</li></ul>`],
+["🫀","Организм человека",`<ul><li><b>Кровь:</b> плазма, эритроциты (O₂), лейкоциты (иммунитет), тромбоциты (свёртывание).</li><li><b>Круги кровообращения:</b> большой (левый желудочек → правое предсердие), малый (правый желудочек → левое предсердие).</li><li><b>Пищеварение:</b> рот (амилаза), желудок (пепсин, HCl), двенадцатиперстная кишка (желчь, сок поджелудочной), тонкая кишка — всасывание.</li><li><b>Нервная система:</b> рефлекторная дуга; симпатическая — мобилизация, парасимпатическая — восстановление.</li><li><b>Гормоны:</b> инсулин и глюкагон (сахар крови), тироксин (обмен веществ), адреналин (стресс).</li><li><b>Иммунитет:</b> клеточный (Т-лимфоциты) и гуморальный (В-лимфоциты, антитела); вакцина — активный, сыворотка — пассивный.</li></ul>`],
+["🌍","Эволюция и экология",`<p><b>Эволюция.</b> Движущие силы: изменчивость, борьба за существование, отбор. Элементарная единица — популяция. Формы отбора: движущий, стабилизирующий, дизруптивный. Направления: ароморфоз (повышение организации), идиоадаптация (приспособление без роста сложности), дегенерация (упрощение). Доказательства: палеонтологические, сравнительно-анатомические (гомологичные и аналогичные органы), эмбриологические, молекулярные.</p><p><b>Экология.</b> Факторы: абиотические, биотические, антропогенные. Закон лимитирующего фактора. Цепь питания: продуценты → консументы → редуценты; на следующий уровень передаётся около 10% энергии. Отношения: симбиоз (мутуализм, комменсализм), хищничество, конкуренция, паразитизм.</p>`]];
+V.th=()=>`<div class=card><h2>Теория</h2><input type=text oninput="sr(this.value)" placeholder="🔎 Поиск: мейоз, АТФ, отбор…"><div class=bar style="margin-top:10px"><i id=thp></i></div><small id=thc></small></div><div class=card><h3>▶ Анимация: митоз</h3><svg id=mv viewBox="0 0 320 150" width="100%" style="max-width:480px"><ellipse id=e0 class=ce cx=160 cy=75 rx=145 ry=65 /><ellipse id=e1 class=ce cx=84 cy=75 rx=72 ry=56 style="opacity:0"/><ellipse id=e2 class=ce cx=236 cy=75 rx=72 ry=56 style="opacity:0"/>${[0,1,2,3,4,5,6,7].map(i=>`<rect id=r${i} class=ch width=6 height=24 rx=3 style="fill:${i%2?'#b5651d':'#7a3e9d'}"/>`).join('')}</svg><div>${['Профаза','Метафаза','Анафаза','Телофаза'].map((n,i)=>`<button class="btn g" id=pb${i} onclick="mph(${i},1)">${n}</button>`).join('')}<button class=btn onclick="mau()">▶ Авто</button></div><p class=ex id=mt></p></div>`+TH.map((t,i)=>`<details class="card th" id=d${i}><summary>${t[0]} ${t[1]}</summary>${t[2]}<button class="btn g" id=lb${i} onclick="lr(${i})"></button></details>`).join('');
+let mtm;const MT=["Профаза: хромосомы спирализуются (2n4c), исчезает ядрышко, строится веретено деления.","Метафаза: хромосомы выстраиваются по экватору, нити веретена прикреплены к центромерам.","Анафаза: сестринские хроматиды расходятся к полюсам — 4n4c.","Телофаза: хромосомы деспирализуются, формируются ядра, цитокинез → две клетки 2n2c."];
+function mph(p,m){if(m)clearInterval(mtm);const b=[[90,40],[170,95],[120,85],[200,45]];for(let i=0;i<4;i++)for(let j=0;j<2;j++){const x=p==0?b[i][0]+j*7:p==1?153+j*7:p==2?(j?215:100):(j?240:76),y=p==0?b[i][1]:p==3?40+i*18:18+i*30;$('#r'+(i*2+j)).style.transform=`translate(${x}px,${y}px)`}$('#e0').style.opacity=p<3?1:0;$('#e1').style.opacity=$('#e2').style.opacity=p==3?1:0;$('#mt').textContent=MT[p];[0,1,2,3].forEach(k=>$('#pb'+k).classList.toggle('g',k!=p))}
+function mau(){clearInterval(mtm);let p=0;mph(0);mtm=setInterval(()=>{if(!$('#mv'))return clearInterval(mtm);p=(p+1)%4;mph(p)},2200)}
+function sr(v){v=v.toLowerCase();TH.forEach((_,i)=>$('#d'+i).style.display=$('#d'+i).textContent.toLowerCase().includes(v)?'':'none')}
+function upd(){const d=Object.values(S.th||{}).filter(Boolean).length;$('#thp').style.width=100*d/TH.length+'%';$('#thc').textContent=`Изучено ${d} из ${TH.length}`;TH.forEach((_,i)=>$('#lb'+i).textContent=(S.th||{})[i]?'✓ Изучено':'Отметить изученным')}
+function lr(i){S.th=S.th||{};S.th[i]=!S.th[i];sv();upd()}
+B.th=()=>{mph(0,1);upd()};
+B.home=()=>document.querySelectorAll('.cu').forEach(e=>{const n=+e.dataset.n,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/900);e.textContent=Math.round(n*p);if(p<1)requestAnimationFrame(f)})(t0)});
+/* карточки */
+let sh=0;
+const dueL=()=>C.map((_,i)=>i).filter(i=>!(S.box[i]&&S.box[i].d>Date.now()));
+V.cards=()=>{const d=dueL();if(!d.length)return`<div class=card><h2>На сегодня всё повторено 🎉</h2><p>Карточек пройдено: ${C.length}. Загляни завтра — часть вернётся по графику.</p></div>`;
+const c=C[d[0]];return`<div class=card><small>${c[0]} · осталось сегодня: ${d.length}</small><p class=fc><b>${c[1]}</b></p>${sh?`<div class=ex>${c[2]}</div><p>Как ты ответил(а)?</p><button class=btn style="background:var(--bad)" onclick="rate(0)">Забыл(а)</button><button class="btn g" onclick="rate(1)">Сомневался(ась)</button><button class=btn onclick="rate(2)">Знаю</button>`:`<button class=btn onclick="sh=1;go('cards')">Показать ответ</button>`}</div>`};
+function rate(r){const i=dueL()[0],b=S.box[i]||{b:0},IV=[1,3,7,14,30,60];if(r==0){b.b=0;b.d=Date.now()+6e5}else if(r==1)b.d=Date.now()+864e5;else{b.b=Math.min(b.b+1,5);b.d=Date.now()+IV[b.b]*864e5}S.box[i]=b;rec(C[i][0],r==2);sh=0;go('cards')}
+/* v3 */
+let cq=null,ft=0;
+function mkq(i){const sh=a=>a.sort(()=>Math.random()-.5),ix=C.map((_,k)=>k).filter(k=>k!=i),same=ix.filter(k=>C[k][0]==C[i][0]),oth=ix.filter(k=>C[k][0]!=C[i][0]);return{i,o:sh([i,...sh(same).concat(sh(oth)).slice(0,3)]),s:-1}}
+V.cards=()=>{const d=dueL();if(!d.length)return`<div class=card><h2>На сегодня всё повторено 🎉</h2><p>Карточек в колоде: ${C.length}. Загляни завтра — часть вернётся по графику.</p></div>`;if(!cq||cq.i!=d[0])cq=mkq(d[0]);const c=C[cq.i],r=cq.s!=-1;return`<div class=card><small>${c[0]} · осталось сегодня: ${d.length}</small><p class=fc><b>${c[1]}</b></p><small>Выбери верный ответ:</small>`+cq.o.map(k=>`<div class='op ${r?(k==cq.i?'good':k==cq.s?'bad':''):''}' ${r?'':`onclick='cpick(${k})'`}>${C[k][2]}</div>`).join('')+(r?`<div class=ex>${cq.s==cq.i?'<span class=ok>Верно ✓</span> Отлично, +10 XP!':'<span class=no>Не совсем ✗</span> Верный ответ выделен зелёным — запомни его.'}</div><button class=btn onclick='cnext()'>Дальше →</button>`:`<button class='btn g' onclick='cpick(-2)'>Не знаю</button>`)+`</div>`};
+function cpick(k){if(cq.s!=-1)return;cq.s=k;rec(C[cq.i][0],k==cq.i);go('cards')}
+function cnext(){const i=cq.i,b=S.box[i]||{b:0},IV=[1,3,7,14,30,60];if(cq.s==i){b.b=Math.min(b.b+1,5);b.d=Date.now()+IV[b.b]*864e5}else{b.b=0;b.d=Date.now()+6e5}S.box[i]=b;cq=null;sv();go('cards')}
+function fx(){if(Date.now()-ft<700)return;ft=Date.now();const c=['🎉','✨','🧬','⭐','🌿'];for(let i=0;i<14;i++){const s=document.createElement('span');s.className='cf';s.textContent=c[i%5];s.style.cssText=`left:${25+Math.random()*50}vw;--dx:${(Math.random()-.5)*300}px;--r:${Math.random()*720}deg;animation-delay:${Math.random()*.25}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),2000)}}
+function hdr(){const x=S.xp||0,l=Math.floor(x/100)+1;$('#sk').innerHTML=`<span class=fire>🔥</span> Серия: ${S.sk||1} дн. · ⭐ Уровень ${l} <span class=xb><i style='width:${x%100}%'></i></span>`}
+function stg(s){document.querySelectorAll(s).forEach((e,i)=>{e.style.animation='up .4s both';e.style.animationDelay=i*50+'ms'})}
+const _tl=tl,_pn=pn;tl=function(){_tl();stg('#go tr')};pn=function(){_pn();stg('#po td')};
+(function(){for(let i=0;i<12;i++){const s=document.createElement('i');s.className='fb';s.textContent=['🧬','🌿','🔬','🦠','🍃','🧫'][i%6];s.style.cssText=`left:${Math.random()*100}vw;font-size:${18+Math.random()*22}px;animation-duration:${14+Math.random()*16}s;animation-delay:-${Math.random()*20}s`;document.body.appendChild(s)}document.body.insertAdjacentHTML('afterbegin','<div id=sb></div>');addEventListener('scroll',()=>{$('#sb').style.width=100*scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)+'%'})})();
+Q.push({t:'Генетика',k:'c',q:'Какое расщепление получится при скрещивании Aa × aa?',o:['3:1','1:1','1:2:1','9:3:3:1'],a:1,e:'Aa × aa → 1 Aa : 1 aa, расщепление 1:1 (анализирующее скрещивание).'},{t:'Молекулярная биология',k:'c',q:'В молекуле ДНК 20% аденина. Сколько в ней гуанина?',o:['20%','30%','40%','60%'],a:1,e:'А = Т = 20%, значит Г + Ц = 60%, Г = Ц = 30% (правило Чаргаффа).'},{t:'Эволюция',k:'c',q:'Появление четырёхкамерного сердца у птиц — пример:',o:['идиоадаптации','дегенерации','ароморфоза','модификации'],a:2,e:'Это крупное повышение уровня организации — ароморфоз.'},{t:'Экология',k:'c',q:'Продуценты накопили 10 000 кДж. Сколько энергии по правилу 10% получат консументы второго порядка?',o:['1000 кДж','100 кДж','10 кДж','10 000 кДж'],a:1,e:'10 000 → 1000 (1-й порядок) → 100 кДж (2-й порядок).'},{t:'Анатомия',k:'c',q:'Какой отдел мозга отвечает за равновесие и координацию движений?',o:['Продолговатый мозг','Мозжечок','Средний мозг','Промежуточный мозг'],a:1,e:'Равновесие и координация движений — функции мозжечка.'},{t:'Соответствие',k:'m',q:'Установите соответствие между процессом и фазой фотосинтеза.',c:['световая фаза','тёмная фаза'],r:['происходит в тилакоидах гран','цикл Кальвина','фотолиз воды','образуется глюкоза','выделяется кислород'],a:[0,1,0,1,0],e:'Световая: тилакоиды, фотолиз, O₂, АТФ и НАДФ·Н. Тёмная: строма, фиксация CO₂, глюкоза.'},{t:'Последовательность',k:'s',q:'Расположите путь воды из почвы в лист.',items:['корневой волосок','клетки коры корня','сосуды ксилемы корня','сосуды ксилемы стебля','клетки листа'],e:'Вода всасывается волоском, идёт по коре, затем вверх по ксилеме к листу.'});
+const _h=V.home;
+V.home=()=>{const k=Math.floor(Date.now()/864e5)%Q.length,e=S.ex?Math.ceil((new Date(S.ex)-Date.now())/864e5):null;return`<div class=card><h3>⏳ До экзамена</h3><input type=date value='${S.ex||''}' onchange="S.ex=this.value;sv();go('home')" style='max-width:220px'>${e!=null?`<p class=fc><b class=cu data-n=${Math.max(e,0)}>0</b> дн. ${e>60?'Времени много: двигайся по теории и закрепляй карточками.':e>14?'Пора решать варианты и добирать слабые темы.':e>=0?'Финишная прямая: повторяй слабые темы и решай варианты.':'Дата прошла — выбери новую.'}</p>`:'<p><small>Выбери дату экзамена — появится обратный отсчёт.</small></p>'}</div><h3>🎯 Задание дня</h3>`+qh(Q[k],k,1)+_h()};
+const dots=(p,a,b)=>[0,1,2,3,4,5].map(k=>`<circle r='4'><animateMotion dur='6s' begin='-${k}s' repeatCount='indefinite' path='${p}'/><animate attributeName='fill' values='${a};${b}' keyTimes='0;.5' calcMode='discrete' dur='6s' begin='-${k}s' repeatCount='indefinite'/></circle>`).join('');
+V.lab=()=>`<h2>Лаборатория</h2><div class=card><h3>❤️ Круги кровообращения</h3><svg viewBox='0 0 320 190' width='100%' style='max-width:480px'><g fill='none' stroke='currentColor' opacity='.2' stroke-width='9'><ellipse cx='80' cy='95' rx='65' ry='60'/><ellipse cx='240' cy='95' rx='65' ry='60'/></g>${dots('M145,95 a65,60 0 1,0 -130,0 a65,60 0 1,0 130,0','#3b82f6','#ef4444')}${dots('M175,95 a65,60 0 1,1 130,0 a65,60 0 1,1 -130,0','#ef4444','#3b82f6')}<text x='160' y='105' font-size='30' text-anchor='middle'>❤️</text><g font-size='12' fill='currentColor' text-anchor='middle'><text x='80' y='98'>Малый круг</text><text x='80' y='113'>лёгкие</text><text x='240' y='98'>Большой круг</text><text x='240' y='113'>органы тела</text></g></svg><p class=ex>Красные точки — артериальная кровь, синие — венозная. По лёгочным артериям течёт венозная кровь, по лёгочным венам — артериальная.</p></div><div class=card><h3>🧬 Трансляция по шагам</h3><div class=w id=tr1><small>Нажми «Запустить»: рибосома считывает иРНК, цепочка белка растёт.</small></div><div id=pp style='margin-top:8px'></div><button class=btn onclick='trn()'>▶ Запустить</button></div>`;
+function trn(){const cs='AUGGCUUAUGGACGUUAA'.match(/.../g),ix='UCAG';$('#pp').innerHTML='';$('#tr1').innerHTML='<div style="display:flex;gap:6px;min-width:max-content">'+cs.map((c,i)=>`<div class='chip u' id=cd${i}>${c}</div>`).join('')+'</div>';let i=0;const t=setInterval(()=>{if(!$('#pp')||i>=cs.length)return clearInterval(t);const c=cs[i],a=AA[CT[16*ix.indexOf(c[0])+4*ix.indexOf(c[1])+ix.indexOf(c[2])]];cs.forEach((_,k)=>$('#cd'+k).classList.toggle('u',k!=i));$('#pp').insertAdjacentHTML('beforeend',`<span class='chip pp'>${a}</span>`);if(a=='СТОП'){clearInterval(t);fx()}i++},900)}
+/* сравнения */
+V.tab=()=>`<div class=card><h2>Митоз и мейоз</h2><div class=w><table><tr><th></th><th>Митоз</th><th>Мейоз</th></tr><tr><td>Делений</td><td>одно</td><td>два</td></tr><tr><td>Результат</td><td>2 клетки, 2n</td><td>4 клетки, n</td></tr><tr><td>Конъюгация, кроссинговер</td><td>нет</td><td>есть (профаза I)</td></tr><tr><td>Значение</td><td>рост, бесполое размножение, регенерация</td><td>образование гамет, комбинативная изменчивость</td></tr></table></div></div>
+<div class=card><h2>Фотосинтез и хемосинтез</h2><div class=w><table><tr><th></th><th>Фотосинтез</th><th>Хемосинтез</th></tr><tr><td>Энергия</td><td>света</td><td>окисления неорганических веществ</td></tr><tr><td>Организмы</td><td>растения, цианобактерии</td><td>серо-, железо-, нитрифицирующие бактерии</td></tr><tr><td>O₂</td><td>выделяется (фотолиз воды)</td><td>не выделяется</td></tr></table></div></div>
+<div class=card><h2>Ткани животных</h2><div class=w><table><tr><th>Ткань</th><th>Признаки и примеры</th></tr><tr><td>Эпителиальная</td><td>плотно прилежащие клетки, мало межклеточного вещества; защита, секреция</td></tr><tr><td>Соединительная</td><td>много межклеточного вещества; кровь, кость, хрящ, жир</td></tr><tr><td>Мышечная</td><td>сократимость; гладкая, поперечнополосатая, сердечная</td></tr><tr><td>Нервная</td><td>нейроны и нейроглия; возбудимость, проводимость</td></tr></table></div></div>`;
+/* тренажёр + вариант */
+const A={},perm=n=>[...Array(n).keys()].map(i=>(i*2+1)%n==i?i:i).sort((a,b)=>((a*7+3)%n)-((b*7+3)%n));
+function qh(q,i,pr){let h=`<div class=card id=q${i}><small>${q.t}</small><p><b>${q.q}</b></p>`;
+if(q.k=='c')h+=q.o.map((o,j)=>`<label class=op><input type=radio name=r${i} value=${j}> ${o}</label>`).join('');
+if(q.k=='m')h+=`<div class=w><table>`+q.r.map(r=>`<tr><td>${r}</td><td><select><option value="">—</option>${q.c.map((c,k)=>`<option value=${k}>${c}</option>`).join('')}</select></td></tr>`).join('')+`</table></div>`;
+if(q.k=='s')h+=`<div>`+perm(q.items.length).map(j=>`<button class=chip id=c${i}_${j} onclick="pick(${i},${j})">${q.items[j]}</button>`).join('')+`</div><p id=sq${i}><small>Нажимай по порядку</small></p><button class="btn g" onclick="rsq(${i})">Сбросить</button>`;
+if(pr)h+=`<button class=btn onclick="chk(${i})">Проверить</button>`;return h+`<div id=res${i}></div></div>`}
+function pick(i,j){A[i]=A[i]||[];if(A[i].includes(j))return;A[i].push(j);$(`#c${i}_${j}`).classList.add('u');$(`#sq${i}`).textContent=A[i].map(x=>Q[i].items[x]).join(' → ')}
+function ans(i){const q=Q[i];if(q.k=='c'){const r=document.querySelector(`#q${i} input:checked`);return r?+r.value:-1}
+if(q.k=='m')return[...document.querySelectorAll(`#q${i} select`)].map(s=>s.value===''?-1:+s.value);return A[i]||[]}
+const ok=(i,a)=>{const q=Q[i];return q.k=='c'?a===q.a:q.k=='m'?a.join()==q.a.join():a.join()==q.items.map((_,k)=>k).join()};
+function chk(i,quiet){const r=ok(i,ans(i));rec(Q[i].t,r);$(`#res${i}`).innerHTML=`<div class=ex><span class="${r?'ok':'no'}">${r?'Верно ✓':'Есть ошибка ✗'}</span> ${Q[i].e}</div>`;return r}
+V.quiz=()=>`<h2>Тренажёр</h2><p>Тесты, соответствие, последовательность. После проверки видно объяснение.</p>`+Q.map((q,i)=>qh(q,i,1)).join('');
+B.quiz=()=>Object.keys(A).forEach(k=>delete A[k]);
+let tm=null,left=900;
+V.var=()=>`<h2>Мини-вариант</h2><div class=card><p>${Q.length} заданий, 15 минут, без подсказок до конца. Подходит для тренировки темпа.</p><button class=btn onclick="startV()">Начать</button></div><div id=vq></div>`;
+function startV(){clearInterval(tm);left=900;Object.keys(A).forEach(k=>delete A[k]);$("#vq").innerHTML=`<div class=card style="position:sticky;top:62px;z-index:5"><b id=tmr></b> <button class=btn onclick="finV()">Завершить</button></div>`+Q.map((q,i)=>qh(q,i,0)).join('');tick();tm=setInterval(()=>{left--;tick();if(left<=0)finV()},1000)}
+const tick=()=>{const e=$('#tmr');if(e)e.textContent=`⏱ ${Math.floor(left/60)}:${String(left%60).padStart(2,'0')}`};
+function finV(){clearInterval(tm);let n=0;Q.forEach((q,i)=>{if(chk(i))n++});$("#tmr").textContent=`Итог: ${n} из ${Q.length}`;scrollTo(0,0)}
+/* часть 2 */
+V.p2=()=>`<h2>Часть 2: развёрнутые ответы</h2><p>Эксперт засчитывает ответ по элементам. Напиши ответ, нажми «Проверить» — найденные элементы отметятся автоматически; сверь и поправь отметки сам(а).</p>`+P2.map((p,i)=>`<div class=card><b>${i+1}. ${p.q}</b><textarea rows=4 id=t${i} placeholder="Твой ответ…"></textarea><button class=btn onclick="p2c(${i})">Проверить</button><div id=pr${i}></div></div>`).join('');
+function p2c(i){const t=$(`#t${i}`).value.toLowerCase(),p=P2[i];$(`#pr${i}`).innerHTML=`<div class=ex>`+p.el.map((e,j)=>`<label class=op><input type=checkbox ${e[1].some(k=>t.includes(k))?'checked':''} onchange="p2s(${i})"> ${e[0]}</label>`).join('')+`<p id=ps${i}></p></div>`;p2s(i,1)}
+function p2s(i,f){const n=document.querySelectorAll(`#pr${i} input:checked`).length,m=P2[i].el.length;$(`#ps${i}`).innerHTML=`Элементов в ответе: <b>${n} из ${m}</b>. Для 3 баллов нужны 3 и более верных элемента без биологических ошибок.`;if(f)rec('Часть 2',n>=3)}
+/* генетика */
+V.gen=()=>`<h2>Генетика и молекулярная биология</h2>
+<div class=card><h3>Транскрипция и трансляция</h3><select id=gm><option value=d>Дана матричная цепь ДНК</option><option value=r>Дана иРНК</option></select><input type=text id=gs value="ТАЦГГЦАААЦТГ" style="margin-top:6px"><button class=btn onclick="tl()">Решить</button><div id=go></div></div>
+<div class=card><h3>Решётка Пеннета</h3><p><small>Генотипы в виде AaBb (заглавная — доминантный аллель, полное доминирование, гены не сцеплены)</small></p><div class=g2><input type=text id=p1 value="AaBb"><input type=text id=p2 value="AaBb"></div><button class=btn onclick="pn()">Построить</button><div id=po></div></div>
+<div class=card><h3>Алгоритм оформления задачи</h3><p>1) Запиши условие и введи обозначения генов. 2) Схема скрещивания: Р, G, F₁. 3) Решётка Пеннета при необходимости. 4) Генотипы и фенотипы потомства с расщеплением. 5) Ответ на вопрос задачи с пояснением закона.</p>
+<details><summary>Группы крови</summary>I — i⁰i⁰; II — IᴬIᴬ или Iᴬi⁰; III — IᴮIᴮ или Iᴮi⁰; IV — IᴬIᴮ (кодоминирование).</details>
+<details><summary>Наследование, сцепленное с полом</summary>Гены в X-хромосоме: у мужчин один аллель (XʰY). Запиши половые хромосомы в схеме обязательно.</details>
+<details><summary>Молекулярные задачи</summary>Комплементарность: А–Т (в РНК А–У), Г–Ц. Кодон = 3 нуклеотида; тРНК антикодон комплементарен кодону иРНК. Длина нуклеотида 0,34 нм.</details>
+<details><summary>Энергетический обмен</summary>Гликолиз: 2 АТФ; кислородный этап: 34 АТФ; всего 36 АТФ на молекулу глюкозы.</details></div>
+<div class=card><h3>Задачи с разбором</h3><details><summary>1. Гемофилия (рецессивный сцепленный с Х признак). Женщина-носительница и здоровый мужчина. Вероятность больного сына?</summary><div class=ex>Р: XᴴXʰ × XᴴY. G: Xᴴ, Xʰ | Xᴴ, Y. F₁: XᴴXᴴ, XᴴXʰ, XᴴY, XʰY. Больной сын XʰY — 1/4 от всех детей, 1/2 от сыновей.</div></details>
+<details><summary>2. У матери II группа (гетерозигота), у отца III (гетерозигота). Какие группы возможны у детей?</summary><div class=ex>Р: Iᴬi⁰ × Iᴮi⁰. G: Iᴬ, i⁰ | Iᴮ, i⁰. F₁: IᴬIᴮ (IV), Iᴬi⁰ (II), Iᴮi⁰ (III), i⁰i⁰ (I). Возможны все четыре группы в соотношении 1:1:1:1.</div></details></div>`;
+function tl(){let s=$('#gs').value.toUpperCase().replace(/А/g,'A').replace(/Т/g,'T').replace(/Г/g,'G').replace(/Ц/g,'C').replace(/У/g,'U').replace(/[^ATGCU]/g,'');let r=$('#gm').value=='d'?[...s].map(x=>({A:'U',T:'A',G:'C',C:'G'}[x]||'?')).join(''):s;
+if($('#gm').value=='d'&&/U/.test(s))return $('#go').innerHTML='<p class=no>В ДНК нет У (урацила).</p>';if($('#gm').value=='r'&&/T/.test(s))return $('#go').innerHTML='<p class=no>В РНК нет Т (тимина).</p>';
+const cs=r.match(/.{3}/g)||[],ix='UCAG',cm={A:'U',U:'A',G:'C',C:'G'};
+$('#go').innerHTML=`<p>иРНК: <code>${r}</code></p><div class=w><table><tr><th>Кодон иРНК</th><th>Антикодон тРНК</th><th>Аминокислота</th></tr>`+cs.map(c=>`<tr><td>${c}</td><td>${[...c].map(x=>cm[x]).join('')}</td><td>${AA[CT[16*ix.indexOf(c[0])+4*ix.indexOf(c[1])+ix.indexOf(c[2])]]}</td></tr>`).join('')+`</table></div><p><small>Нуклеотидов: ${r.length}, триплетов: ${cs.length}. Считывание обычно начинается со стартового кодона АУГ.</small></p>`}
+const gam=g=>[...new Set((g.match(/../g)||[]).reduce((a,p)=>a.flatMap(x=>[...new Set(p)].map(c=>x+c)),['']))];
+function pn(){const a=$('#p1').value.trim(),b=$('#p2').value.trim(),o=$('#po'),f=x=>/^([A-Za-z]{2})+$/.test(x)&&x.match(/../g).every(p=>p[0].toLowerCase()==p[1].toLowerCase());
+if(!f(a)||!f(b)||a.length!=b.length)return o.innerHTML='<p class=no>Формат: AaBb, у обоих родителей одинаковое число генов.</p>';
+const g1=gam(a),g2=gam(b);if(g1.length>8||g2.length>8)return o.innerHTML='<p class=no>Слишком много гамет, введи до 3 генов.</p>';
+const gt={},ph={};const mk=(x,y)=>{let G='',P='';for(let k=0;k<x.length;k++){const p=[x[k],y[k]].sort().join('');G+=p;P+=/[A-Z]/.test(p)?p[0]+'_':p}return[G,P]};
+const rows=g1.map(x=>`<tr><th>${x}</th>`+g2.map(y=>{const[G,P]=mk(x,y);gt[G]=(gt[G]||0)+1;ph[P]=(ph[P]||0)+1;return`<td>${G}</td>`}).join('')+`</tr>`).join('');
+const fm=m=>Object.entries(m).sort((x,y)=>y[1]-x[1]).map(e=>`${e[0]} — ${e[1]}`).join('; ');
+o.innerHTML=`<div class=w><table><tr><th>♀\\♂</th>${g2.map(y=>`<th>${y}</th>`).join('')}</tr>${rows}</table></div><p><b>Генотипы:</b> ${fm(gt)}</p><p><b>Фенотипы:</b> ${fm(ph)}</p><p><small>Расщепление по фенотипу: ${Object.values(ph).sort((x,y)=>y-x).join(':')}</small></p>`}
+/* рисунки */
+const FN=["клеточная стенка","ядро","хлоропласт","вакуоль","митохондрия"],FD=["рибосома","лизосома"];
+V.fig=()=>`<h2>Работа с рисунками</h2><div class=card><p><b>Подпишите органоиды растительной клетки (1–5).</b></p><svg viewBox="0 0 320 230" width="100%" style="max-width:420px" role="img" aria-label="Растительная клетка"><rect x="40" y="20" width="240" height="180" rx="18" fill="#d8f0d2" stroke="#7a5c2e" stroke-width="7"/><circle cx="100" cy="75" r="28" fill="#c9b6e4" stroke="#6b4f9a" stroke-width="2"/><circle cx="106" cy="70" r="8" fill="#6b4f9a"/><ellipse cx="210" cy="110" rx="55" ry="65" fill="#bfe3f5" stroke="#3b82a6" stroke-width="2"/><ellipse cx="80" cy="150" rx="18" ry="10" fill="#3fa34d"/><ellipse cx="135" cy="175" rx="18" ry="10" fill="#3fa34d"/><ellipse cx="140" cy="118" rx="14" ry="7" fill="#f0a35e" stroke="#b5651d"/><g font-size="14" font-weight="700" fill="currentColor"><text x="268" y="14">1</text><text x="143" y="14">2</text><text x="5" y="190">3</text><text x="205" y="115">4</text><text x="130" y="138" font-size="12">5</text></g><g stroke="currentColor" stroke-width="1"><line x1="272" y1="17" x2="268" y2="30"/><line x1="148" y1="17" x2="118" y2="58"/><line x1="18" y1="186" x2="64" y2="154"/></g></svg>
+<div class=w><table>${FN.map((n,i)=>`<tr><td>${i+1}</td><td><select id=f${i}><option value="">—</option>${[...FN,...FD].sort().map(x=>`<option>${x}</option>`).join('')}</select></td></tr>`).join('')}</table></div><button class=btn onclick="fc()">Проверить</button><div id=fr></div></div>
+<div class=card><h3>Как разбирать рисунки, схемы и графики</h3><p>1) Прочитай подпись и оси. 2) Найди оптимум, максимум и пороги. 3) Опиши тенденцию словами. 4) Объясни причину биологическим законом. График с ферментом — в Тренажёре.</p></div>`;
+function fc(){let n=0;FN.forEach((x,i)=>{if($('#f'+i).value==x)n++});rec('Рисунки и данные',n==5);$('#fr').innerHTML=`<div class=ex>Верно: <b>${n} из 5</b>. Ответ: ${FN.map((x,i)=>`${i+1} — ${x}`).join('; ')}.</div>`}
+/* прогресс */
+V.prog=()=>{const k=Object.keys(S.st);return`<h2>Прогресс</h2><div class=card>${k.length?k.map(t=>{const[a,b]=S.st[t],p=Math.round(100*a/b);return`<p><b>${t}</b>: ${a} из ${b} (${p}%)<span class=bar><i style="width:${p}%"></i></span></p>`}).join(''):'<p>Пока нет данных. Реши пару заданий!</p>'}</div><p><small>Слабые темы — там, где процент ниже 60. Вернись к ним в карточках и сравнениях.</small></p><button class="btn g" onclick="if(confirm('Сбросить весь прогресс?')){S={st:{},box:{}};sv();go('prog')}">Сбросить прогресс</button>`};
+if(S.tm)document.documentElement.dataset.theme=S.tm;
+function tgl(){const d=document.documentElement,dk=d.dataset.theme?d.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;S.tm=d.dataset.theme=dk?'light':'dark';sv()}
+(function(){let s='';for(let i=0;i<28;i++){const x=i*13+8,d=(-i*.18).toFixed(2),a=(v,c)=>`<animate attributeName="${c}" values="${v}" dur="3.6s" begin="${d}s" repeatCount="indefinite"/>`;s+=`<line x1="${x}" x2="${x}" stroke="#fff" opacity=".3">${a('52;8;52','y1')}${a('8;52;8','y2')}</line><circle cx="${x}" r="4" fill="#9be7b8">${a('52;8;52','cy')}</circle><circle cx="${x}" r="4" fill="#ffc98a">${a('8;52;8','cy')}</circle>`}$('#hx').innerHTML=s})();
+const td=new Date().toDateString();if(S.last!=td){S.sk=S.last==new Date(Date.now()-864e5).toDateString()?(S.sk||0)+1:1;S.last=td;sv()}$('#sk').textContent='🔥 Серия занятий: '+(S.sk||1)+' дн.';
+const _p=V.prog;V.prog=()=>{const t=Object.values(S.st),n=t.reduce((a,x)=>a+x[1],0),g=t.reduce((a,x)=>a+x[0],0),l=Math.floor((S.xp||0)/100)+1,th=Object.values(S.th||{}).filter(Boolean).length,bg=[['🌱','Первые шаги: 10 ответов',n>=10],['🎯','25 верных ответов',g>=25],['🔥','Серия 3 дня',(S.sk||1)>=3],['📚','5 тем теории',th>=5],['🏆','Уровень 5',l>=5],['🧠','Вся теория изучена',th>=TH.length]];return`<div class=card><h3>⭐ Уровень ${l} · ${S.xp||0} XP</h3><div class=bar><i style='width:${(S.xp||0)%100}%'></i></div><p>`+bg.map(b=>`<span class='bd ${b[2]?'':'l'}'>${b[0]} ${b[1]}</span>`).join('')+`</p></div>`+_p()};
+/* v4: больше контента, журнал ошибок, план */
+C.push(["Цитология","Набор в клетках в конце телофазы мейоза I?","n2c: хромосомы ещё состоят из двух хроматид."],["Цитология","Чем прокариоты отличаются от эукариот?","Нет оформленного ядра и мембранных органоидов; кольцевая ДНК; мелкие рибосомы."],["Молекулярная биология","Чем ДНК отличается от РНК?","ДНК: дезоксирибоза, тимин, две цепи. РНК: рибоза, урацил, одна цепь."],["Молекулярная биология","Что такое антикодон?","Триплет тРНК, комплементарный кодону иРНК."],["Молекулярная биология","Сколько нуклеотидов двуцепочечной ДНК кодируют белок из 100 аминокислот?","600 (300 в кодирующей цепи), стоп-кодон не считаем."],["Генетика","Сколько типов гамет образует AaBbCc?","8 (2³)."],["Генетика","Генотипы людей с I, II, III, IV группой крови?","I — ii; II — IᴬIᴬ или Iᴬi; III — IᴮIᴮ или Iᴮi; IV — IᴬIᴮ."],["Генетика","Особенность наследования рецессивных признаков, сцепленных с Х-хромосомой, у мужчин?","Проявляются при одном аллеле (в Y аллеля нет); сын получает Х от матери."],["Эволюция","Ароморфоз и идиоадаптация: в чём разница?","Ароморфоз — крупное усложнение (четырёхкамерное сердце); идиоадаптация — частное приспособление без повышения уровня организации."],["Экология","Типы взаимоотношений организмов?","Мутуализм, комменсализм; конкуренция, хищничество, паразитизм."],["Анатомия","Звенья рефлекторной дуги?","Рецептор → чувствительный нейрон → вставочный нейрон → двигательный нейрон → эффектор."],["Анатомия","Чем артерии отличаются от вен?","Артерии несут кровь от сердца, стенки толстые; вены — к сердцу, есть клапаны, давление низкое."],["Ботаника","Однодольные и двудольные: главные отличия?","Одна семядоля, мочковатая корневая система, нет камбия — против двух семядолей, стержневого корня, камбия."],["Зоология","Особенности земноводных?","Голая влажная кожа, трёхкамерное сердце, два круга кровообращения, личинка развивается в воде."]);
+Q.push({t:"Генетика",k:"c",q:"Сколько типов гамет образует дигетерозигота AaBb (гены не сцеплены)?",o:["1","2","4","8"],a:2,e:"Aa даёт 2 типа, Bb — 2: 2 × 2 = 4 (AB, Ab, aB, ab)."},{t:"Цитология",k:"c",q:"Какой набор в клетках в конце телофазы мейоза I?",o:["2n2c","n2c","nc","n4c"],a:1,e:"Разошлись гомологи: n хромосом, каждая из двух хроматид — n2c."},{t:"Анатомия",k:"c",q:"Какая кровь течёт по лёгочным венам?",o:["Венозная","Артериальная","Смешанная","Насыщенная CO₂"],a:1,e:"Лёгочные вены несут артериальную кровь в левое предсердие."},{t:"Генетика",k:"c",q:"У отца I группа крови, у матери IV. Какие группы возможны у детей?",o:["I и IV","II и III","Только II","Все четыре"],a:1,e:"ii × IᴬIᴮ → Iᴬi (II) и Iᴮi (III)."},{t:"Эволюция",k:"c",q:"Что относится к ароморфозам?",o:["Окраска, подражающая листу","Появление четырёхкамерного сердца у птиц","Длинные ноги цапли","Колючки кактуса"],a:1,e:"Ароморфоз — крупное усложнение организации; остальное — идиоадаптации."},{t:"Экология",k:"c",q:"Клубеньковые бактерии и бобовые — это пример:",o:["Хищничества","Паразитизма","Мутуализма","Конкуренции"],a:2,e:"Обе стороны получают пользу: бактерии — органику, растение — азот."},{t:"Молекулярная биология",k:"c",q:"Сколько нуклеотидов иРНК кодируют белок из 50 аминокислот (без стоп-кодона)?",o:["50","100","150","300"],a:2,e:"Одна аминокислота — один триплет: 50 × 3 = 150."},{t:"Ботаника",k:"c",q:"Какой набор хромосом имеют клетки эндосперма покрытосеменных?",o:["n","2n","3n","4n"],a:2,e:"Эндосперм образуется при слиянии спермия (n) с центральной клеткой (2n): 3n."});
+P2.push({q:"Почему у птиц и млекопитающих чётко разделены артериальная и венозная кровь и в чём это выгодно?",el:[["Четырёхкамерное сердце: кровь не смешивается",["четырёхкамер","разделен","не смешива"]],["Ткани получают кровь, насыщенную кислородом",["кислород","насыщ"]],["Высокий уровень обмена веществ",["обмен"]],["Теплокровность, постоянная температура тела",["тепл","температур"]]]},{q:"Почему загущённые посевы дают меньший урожай?",el:[["Возрастает конкуренция между растениями",["конкурен","борьб"]],["Не хватает света для фотосинтеза",["свет","фотосинтез"]],["Не хватает воды и минеральных веществ",["вод","минерал","почв"]],["Снижается накопление органических веществ и масса растений",["органическ","масс","урож"]]]});
+const tdy=()=>new Date().toISOString().slice(0,10),cnt=()=>{S.dl=S.dl||{};S.dl[tdy()]=(S.dl[tdy()]||0)+1};
+const _c=chk;chk=function(i,q){const r=_c(i,q);S.err=S.err||[];const p=S.err.indexOf(i);if(!r&&p<0)S.err.push(i);if(r&&p>=0)S.err.splice(p,1);cnt();sv();return r};
+const _r=rate;rate=function(r){_r(r);cnt();sv()};
+V.err=()=>{const e=(S.err||[]).filter(i=>Q[i]);return`<h2>Журнал ошибок</h2>`+(e.length?`<p>Неверно решённых заданий: ${e.length}. Верный ответ убирает задание из журнала.</p>`+e.map(i=>qh(Q[i],i,1)).join(''):`<div class=card><p>Ошибок нет 🎉 Неверные ответы из тренажёра и варианта попадут сюда автоматически.</p></div>`)};
+B.err=()=>Object.keys(A).forEach(k=>delete A[k]);
+V.plan=()=>{const d=S.exam?Math.ceil((new Date(S.exam)-new Date())/864e5):null,n=(S.dl||{})[tdy()]||0,g=20;return`<h2>План подготовки</h2><div class=card><label>Дата экзамена <input type=date value="${S.exam||''}" onchange="S.exam=this.value;sv();go('plan')"></label><label style="display:block;margin-top:8px">Целевой балл <input type=number min=1 max=100 value="${S.tgt||''}" onchange="S.tgt=this.value;sv()"></label>${d!==null?`<p><b>${d>0?'До экзамена '+d+' дн.':'Дата уже прошла'}</b></p>`:''}</div><div class=card><h3>Цель на сегодня: ${g} ответов</h3><div class=bar><i style="width:${Math.min(100,n*100/g)}%"></i></div><p>${n} из ${g} ${n>=g?'— цель выполнена ✓':''}</p><small>Считаются проверенные задания и оценённые карточки.</small></div><div class=card><h3>Перенос прогресса</h3><textarea rows=3 readonly>${btoa(unescape(encodeURIComponent(JSON.stringify(S))))}</textarea><p><small>Скопируй код, чтобы сохранить прогресс. Чтобы восстановить, вставь код ниже:</small></p><textarea id=im rows=2></textarea><button class=btn onclick="imp()">Загрузить прогресс</button></div>`};
+function imp(){try{S=JSON.parse(decodeURIComponent(escape(atob($('#im').value.trim()))));S.st=S.st||{};S.box=S.box||{};sv();hdr();go('plan')}catch(e){alert('Неверный код')}}
+T.push(["err","Ошибки"],["plan","План"]);
+/* v5: полный вариант и больше контента */
+const cqx=(t,q,o,a,e)=>Q.push({t,k:'c',q,o,a,e});
+cqx("Цитология","Какой органоид содержит собственную ДНК?",["ЭПС","Митохондрия","Лизосома","Комплекс Гольджи"],1,"ДНК есть в ядре, митохондриях и пластидах.");
+cqx("Цитология","В какой фазе митоза хромосомы выстраиваются по экватору?",["Профаза","Метафаза","Анафаза","Телофаза"],1,"В метафазе формируется метафазная пластинка.");
+cqx("Молекулярная биология","Сколько водородных связей между Г и Ц?",["1","2","3","4"],2,"А–Т: две связи, Г–Ц: три.");
+cqx("Молекулярная биология","В ДНК 20% аденина. Сколько в ней цитозина?",["20%","30%","40%","60%"],1,"А = Т = 20%, Г + Ц = 60%, Ц = 30%.");
+cqx("Генетика","Какое расщепление по фенотипу при Aa × aa?",["3:1","1:1","1:2:1","9:3:3:1"],1,"Потомки Aa и aa в соотношении 1:1.");
+cqx("Генетика","Кратное увеличение числа хромосом — это мутация:",["Генная","Хромосомная","Геномная","Модификация"],2,"Изменение числа хромосом — геномная мутация (полиплоидия).");
+cqx("Фотосинтез","Источник кислорода при фотосинтезе:",["CO₂","Вода","Глюкоза","АТФ"],1,"O₂ выделяется при фотолизе воды.");
+cqx("Энергетический обмен","Где происходит гликолиз?",["Митохондрии","Цитоплазма","Ядро","Строма хлоропласта"],1,"Гликолиз идёт в цитоплазме без кислорода.");
+cqx("Ботаника","Какая ткань проводит органические вещества вниз по стеблю?",["Ксилема","Флоэма","Камбий","Эпидерма"],1,"Органика движется по ситовидным трубкам флоэмы.");
+cqx("Анатомия","Какой гормон снижает уровень глюкозы в крови?",["Глюкагон","Адреналин","Инсулин","Тироксин"],2,"Инсулин поджелудочной железы.");
+cqx("Анатомия","Где происходит газообмен в лёгких?",["Бронхи","Трахея","Альвеолы","Плевра"],2,"Через тонкие стенки альвеол и капилляров.");
+cqx("Эволюция","Кто выдвинул идею наследования приобретённых признаков?",["Дарвин","Ламарк","Мендель","Вавилов"],1,"Ж.-Б. Ламарк, 1809.");
+cqx("Эволюция","Какой критерий вида — набор хромосом?",["Морфологический","Генетический","Экологический","Географический"],1,"Кариотип — генетический критерий.");
+cqx("Экология","Кто относится к продуцентам?",["Бактерии гниения","Зелёные растения","Травоядные","Хищники"],1,"Продуценты создают органику из неорганики.");
+cqx("Зоология","Какое животное относится к паукообразным?",["Речной рак","Паук-крестовик","Майский жук","Пчела"],1,"У паукообразных четыре пары ног.");
+cqx("Ботаника","Что характерно только для покрытосеменных?",["Семена","Цветок и плод","Корень","Спороношение"],1,"Цветок, плод и двойное оплодотворение.");
+C.push(["Эволюция","Вклад Ж.-Б. Ламарка?","Первая эволюционная теория (1809): упражнение органов, наследование приобретённых признаков."],["Эволюция","Вклад Ч. Дарвина?","Теория естественного отбора («Происхождение видов», 1859)."],["Генетика","Вклад Г. Менделя?","Законы наследования, гибридологический метод (1865)."],["Генетика","Вклад Т. Моргана?","Хромосомная теория, сцепленное наследование."],["Генетика","Вклад Н. И. Вавилова?","Закон гомологических рядов, центры происхождения культурных растений."],["Цитология","Клеточная теория: кто и что?","Шлейден и Шванн: клетка — единица строения; Вирхов: клетка от клетки."],["Молекулярная биология","Кто описал структуру ДНК?","Уотсон и Крик (1953): двойная спираль."],["Экология","Биоценоз и биогеоценоз?","Биоценоз — совокупность популяций; биогеоценоз — биоценоз вместе с биотопом."],["Экология","Вклад В. И. Вернадского?","Учение о биосфере, живое вещество, ноосфера."],["Анатомия","Отделы вегетативной нервной системы?","Симпатический (мобилизует) и парасимпатический (восстанавливает)."],["Анатомия","Инсулин и глюкагон?","Инсулин снижает глюкозу, глюкагон повышает; вырабатываются в поджелудочной железе."],["Ботаника","Гаметофит и спорофит папоротника?","Заросток — гаметофит (n); взрослое растение — спорофит (2n)."],["Зоология","Признаки членистоногих?","Хитиновый покров, членистые конечности, незамкнутая кровеносная система."],["Систематика","Порядок категорий?","Вид → род → семейство → отряд → класс → тип → царство."],["Эволюция","Формы естественного отбора?","Стабилизирующий, движущий, дизруптивный."],["Цитология","Гаплоидный и диплоидный набор?","n — по одной хромосоме каждой пары; 2n — по две."]);
+P2.push({q:"Эксперимент: проростки пшеницы выращивали при разной освещённости, контроль — обычный свет. Назовите зависимую и независимую переменные, что нужно держать постоянным и зачем нужен контроль.",el:[["Зависимая переменная — рост (длина, масса) проростков",["рост","длин","масс"]],["Независимая переменная — освещённость",["освещ","свет"]],["Постоянны температура, влажность, почва, число семян",["температур","влажн","полив","почв"]],["Контроль нужен для сравнения и выявления влияния одного фактора",["сравн","влиян"]]]},{q:"Применение знаний: что произойдёт с численностью зайцев, если уничтожить рысей? Объясните.",el:[["Сначала численность зайцев возрастёт",["возраст","увелич","вырастет"]],["Исчезнет давление хищника",["хищ","давлен"]],["Не хватит корма, усилится конкуренция",["корм","конкурен"]],["Рост болезней, затем падение численности",["болез","эпидем","сниз","уменьш"]]]});
+const FT=14100,TY=q=>q.k=='c'?'Тест':q.k=='m'?'Соответствие':'Последовательность',mxq=q=>q.k=='c'?1:2;
+function rsq(i){A[i]=[];if(S.fv&&!S.fv.d)delete S.fv.a[i];go(cur)}
+function pts(i){const q=Q[i],a=(S.fv.a||{})[i];if(a==null)return 0;if(q.k=='c')return a===q.a?1:0;if(q.k=='m'){const w=a.filter((x,k)=>x!=q.a[k]).length;return w==0?2:w==1?1:0}return ok(i,a)?2:0}
+function nfv(){S.fv={u:0,a:{},t:{},c:{}};sv();go('fv')}
+function tk(){const f=S.fv;if(!f||f.d||cur!='fv')return clearInterval(tm);f.u++;Q.forEach((q,i)=>f.a[i]=ans(i));P2.forEach((p,j)=>{const e=$('#t'+j);if(e)f.t[j]=e.value});sv();const l=FT-f.u;if(l<=0)return endv();$('#tmr').textContent=`⏱ ${Math.floor(l/3600)}:${String(Math.floor(l%3600/60)).padStart(2,'0')}:${String(l%60).padStart(2,'0')}`}
+function endv(){const f=S.fv;clearInterval(tm);S.err=S.err||[];Q.forEach((q,i)=>{const r=pts(i)==mxq(q);rec(q.t,r);const p=S.err.indexOf(i);if(!r&&p<0)S.err.push(i)});P2.forEach((p,j)=>{const x=(f.t[j]||'').toLowerCase();f.c[j]=p.el.map(el=>el[1].some(k=>x.includes(k)))});f.d=1;sv();go('fv')}
+const sm=()=>{const R=[];Q.forEach((q,i)=>R.push([q.t,TY(q),pts(i),mxq(q)]));P2.forEach((p,j)=>R.push(['Часть 2','Часть 2',Math.min(3,S.fv.c[j].filter(Boolean).length),3]));const g=x=>{const m={};R.forEach(r=>{const v=m[r[x]]=m[r[x]]||[0,0];v[0]+=r[2];v[1]+=r[3]});return Object.entries(m).map(([k,[a,b]])=>`<tr><td>${k}</td><td>${a} из ${b}</td><td class=${a/b<.6?'no':'ok'}>${Math.round(100*a/b)}%</td></tr>`).join('')};const p=R.reduce((s,r)=>s+r[2],0),mx=R.reduce((s,r)=>s+r[3],0),n=p/mx*59,sc=Math.round(n<16?n*36/16:36+(n-16)*64/43);return`<div class=card><h2>Итог: ${p} из ${mx} первичных</h2><p>Ориентировочно ≈ <b>${sc}</b> из 100. <small>Шкала приблизительная: реальный перевод баллов ежегодно утверждает Рособрнадзор.</small></p></div><div class=card><h3>По темам</h3><div class=w><table>${g(0)}</table></div></div><div class=card><h3>По типам заданий</h3><div class=w><table>${g(1)}</table></div></div>`};
+function cl(){P2.forEach((p,j)=>p.el.forEach((_,k)=>S.fv.c[j][k]=$(`#k${j}_${k}`).checked));sv();$('#rs').innerHTML=sm()}
+V.fv=()=>{const f=S.fv;if(!f)return`<h2>Полный вариант</h2><div class=card><p>${Q.length} заданий части 1 и ${P2.length} части 2, 3 ч 55 мин. Ответы и таймер сохраняются: можно закрыть страницу и продолжить позже.</p><button class=btn onclick="nfv()">Начать вариант</button></div>`;if(f.d)return`<div id=rs>${sm()}</div><div class=card><h3>Часть 2: самооценка по критериям</h3><small>Элементы, найденные в ответе по ключевым словам, отмечены автоматически. Поправь отметки честно.</small>`+P2.map((p,j)=>`<p><b>${p.q}</b></p><div class=ex>${(f.t[j]||'—').replace(/</g,'&lt;')}</div>`+p.el.map((el,k)=>`<label class=op><input type=checkbox id=k${j}_${k} ${f.c[j][k]?'checked':''} onchange="cl()"> ${el[0]}</label>`).join('')).join('')+`</div><div class=card><p>Неверные задания части 1 добавлены в журнал ошибок.</p><button class=btn onclick="S.fv=null;sv();go('fv')">Новый вариант</button></div>`;return`<div class=card style="position:sticky;top:62px;z-index:5"><b id=tmr></b> <button class="btn g" onclick="go('home')">Пауза</button> <button class=btn onclick="if(confirm('Завершить вариант?'))endv()">Завершить</button></div><h3>Часть 1</h3>`+Q.map((q,i)=>qh(q,i,0)).join('')+`<h3>Часть 2</h3>`+P2.map((p,j)=>`<div class=card><p><b>${Q.length+j+1}. ${p.q}</b></p><textarea rows=4 id=t${j}>${((f.t||{})[j]||'').replace(/</g,'&lt;')}</textarea></div>`).join('')};
+B.fv=()=>{const f=S.fv;clearInterval(tm);if(!f||f.d)return;Object.keys(A).forEach(k=>delete A[k]);Q.forEach((q,i)=>{const a=f.a[i];if(a==null)return;if(q.k=='c'){const r=$(`#q${i} input[value="${a}"]`);if(r)r.checked=true}else if(q.k=='m')document.querySelectorAll(`#q${i} select`).forEach((e,k)=>e.value=a[k]<0?'':a[k]);else{A[i]=[...a];a.forEach(j=>$(`#c${i}_${j}`).classList.add('u'));$(`#sq${i}`).textContent=a.map(x=>q.items[x]).join(' → ')}});tm=setInterval(tk,1000);tk()};
+T.push(["fv","Полный вариант"]);
+/* v6: анимированные разборы, поиск, больше контента */
+const z_qx=(t,q,o,a,e)=>Q.push({t,k:'c',q,o,a,e});
+z_qx("Генетика","Какова вероятность рождения голубоглазого ребёнка (рецессивный признак) у двух кареглазых гетерозигот?",["25%","50%","75%","0%"],0,"Aa × Aa → 1AA : 2Aa : 1aa, рецессив aa — 25%.");
+z_qx("Генетика","Мать — носительница гемофилии XᴴXʰ, отец здоров. Какова вероятность гемофилии среди сыновей?",["0%","25%","50%","100%"],2,"Сын получает от матери Xᴴ или Xʰ с равной вероятностью.");
+z_qx("Генетика","Какое расщепление даёт скрещивание AaBb × aabb?",["9:3:3:1","1:1:1:1","3:1","1:2:1"],1,"Дигетерозигота даёт 4 типа гамет, рецессив — один: 1:1:1:1.");
+z_qx("Молекулярная биология","Антикодон тРНК ЦАУ комплементарен кодону иРНК:",["ГУА","ГТА","ЦАУ","УАГ"],0,"Ц–Г, А–У, У–А: кодон ГУА.");
+z_qx("Молекулярная биология","Матричная цепь ДНК АТГЦЦА. Какая иРНК с неё синтезируется?",["УАЦГГУ","ТАЦГГТ","АУГЦЦА","УАЦЦГУ"],0,"А→У, Т→А, Г→Ц, Ц→Г: УАЦГГУ.");
+z_qx("Цитология","Какой набор в анафазе мейоза II?",["n2c","2n2c","2n4c","4n4c"],1,"Хроматиды разошлись, в клетке 2n хромосом по одной хроматиде.");
+z_qx("Цитология","Сколько хромосом и молекул ДНК в профазе митоза клетки с 2n=6?",["6 и 6","6 и 12","12 и 12","3 и 6"],1,"Хромосом 6, ДНК после репликации 12.");
+z_qx("Эволюция","Результат действия дизруптивного отбора:",["Сохранение средних форм","Сдвиг признака","Сохранение крайних форм и разделение популяции","Исчезновение мутаций"],2,"Дизруптивный отбор поддерживает крайние варианты и может привести к видообразованию.");
+z_qx("Экология","На уровне продуцентов 10000 кДж. Сколько получат консументы II порядка (правило 10%)?",["1000","100","10","1"],1,"10000 → 1000 (I порядок) → 100 (II порядок).");
+z_qx("Анатомия","Где находится центр дыхания?",["Продолговатый мозг","Мозжечок","Кора","Спинной мозг"],0,"Дыхательный центр расположен в продолговатом мозге.");
+C.push(["Ловушки ЕГЭ","Когда 2n2c впервые становится 2n4c?","В S-период интерфазы: репликация ДНК; число хромосом не меняется."],["Ловушки ЕГЭ","Что происходит с числом хромосом в анафазе митоза?","Удваивается (4n), ДНК — 4c: хроматиды стали хромосомами."],["Ловушки ЕГЭ","Триплет, кодон, антикодон?","Триплет — три нуклеотида ДНК; кодон — иРНК; антикодон — тРНК."],["Ловушки ЕГЭ","Фотосинтез и дыхание: в чём путаница?","Дыхание идёт всегда во всех клетках; фотосинтез — на свету в клетках с хлорофиллом."],["Ловушки ЕГЭ","Какая кровь в лёгочных артериях и венах?","В артериях — венозная, в венах — артериальная."],["Ловушки ЕГЭ","Вид и популяция?","Вид — совокупность популяций; популяция — единица эволюции."],["Генетика","Расщепление при неполном доминировании?","1:2:1 и по фенотипу, и по генотипу."],["Генетика","Сцепленное наследование?","Гены одной хромосомы наследуются вместе; кроссинговер даёт кроссоверные гаметы."],["Генетика","Когда нужно анализирующее скрещивание?","Фенотип доминантный, генотип неизвестен: скрещивают с aa."],["Ботаника","Чем семя отличается от споры?","Семя многоклеточное, с зародышем и запасом; спора — одна клетка."],["Анатомия","Функции лейкоцитов, эритроцитов, тромбоцитов?","Защита; перенос газов; свёртывание крови."],["Зоология","Приспособления рыб к воде?","Обтекаемое тело, плавники, жабры, боковая линия, плавательный пузырь."]);
+const z_gam=g=>{let r=[''];g.match(/../g).forEach(x=>{r=r.flatMap(y=>[y+x[0],y+x[1]])});return[...new Set(r)]},z_fx=(c,d)=>c==c.toUpperCase()?c+d:d==d.toUpperCase()?d+c:c+d,z_nm=g=>g.match(/../g).map(p=>z_fx(p[0],p[1])).join(''),z_LL=g=>g.match(/../g).map(p=>p[0].toLowerCase()).join(''),z_gc=(a,b)=>b?z_gc(b,a%b):a;
+function z_gs(){const n=g=>g.replace(/\s/g,''),a0=n($('#ga').value),b0=n($('#gb').value),v=g=>/^([A-Za-z]{2}){1,3}$/.test(g)&&g.match(/../g).every(p=>p[0].toLowerCase()==p[1].toLowerCase());if(!v(a0)||!v(b0)||z_LL(a0)!=z_LL(b0))return alert('Введите генотипы одинаковых генов, например AaBb и aabb (до 3 пар)');const a=z_nm(a0),b=z_nm(b0),ga=z_gam(a),gb=z_gam(b),cl=ga.map(x=>gb.map(y=>x.split('').map((c,i)=>z_fx(c,y[i])).join(''))),ph=c=>c.match(/../g).map(p=>p[0]).join(''),pc={},gt={};cl.flat().forEach(c=>{pc[ph(c)]=(pc[ph(c)]||0)+1;gt[c]=(gt[c]||0)+1});const keys=Object.keys(pc).sort(),lb=k=>k.split('').map(c=>c==c.toUpperCase()?c+'_':c+c).join(''),tot=cl.flat().length,rt=o=>{const v=Object.values(o).sort((x,y)=>y-x),g=v.reduce(z_gc);return v.map(x=>x/g).join(':')};let k=0;const dl=()=>(k++*.9).toFixed(1),ch=(arr,b)=>arr.map((g,i)=>`<span class=chip style="animation:pop .4s ${(b+.3+i*.1).toFixed(2)}s both">${g}</span>`).join('');let h=`<div class=card style="animation-delay:${dl()}s"><b>Шаг 1. Схема скрещивания.</b> Р: ♀ ${a} × ♂ ${b}</div>`;let b2=k*.9;h+=`<div class=card style="animation-delay:${dl()}s"><b>Шаг 2. Гаметы (G).</b><br>♀ ${ch(ga,b2)}<br>♂ ${ch(gb,b2+.3)}</div>`;b2=k*.9;h+=`<div class=card style="animation-delay:${dl()}s"><b>Шаг 3. Решётка Пеннета (F₁).</b><div class=w><table><tr><th></th>${gb.map(g=>`<th>${g}</th>`).join('')}</tr>`+cl.map((r,i)=>`<tr><th>${ga[i]}</th>`+r.map((c,j)=>`<td style="text-align:center;background:hsla(${keys.indexOf(ph(c))*70},60%,50%,.28);animation:pop .4s ${(b2+.3+(i*gb.length+j)*.06).toFixed(2)}s both">${c}</td>`).join('')+'</tr>').join('')+`</table></div></div>`;b2=k*.9;h+=`<div class=card style="animation-delay:${dl()}s"><b>Шаг 4. Расщепление.</b> По фенотипу <span class=ok>${rt(pc)}</span>, по генотипу <span class=ok>${rt(gt)}</span>`+keys.map((q,i)=>`<p style="margin:6px 0">${lb(q)} — ${pc[q]} из ${tot} (${Math.round(100*pc[q]/tot)}%)<span class=bar><i style="width:${100*pc[q]/tot}%;background:hsl(${i*70},60%,50%);animation:gw 1s ${(b2+.3+i*.2).toFixed(2)}s both"></i></span></p>`).join('')+`</div>`;$('#gz').innerHTML=h}
+const z_DV={"Митоз":[["Интерфаза G₁","2n2c","Клетка растёт; каждая хромосома из одной хроматиды.",[[4,'|']]],["S-период","2n4c","Репликация ДНК: хромосомы двухроматидные (✕), их число не меняется.",[[4,'✕']]],["Метафаза","2n4c","Хромосомы выстроены по экватору.",[[4,'✕']]],["Анафаза","4n4c","Хроматиды разошлись: хромосом вдвое больше.",[[4,'|'],[4,'|']]],["Телофаза","2n2c","Две генетически одинаковые клетки.",[[4,'|'],[4,'|']]]],"Мейоз":[["Профаза I","2n4c","Конъюгация и кроссинговер.",[[4,'✕']]],["Анафаза I","2n4c","Расходятся гомологичные хромосомы.",[[2,'✕'],[2,'✕']]],["Телофаза I","n2c","Редукция: клетки гаплоидны, хромосомы двухроматидные.",[[2,'✕'],[2,'✕']]],["Анафаза II","2n2c","Расходятся хроматиды в каждой клетке.",[[4,'|'],[4,'|']]],["Итог","nc","Четыре гаплоидные клетки.",[[2,'|'],[2,'|'],[2,'|'],[2,'|']]]]};
+let z_dv=["Митоз",0];
+const z_dvh=()=>{const s=z_DV[z_dv[0]],t=s[z_dv[1]];return`<div class=card><div>${Object.keys(z_DV).map(k=>`<button class="btn ${z_dv[0]==k?'':'g'}" onclick="z_dv=['${k}',0];$('#dvb').innerHTML=z_dvh()">${k}</button>`).join('')}</div><h3>${t[0]} — <span class=ok>${t[1]}</span></h3><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0">${t[3].map((g,gi)=>`<div style="border:2px solid var(--ac);border-radius:50%/40%;padding:14px 18px;min-width:90px;text-align:center;animation:pop .5s ${gi*.15}s both">${Array.from({length:g[0]},(_,k)=>`<span style="display:inline-block;font-size:26px;margin:2px;animation:pop .4s ${(gi*4+k)*.08}s both">${g[1]}</span>`).join('')}</div>`).join('')}</div><p class=ex>${t[2]}</p><div class=bar><i style="width:${(z_dv[1]+1)*100/s.length}%"></i></div><button class="btn g" onclick="z_dvs(-1)">← Назад</button><button class=btn onclick="z_dvs(1)">Далее →</button></div>`};
+function z_dvs(d){z_dv[1]=Math.max(0,Math.min(z_DV[z_dv[0]].length-1,z_dv[1]+d));$('#dvb').innerHTML=z_dvh()}
+V.an=()=>`<h2>Разбор в движении</h2><div class=card><h3>🧬 Генетическая задача по шагам</h3><p><small>Введите генотипы родителей (до 3 пар генов, заглавная — доминантный аллель).</small></p><div class=g2><input type=text id=ga value=AaBb><input type=text id=gb value=aabb></div><button class=btn onclick="z_gs()">Показать решение</button></div><div id=gz></div><h3>♻️ Деление клетки: что происходит с набором</h3><div id=dvb>${z_dvh()}</div>`;
+function z_srch(v){v=v.toLowerCase().trim();const o=$('#sro');if(v.length<2){o.innerHTML='';return}const r=[];C.forEach(c=>{if((c[1]+c[2]).toLowerCase().includes(v))r.push(`<div class=card><small>Карточка · ${c[0]}</small><p><b>${c[1]}</b></p><p>${c[2]}</p></div>`)});TH.forEach(t=>{const x=t[2].replace(/<[^>]+>/g,' ');const i=x.toLowerCase().indexOf(v);if(t[1].toLowerCase().includes(v)||i>=0)r.push(`<div class=card><small>Теория · ${t[1]}</small><p>${i>=0?'…'+x.slice(Math.max(0,i-60),i+140)+'…':''}</p></div>`)});o.innerHTML=r.slice(0,20).join('')||'<p>Ничего не найдено.</p>'}
+V.sr=()=>`<h2>Поиск</h2><input type=text id=sin placeholder="Например: кроссинговер" oninput="z_srch(this.value)"><div id=sro></div>`;
+T.push(["an","Разбор"],["sr","Поиск"]);
+/* v7: биосинтез белка в анимации, причины ошибок, ещё контента */
+const z_q=(t,q,o,a,e)=>Q.push({t,k:'c',q,o,a,e});
+z_q("Анатомия","Какой отдел мозга отвечает за равновесие и координацию движений?",["Мозжечок","Гипоталамус","Мост","Таламус"],0,"Координация и равновесие — функции мозжечка.");
+z_q("Анатомия","Недостаток какого витамина вызывает «куриную слепоту»?",["C","A","D","B₁"],1,"Витамин A нужен для работы сетчатки.");
+z_q("Ботаника","Что обеспечивает движение воды по ксилеме вверх?",["Только осмос в корне","Транспирация и корневое давление","Фотосинтез","Дыхание"],1,"Присасывающая сила транспирации и корневое давление.");
+z_q("Зоология","Для каких животных характерно трёхкамерное сердце с неполной перегородкой в желудочке?",["Рыбы","Пресмыкающиеся","Птицы","Млекопитающие"],1,"Это признак большинства пресмыкающихся.");
+z_q("Эволюция","Как называется случайное изменение частот аллелей в малой популяции?",["Естественный отбор","Дрейф генов","Изоляция","Модификация"],1,"Это дрейф генов.");
+z_q("Экология","Что такое сукцессия?",["Смена одних сообществ другими","Сезонное изменение","Рост популяции","Миграция"],0,"Последовательная смена сообществ на одной территории.");
+z_q("Молекулярная биология","В каком органоиде образуется рРНК?",["Ядрышко","Лизосома","ЭПС","Центриоль"],0,"В ядрышке образуются рРНК и субъединицы рибосом.");
+z_q("Цитология","Какой процесс идёт в лизосомах?",["Синтез белка","Внутриклеточное пищеварение","Фотосинтез","Синтез АТФ"],1,"Ферменты лизосом расщепляют органические вещества.");
+z_q("Генетика","С какими структурами связана цитоплазматическая наследственность?",["Ядро","ДНК митохондрий и пластид","Рибосомы","Лизосомы"],1,"Эти органоиды содержат собственную ДНК.");
+z_q("Систематика","К какому царству относятся дрожжи?",["Растения","Грибы","Бактерии","Животные"],1,"Дрожжи — одноклеточные грибы.");
+C.push(["Эволюция","Что такое дрейф генов?","Случайное изменение частот аллелей в малых популяциях."],["Эволюция","Формы изоляции?","Географическая, экологическая, биологическая (репродуктивная)."],["Экология","Что такое сукцессия?","Последовательная смена сообществ на одной территории."],["Экология","Типы пищевых цепей?","Пастбищные (от продуцентов) и детритные (от мёртвой органики)."],["Анатомия","Отделы головного мозга?","Продолговатый, мост, мозжечок, средний, промежуточный, большие полушария."],["Анатомия","Функции гипоталамуса?","Регуляция обмена веществ, температуры, голода; связь с гипофизом."],["Анатомия","Роль витаминов A, C, D, B₁?","A — зрение; C — иммунитет; D — кости; B₁ — нервная система."],["Ботаника","Функции листа и стебля?","Лист — фотосинтез, испарение, газообмен; стебель — опора и проведение."],["Зоология","Классы позвоночных?","Рыбы, земноводные, пресмыкающиеся, птицы, млекопитающие."],["Цитология","Функция ядрышка?","Образование рРНК и субъединиц рибосом."]);
+P2.push({q:"Текст: «Лишайник — симбиоз гриба и водоросли: гриб поглощает воду и минеральные соли, водоросль синтезирует органические вещества». Определите тип взаимоотношений и выгоду каждого партнёра.",el:[["Мутуализм (симбиоз)",["мутуал","симбиоз"]],["Гриб получает органические вещества",["органик"]],["Водоросль получает воду, минеральные соли и защиту",["вод","минерал","защит"]],["Оба организма получают пользу",["польз","выгод","оба"]]]},{q:"Таблица: в покое пульс 70 уд/мин, объём вдоха 0,5 л; при нагрузке — 140 уд/мин, 2 л. Сделайте выводы.",el:[["При нагрузке растёт потребность в кислороде",["кислород","потребн"]],["Учащается пульс, усиливается кровоток",["пульс","кровоток","сердц"]],["Дыхание становится глубже",["дыхан","вдох","глубин"]],["Быстрее доставляется O₂ и удаляется CO₂",["углекисл","co","удален","доставк"]]]},{q:"Схема: трава → кузнечик → лягушка → змея → орёл. Назовите консумента II порядка и объясните, почему биомасса убывает.",el:[["Консумент II порядка — лягушка",["лягушк"]],["Энергия теряется на дыхание и тепло",["дыхан","тепл","потер"]],["На следующий уровень переходит около 10% энергии",["10","десят"]],["Поэтому цепи питания короткие",["коротк","ограничен"]]]});
+const ZC={А:'У',Т:'А',Г:'Ц',Ц:'Г'},ZB={У:'А',А:'У',Ц:'Г',Г:'Ц'},ZI={У:0,Ц:1,А:2,Г:3};
+function z_pz(){const d=$('#pd').value.toUpperCase().replace(/\s/g,'').replace(/T/g,'Т').replace(/A/g,'А').replace(/G/g,'Г').replace(/C/g,'Ц');if(!/^[АТГЦ]{3,45}$/.test(d))return alert('Введите цепь ДНК из букв А, Т, Г, Ц (3–45 нуклеотидов)');const m=[...d].map(c=>ZC[c]),cod=[];for(let i=0;i+3<=m.length;i+=3)cod.push(m.slice(i,i+3).join(''));const aa=c=>CT[ZI[c[0]]*16+ZI[c[1]]*4+ZI[c[2]]];let k=0;const dl=()=>(k++*.9).toFixed(1)+'s',pl=(a,b,st)=>a.map((c,i)=>`<span class=chip style="animation:pop .35s ${(b+i*st).toFixed(2)}s both">${c}</span>`).join('');let h=`<div class=card style="animation-delay:${dl()}"><b>Шаг 1. Матричная цепь ДНК</b><br>${pl([...d],.3,.05)}</div>`;let b=k*.9;h+=`<div class=card style="animation-delay:${dl()}"><b>Шаг 2. Транскрипция:</b> РНК-полимераза строит иРНК по комплементарности (А→У, Т→А, Г→Ц, Ц→Г)<br>${pl(m,b+.3,.12)}</div>`;b=k*.9;let st=0,cols='';for(const c of cod){const a=aa(c),x=b+.3+cols.split('<div').length*.45;cols+=`<div style="display:inline-block;text-align:center;margin:4px;animation:pop .5s ${x.toFixed(2)}s both"><div class=chip>${c}</div><div style="font-size:12px">антикодон</div><div class=chip style="background:var(--cd)">${[...c].map(q=>ZB[q]).join('')}</div><div style="font-size:20px">↓</div><div class=chip style="${a=='*'?'color:var(--bad)':'color:var(--ok)'};font-weight:700">${AA[a]}</div></div>`;if(a=='*'){st=1;break}}const pr=cod.map(aa).filter((a,i,r)=>a!='*'&&!r.slice(0,i).includes('*')).map(a=>AA[a]);h+=`<div class=card style="animation-delay:${dl()}"><b>Шаг 3. Трансляция:</b> тРНК с антикодоном приносит аминокислоты к рибосоме<br>${cols}</div><div class=card style="animation-delay:${dl()}"><b>Итог.</b> Белок: <span class=ok>${pr.join(' — ')||'нет'}</span> (${pr.length} аминокислот${st?', синтез остановлен стоп-кодоном':''}). Нуклеотидов в иРНК: ${m.length}.</div>`;$('#pz').innerHTML=h}
+const z_an=V.an;V.an=()=>z_an()+`<h3>🧬 Биосинтез белка в движении</h3><div class=card><p><small>Введите матричную цепь ДНК (А, Т, Г, Ц).</small></p><input type=text id=pd value="ТАЦГГЦАААЦТГАТТ"><button class=btn onclick="z_pz()">Показать синтез</button></div><div id=pz></div>`;
+V.err=()=>{const e=(S.err||[]).filter(i=>Q[i]);S.et=S.et||{};const TG=['Не знал теорию','Перепутал','Невнимательность'];return`<h2>Журнал ошибок</h2>`+(e.length?`<div class=card><small>Причины ошибок:</small> ${TG.map(t=>`<span class=chip>${t}: ${e.filter(i=>S.et[i]==t).length}</span>`).join('')}<p><small>Отметь причину у каждого задания, чтобы увидеть, что исправлять.</small></p></div>`+e.map(i=>qh(Q[i],i,1)+`<p style="margin:-6px 0 8px">${TG.map(t=>`<button class=chip onclick="S.et[${i}]='${t}';sv();go('err')">${S.et[i]==t?'✓ ':''}${t}</button>`).join('')}</p>`).join(''):`<div class=card><p>Ошибок нет 🎉 Неверные ответы из тренажёра и варианта попадут сюда автоматически.</p></div>`)};
+/* v8: процессы в движении, кликабельная схема клетки, ещё контента */
+const z_w=(t,q,o,a,e)=>Q.push({t,k:'c',q,o,a,e});
+z_w("Фотосинтез","Где происходит тёмная фаза фотосинтеза?",["Тилакоиды гран","Строма хлоропласта","Цитоплазма","Матрикс митохондрий"],1,"Цикл Кальвина идёт в строме.");
+z_w("Фотосинтез","Какие вещества образуются в световой фазе?",["Глюкоза и CO₂","АТФ, НАДФ·Н и O₂","Крахмал","ПВК"],1,"Свет → фотолиз воды → O₂, АТФ, НАДФ·Н.");
+z_w("Энергетический обмен","Сколько АТФ даёт кислородный этап (на молекулу глюкозы)?",["2","4","34","38"],2,"Кислородный этап — 34 АТФ, всего с гликолизом 36.");
+z_w("Энергетический обмен","Конечные продукты кислородного этапа:",["ПВК","CO₂ и H₂O","Молочная кислота","Этанол"],1,"Органика окисляется до CO₂ и H₂O.");
+z_w("Анатомия","Где начинается малый круг кровообращения?",["Левый желудочек","Правый желудочек","Правое предсердие","Левое предсердие"],1,"Малый круг: правый желудочек → лёгкие → левое предсердие.");
+z_w("Анатомия","Какая кровь течёт по верхней полой вене?",["Артериальная","Венозная","Смешанная","Окисленная"],1,"Полые вены несут венозную кровь в правое предсердие.");
+z_w("Анатомия","Какой клапан находится между левым предсердием и левым желудочком?",["Трёхстворчатый","Двустворчатый","Полулунный","Аортальный"],1,"Слева — двустворчатый, справа — трёхстворчатый.");
+z_w("Цитология","Какие органоиды есть только в растительных клетках?",["Митохондрии","Хлоропласты","Рибосомы","Ядро"],1,"Хлоропласты и другие пластиды характерны для растений.");
+z_w("Ботаника","Через что идёт газообмен листа?",["Устьица","Кутикула","Жилки","Корневые волоски"],0,"Устьица регулируют газообмен и испарение.");
+z_w("Генетика","Сколько хромосом в соматической клетке человека?",["23","44","46","92"],2,"2n = 46.");
+C.push(["Фотосинтез","Суммарное уравнение фотосинтеза?","6CO₂ + 6H₂O + свет → C₆H₁₂O₆ + 6O₂."],["Фотосинтез","Роль хлорофилла?","Поглощает свет и отдаёт электроны в световой фазе."],["Энергетический обмен","Роль НАД и НАДФ?","Переносчики водорода и электронов: НАДН — дыхание, НАДФ·Н — фотосинтез."],["Энергетический обмен","Брожение и дыхание: разница?","Брожение без O₂, 2 АТФ, продукты — спирт и CO₂ или молочная кислота."],["Анатомия","Строение сердца человека?","Четыре камеры; клапаны: слева двустворчатый, справа трёхстворчатый."],["Анатомия","Большой круг кровообращения?","Левый желудочек → аорта → органы → полые вены → правое предсердие."],["Ботаника","Что такое устьица?","Щели между замыкающими клетками: газообмен и испарение."],["Генетика","Число хромосом у человека?","Соматические клетки 46 (2n), гаметы 23 (n)."]);
+document.head.insertAdjacentHTML('beforeend','<style>@keyframes zin{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}@keyframes zar{50%{transform:translateX(7px)}}.zs{cursor:pointer;transition:filter .2s}.zs:hover{filter:brightness(1.18)}</style>');
+const ZPR={"Фотосинтез":[["Световая фаза","Тилакоиды гран хлоропласта",["☀️ свет","H₂O"],["O₂","АТФ","НАДФ·Н"],"Хлорофилл возбуждается светом, идёт фотолиз воды: выделяется O₂, синтезируются АТФ и НАДФ·Н."],["Тёмная фаза","Строма хлоропласта",["CO₂","АТФ","НАДФ·Н"],["глюкоза","АДФ","НАДФ⁺"],"Цикл Кальвина: CO₂ фиксируется и восстанавливается до глюкозы; свет напрямую не нужен."]],"Энергетический обмен":[["Подготовительный","ЖКТ, лизосомы",["полимеры"],["мономеры","тепло"],"Расщепление до мономеров, энергия рассеивается в виде тепла."],["Гликолиз","Цитоплазма",["глюкоза"],["2 ПВК","2 АТФ","2 НАДН"],"Бескислородное расщепление глюкозы."],["Кислородный этап","Матрикс и кристы митохондрий",["2 ПВК","O₂"],["CO₂","H₂O","34 АТФ"],"Цикл Кребса и ЭТЦ. Всего с гликолизом 36 АТФ."]],"Малый круг":[["Правый желудочек","Сердце",["🔵 венозная кровь"],["лёгочная артерия"],"Малый круг начинается в правом желудочке."],["Капилляры лёгких","Альвеолы",["CO₂ отдаётся","O₂ присоединяется"],["🔴 артериальная кровь"],"Газообмен: кровь становится артериальной."],["Левое предсердие","Сердце",["лёгочные вены"],["левый желудочек"],"Малый круг заканчивается в левом предсердии, большой начинается в левом желудочке."]]};
+let zp=["Фотосинтез",0];
+const zph=()=>{const s=ZPR[zp[0]],t=s[zp[1]],c=(a,b)=>a.map((x,i)=>`<span class=chip style="display:block;animation:zin .6s ${(b+i*.15).toFixed(2)}s both">${x}</span>`).join('');return`<div class=card><div>${Object.keys(ZPR).map(k=>`<button class="btn ${zp[0]==k?'':'g'}" onclick="zp=['${k}',0];$('#zpb').innerHTML=zph()">${k}</button>`).join('')}</div><h3>${zp[1]+1}. ${t[0]}</h3><small>${t[1]}</small><div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:12px 0"><div>${c(t[2],0)}</div><span style="font-size:30px;animation:zar 1s infinite">➜</span><div class=chip style="padding:14px 18px;border:2px solid var(--ac);animation:pop .5s .3s both"><b>${t[0]}</b></div><span style="font-size:30px;animation:zar 1s .3s infinite">➜</span><div>${c(t[3],.7)}</div></div><p class=ex>${t[4]}</p><div class=bar><i style="width:${(zp[1]+1)*100/s.length}%"></i></div><button class="btn g" onclick="zps(-1)">← Назад</button><button class=btn onclick="zps(1)">Далее →</button></div>`};
+function zps(d){zp[1]=Math.max(0,Math.min(ZPR[zp[0]].length-1,zp[1]+d));$('#zpb').innerHTML=zph()}
+const ZN={w:'клеточную стенку',y:'ядро',v:'вакуоль',h:'хлоропласт',m:'митохондрию'},ZM={w:'клеточная стенка',y:'ядро',v:'вакуоль',h:'хлоропласт',m:'митохондрия'};let zt='y',zsc=[0,0];
+function z_ck(k){const ok=k==zt;zsc[1]++;if(ok)zsc[0]++;rec('Рисунки и данные',ok);const ks=Object.keys(ZN);zt=ks[Math.floor(Math.random()*ks.length)];$('#zf').innerHTML=`<span class="${ok?'ok':'no'}">${ok?'Верно ✓':'Нет, это '+ZM[k]}</span> · ${zsc[0]} из ${zsc[1]}`;$('#zq').textContent='Найдите: '+ZN[zt]}
+const z_an2=V.an;V.an=()=>z_an2()+`<h3>⚡ Процессы по шагам</h3><div id=zpb>${zph()}</div><h3>🔍 Найди органоид на схеме</h3><div class=card><p><b id=zq>Найдите: ${ZN[zt]}</b></p><svg viewBox="0 0 320 230" width="100%" style="max-width:420px"><rect class=zs onclick="z_ck('w')" x="40" y="20" width="240" height="180" rx="18" fill="#d8f0d2" stroke="#7a5c2e" stroke-width="7"/><circle class=zs onclick="z_ck('y')" cx="100" cy="75" r="28" fill="#c9b6e4" stroke="#6b4f9a" stroke-width="2"/><ellipse class=zs onclick="z_ck('v')" cx="210" cy="115" rx="55" ry="65" fill="#bfe3f5" stroke="#3b82a6" stroke-width="2"/><ellipse class=zs onclick="z_ck('h')" cx="80" cy="150" rx="18" ry="10" fill="#3fa34d"/><ellipse class=zs onclick="z_ck('h')" cx="135" cy="175" rx="18" ry="10" fill="#3fa34d"/><ellipse class=zs onclick="z_ck('m')" cx="140" cy="115" rx="16" ry="8" fill="#f0a35e" stroke="#b5651d"/></svg><p id=zf><small>Нажимай на части клетки.</small></p></div>`;
+/* v9: большой пакет контента, фильтр тренажёра */
+const z_l=(t,f)=>t.split('\n').forEach(l=>f(l.split('|')));
+z_l(`Цитология|Какой органоид синтезирует белки?|Лизосома;Рибосома;Вакуоль;Клеточный центр|1|Белки синтезируются на рибосомах.
+Цитология|Какие органоиды образуют веретено деления?|Центриоли;Рибосомы;Пластиды;Вакуоли|0|Центриоли клеточного центра формируют веретено.
+Цитология|Из чего состоит клеточная стенка грибов?|Целлюлоза;Хитин;Муреин;Крахмал|1|У грибов хитин, у растений целлюлоза, у бактерий муреин.
+Цитология|Что происходит в G₂-периоде интерфазы?|Репликация ДНК;Подготовка к делению;Расхождение хроматид;Кроссинговер|1|ДНК уже удвоена в S-периоде, G₂ — подготовка к митозу.
+Цитология|Какой транспорт идёт против градиента с затратой АТФ?|Диффузия;Осмос;Активный транспорт;Облегчённая диффузия|2|Активный транспорт требует энергии АТФ.
+Цитология|В какой фазе мейоза идут конъюгация и кроссинговер?|Профаза I;Метафаза I;Профаза II;Анафаза II|0|Это события профазы мейоза I.
+Цитология|Сколько клеток получается из одной после мейоза?|2;4;8;1|1|Мейоз даёт четыре гаплоидные клетки.
+Цитология|Какие клетки человека не имеют ядра?|Эритроциты;Лейкоциты;Нейроны;Мышечные клетки|0|Зрелые эритроциты безъядерны.
+Молекулярная биология|Какая связь образует первичную структуру белка?|Водородная;Пептидная;Ионная;Дисульфидная|1|Аминокислоты соединены пептидными связями.
+Молекулярная биология|Какая структура белка — α-спираль?|Первичная;Вторичная;Третичная;Четвертичная|1|α-спираль стабилизируют водородные связи — вторичная структура.
+Молекулярная биология|Сколько нуклеотидов кодирующей цепи нужно для белка из 60 аминокислот (без стоп-кодона)?|60;120;180;360|2|60 × 3 = 180.
+Молекулярная биология|Какой моносахарид входит в состав ДНК?|Рибоза;Дезоксирибоза;Глюкоза;Фруктоза|1|В ДНК — дезоксирибоза.
+Молекулярная биология|Какая РНК переносит аминокислоты к рибосоме?|иРНК;рРНК;тРНК;мяРНК|2|Аминокислоты переносит тРНК.
+Молекулярная биология|Какой фермент синтезирует иРНК?|ДНК-полимераза;РНК-полимераза;Лигаза;Рестриктаза|1|Транскрипцию проводит РНК-полимераза.
+Молекулярная биология|Основной запасной полисахарид животных:|Крахмал;Гликоген;Целлюлоза;Хитин|1|Гликоген откладывается в печени и мышцах.
+Генетика|Потомки красных и белых ночной красавицы розовые. Какое это наследование?|Полное доминирование;Неполное доминирование;Кодоминирование;Сцепленное|1|Промежуточный признак — неполное доминирование.
+Генетика|Какова доля aabb при AaBb × AaBb?|1/16;1/8;1/4;9/16|0|(1/4) × (1/4) = 1/16.
+Генетика|Какая группа крови у человека с генотипом IᴬIᴮ?|I;II;III;IV|3|Кодоминирование: IV группа.
+Генетика|Признак сцеплен с Y-хромосомой. Кто его получает?|Только сыновья от отца;Только дочери;Все дети;Только дети от матери|0|Y-хромосома передаётся от отца к сыновьям.
+Генетика|XᴰXᵈ × XᴰY (дальтонизм Xᵈ). Какова вероятность дальтоника среди всех детей?|0%;25%;50%;100%|1|Дальтоник — только сын XᵈY: 1 из 4.
+Генетика|Что верно для модификационной изменчивости?|Передаётся по наследству;Генотип не меняется, границы задаёт норма реакции;Всегда вредна;Возникает при кроссинговере|1|Меняется фенотип в пределах нормы реакции.
+Генетика|Синдром Дауна (трисомия 21) — мутация:|Генная;Хромосомная;Геномная;Модификация|2|Изменение числа хромосом — геномная мутация.
+Эволюция|Рудименты и атавизмы — доказательства:|Палеонтологические;Сравнительно-анатомические;Биогеографические;Эмбриологические|1|Это сравнительно-анатомические доказательства.
+Эволюция|Какие органы гомологичны?|Крыло птицы и бабочки;Рука человека и ласт кита;Колючки барбариса и розы;Глаза осьминога и человека|1|Общее происхождение, разные функции.
+Эволюция|Какое направление эволюции повышает уровень организации?|Ароморфоз;Идиоадаптация;Дегенерация;Модификация|0|Ароморфоз — крупное усложнение.
+Эволюция|Ареал относится к критерию вида:|Географическому;Физиологическому;Морфологическому;Генетическому|0|Территория распространения — географический критерий.
+Эволюция|Закон гомологических рядов открыл:|Н. И. Вавилов;Т. Морган;Г. Мендель;И. Мичурин|0|Закон гомологических рядов — Вавилов.
+Эволюция|Кто создал хромосомную теорию наследственности?|Морган;Мендель;Дарвин;Уотсон|0|Т. Морган и его школа.
+Экология|Какой фактор абиотический?|Хищничество;Температура;Паразитизм;Конкуренция|1|Температура — фактор неживой природы.
+Экология|Кто относится к редуцентам?|Грибы и бактерии гниения;Травоядные;Хищники;Цветковые|0|Редуценты разлагают органику до минеральных веществ.
+Экология|Какая экосистема наиболее устойчива?|Агроценоз;Лес;Монокультурное поле;Аквариум|1|Много видов и разветвлённые цепи питания.
+Экология|Рост концентрации какого газа усиливает парниковый эффект?|O₂;CO₂;N₂;Ar|1|CO₂ удерживает тепло.
+Экология|Лимитирующий фактор — это:|Фактор, сильнее всего ограничивающий жизнь вида;Любой благоприятный фактор;Постоянный фактор;Фактор человека|0|Тот, что больше всего отклонён от оптимума.
+Анатомия|Какой гормон вырабатывает щитовидная железа?|Инсулин;Тироксин;Адреналин;Соматотропин|1|Тироксин содержит йод.
+Анатомия|Нефрон — структурная единица:|Печени;Почки;Лёгких;Сердца|1|Нефроны образуют мочу.
+Анатомия|Где всасывается большая часть питательных веществ?|Желудок;Тонкая кишка;Толстая кишка;Пищевод|1|Ворсинки тонкой кишки.
+Анатомия|Какие клетки вырабатывают антитела?|Эритроциты;Лимфоциты (В);Тромбоциты;Нейроны|1|Антитела образуют плазматические клетки из В-лимфоцитов.
+Анатомия|Какой отдел вегетативной нервной системы учащает сердцебиение?|Парасимпатический;Симпатический;Соматический;Центральный|1|Симпатический мобилизует организм.
+Анатомия|Где образуется желчь?|Поджелудочная железа;Печень;Желудок;Селезёнка|1|Желчь вырабатывает печень.
+Анатомия|Какие структуры глаза преломляют свет и фокусируют его на сетчатке?|Роговица и хрусталик;Радужка;Склера;Сосудистая оболочка|0|Роговица и хрусталик — оптическая система.
+Ботаника|Какая корневая система у однодольных?|Стержневая;Мочковатая;Воздушная;Присосковая|1|Мочковатая корневая система.
+Ботаника|Какой отдел растений размножается спорами и имеет заросток?|Покрытосеменные;Папоротниковидные;Голосеменные;Цветковые|1|Заросток — гаметофит папоротников.
+Ботаника|Кто открыл двойное оплодотворение?|С. Г. Навашин;И. В. Мичурин;В. И. Вернадский;И. П. Павлов|0|Навашин, 1898 г.
+Зоология|У каких животных незамкнутая кровеносная система?|Кольчатые черви;Членистоногие;Рыбы;Птицы|1|Членистоногие — незамкнутая.
+Зоология|У каких животных есть диафрагма и молочные железы?|Птицы;Млекопитающие;Пресмыкающиеся;Земноводные|1|Признаки млекопитающих.
+Зоология|Орган выделения насекомых:|Почки;Мальпигиевы сосуды;Нефридии;Зелёные железы|1|Мальпигиевы сосуды.`,p=>Q.push({t:p[0],k:'c',q:p[1],o:p[2].split(';'),a:+p[3],e:p[4]}));
+z_l(`Цитология|Что такое эндоцитоз?|Поглощение веществ клеткой путём впячивания мембраны (фагоцитоз, пиноцитоз).
+Цитология|Функции вакуоли?|Запас воды и веществ, тургор растительной клетки.
+Цитология|Что такое хроматин?|ДНК с белками в неделящемся ядре; при делении спирализуется в хромосомы.
+Цитология|Что такое кариотип?|Совокупность числа, формы и размеров хромосом вида.
+Цитология|Строение клеточной мембраны?|Двойной слой фосфолипидов с белками (жидкостно-мозаичная модель).
+Цитология|Чем митохондрии похожи на бактерии?|Кольцевая ДНК, собственные рибосомы, двойная мембрана — довод в пользу симбиогенеза.
+Молекулярная биология|Функции белков?|Ферментативная, строительная, транспортная, защитная, сигнальная, двигательная, энергетическая.
+Молекулярная биология|Что такое денатурация?|Нарушение структуры белка (кроме первичной) при нагреве, кислотах, солях.
+Молекулярная биология|Что такое ген?|Участок ДНК, кодирующий последовательность аминокислот белка или РНК.
+Молекулярная биология|Типы РНК и функции?|иРНК — матрица, тРНК — переносит аминокислоты, рРНК — строит рибосомы.
+Молекулярная биология|Что такое комплементарность?|Взаимное соответствие оснований: А–Т (У), Г–Ц.
+Генетика|Закон чистоты гамет?|Гамета несёт только один аллель из пары.
+Генетика|Гомозигота и гетерозигота?|Гомозигота — одинаковые аллели (AA, aa); гетерозигота — разные (Aa).
+Генетика|Генотип и фенотип?|Генотип — совокупность генов; фенотип — совокупность признаков организма.
+Генетика|Методы изучения генетики человека?|Генеалогический, близнецовый, цитогенетический, биохимический, популяционно-статистический.
+Генетика|Что такое норма реакции?|Границы модификационной изменчивости признака, заданные генотипом.
+Генетика|Что такое гетерозис?|Повышенная жизнеспособность гибридов F₁ от неродственного скрещивания.
+Генетика|Что такое полиплоидия?|Кратное увеличение числа хромосомных наборов; часто у растений.
+Эволюция|Результаты эволюции?|Приспособленность, многообразие видов, повышение организации.
+Эволюция|Типы видообразования?|Географическое (аллопатрическое) и экологическое (симпатрическое).
+Эволюция|Что такое популяция?|Совокупность особей вида на общей территории, свободно скрещивающихся между собой.
+Эволюция|Этапы антропогенеза?|Австралопитек → человек умелый → человек прямоходящий → неандерталец → кроманьонец.
+Эволюция|Доказательства эволюции?|Палеонтологические, сравнительно-анатомические, эмбриологические, молекулярные.
+Экология|Что такое экологическая ниша?|Место вида в экосистеме и совокупность его связей и требований к среде.
+Экология|Что такое агроценоз?|Искусственная экосистема с одним-двумя видами; поддерживается энергией человека.
+Экология|Круговорот углерода: ключевое?|Фотосинтез поглощает CO₂; дыхание, горение и разложение возвращают его.
+Экология|Биотические факторы?|Взаимодействия организмов: конкуренция, хищничество, симбиоз.
+Анатомия|Что такое рефлекс?|Ответ организма на раздражение при участии нервной системы.
+Анатомия|Строение нейрона?|Тело, дендриты (к телу), аксон (от тела).
+Анатомия|Функции почек?|Образование мочи, выведение продуктов обмена, водно-солевой баланс.
+Анатомия|Что такое иммунитет?|Защита организма от чужеродных веществ и клеток.
+Анатомия|Виды иммунитета?|Естественный и искусственный; активный (вакцина) и пассивный (сыворотка).
+Анатомия|Отделы пищеварительной системы?|Рот, глотка, пищевод, желудок, тонкая и толстая кишка; печень, поджелудочная железа.
+Анатомия|Функции кожи?|Защита, терморегуляция, выделение, рецепция, синтез витамина D.
+Ботаника|Что такое фотопериодизм?|Реакция растений на длину светового дня.
+Ботаника|Виды корней?|Главный, боковые, придаточные.
+Ботаника|Части цветка?|Околоцветник, тычинки, пестик.
+Ботаника|Способы вегетативного размножения?|Усами, корневищами, клубнями, черенками, прививкой.
+Зоология|Типы симметрии?|Радиальная — у кишечнополостных; двусторонняя — у большинства животных.
+Зоология|Признаки хордовых?|Хорда, нервная трубка на спинной стороне, жаберные щели.
+Зоология|Плоские и круглые черви: разница?|Плоские — без полости тела; круглые — есть первичная полость и анальное отверстие.
+Зоология|Типы развития насекомых?|С полным превращением (яйцо, личинка, куколка, имаго) и с неполным (без куколки).
+Зоология|Приспособления птиц к полёту?|Лёгкий скелет, перья, воздушные мешки, четырёхкамерное сердце.
+Вирусы|Что такое вирусы?|Неклеточные формы: нуклеиновая кислота и капсид; размножаются только в клетках.
+Бактерии|Особенности бактерий?|Прокариоты, нет ядра, кольцевая ДНК, размножение делением.
+Грибы|Чем грибы отличаются от растений?|Гетеротрофы, хитин, запас гликогена, нет хлорофилла.`,p=>C.push(p));
+let z_f='';V.quiz=()=>{const ts=[...new Set(Q.map(q=>q.t))];return`<h2>Тренажёр</h2><p>Тесты, соответствие, последовательность. Выбери тему, чтобы тренировать слабое место.</p><select onchange="z_f=this.value;go('quiz')"><option value="">Все темы (${Q.length})</option>${ts.map(t=>`<option ${t==z_f?'selected':''}>${t}</option>`).join('')}</select>`+Q.map((q,i)=>!z_f||q.t==z_f?qh(q,i,1):'').join('')};
+/* v10: ещё контента */
+z_l(`Цитология|Какие органоиды окружены одной мембраной?|Митохондрии;Лизосомы;Хлоропласты;Ядро|1|Лизосомы одномембранные, митохондрии и хлоропласты — двумембранные.
+Цитология|Что находится в матриксе митохондрий?|Хлорофилл;Ферменты цикла Кребса;Тилакоиды;Ядрышко|1|Цикл Кребса идёт в матриксе.
+Цитология|Что такое граны?|Стопки тилакоидов в хлоропласте;Складки мембраны митохондрий;Каналы ЭПС;Выросты ядра|0|Граны — стопки тилакоидов.
+Цитология|Какой органоид синтезирует липиды и углеводы?|Шероховатая ЭПС;Гладкая ЭПС;Рибосома;Лизосома|1|Это функция гладкой ЭПС.
+Цитология|Какой набор в клетке в G₁-периоде?|2n2c;2n4c;n2c;4n4c|0|ДНК ещё не удвоена.
+Цитология|Какой процесс обеспечивает рост организма?|Мейоз;Митоз;Оплодотворение;Кроссинговер|1|Рост — деление клеток митозом.
+Цитология|В какой фазе исчезает ядерная оболочка и формируется веретено?|Профаза;Телофаза;Интерфаза;Анафаза|0|Это события профазы.
+Цитология|Что свойственно прокариотам?|Митохондрии;Кольцевая ДНК в нуклеоиде;Ядро;Комплекс Гольджи|1|Нуклеоид с кольцевой ДНК.
+Молекулярная биология|Что скрепляет две цепи ДНК?|Пептидные связи;Водородные связи между основаниями;Ионные связи;Дисульфидные мостики|1|Водородные связи между комплементарными основаниями.
+Молекулярная биология|Сколько АТФ образуется при полном окислении глюкозы?|2;18;36;38|2|Гликолиз 2 + кислородный этап 34.
+Молекулярная биология|Какой кодон стартовый?|УАА;АУГ;УГА;ГЦУ|1|АУГ кодирует метионин и начинает трансляцию.
+Молекулярная биология|Свойство кода: одна аминокислота кодируется несколькими кодонами —|Универсальность;Вырожденность;Триплетность;Непрерывность|1|Это вырожденность.
+Молекулярная биология|Что является мономером белков?|Нуклеотид;Аминокислота;Глюкоза;Глицерин|1|Мономер белка — аминокислота.
+Молекулярная биология|Какие вещества расщепляются первыми как источник энергии?|Белки;Углеводы;Нуклеиновые кислоты;Витамины|1|Сначала используются углеводы.
+Генетика|Aa × Aa. Какова вероятность генотипа Aa?|25%;50%;75%;100%|1|1AA : 2Aa : 1aa.
+Генетика|Какой закон описывает единообразие гибридов F₁?|Первый закон Менделя;Второй закон;Третий закон;Закон Моргана|0|Закон единообразия.
+Генетика|У дигетерозиготы гены сцеплены, кроссинговера нет. Сколько типов гамет?|2;4;8;16|0|Образуется два типа гамет.
+Генетика|Анализирующее скрещивание Aa × aa даёт:|Все Aa;1 Aa : 1 aa;3 A_ : 1 aa;Все aa|1|Расщепление 1:1.
+Генетика|Может ли мальчик получить рецессивный ген гемофилии от отца?|Да;Нет;Только если мать здорова;Только в 50%|1|X-хромосома достаётся ему от матери, от отца — Y.
+Генетика|Что изучает цитогенетический метод?|Хромосомы и кариотип;Родословные;Близнецов;Обмен веществ|0|Кариотип человека.
+Эволюция|Какую форму отбора иллюстрирует сохранение птиц со средним размером кладки?|Движущий;Стабилизирующий;Дизруптивный;Половой|1|Стабилизирующий отбор.
+Эволюция|Какой фактор эволюции поставляет новые аллели?|Мутационный процесс;Дрейф генов;Изоляция;Отбор|0|Мутации дают материал для отбора.
+Эволюция|Сходство неродственных организмов в сходных условиях —|Дивергенция;Конвергенция;Атавизм;Рудимент|1|Это конвергенция.
+Эволюция|Какой из предков человека жил раньше всех?|Кроманьонец;Австралопитек;Неандерталец;Человек умелый|1|Австралопитеки — самые древние.
+Эволюция|Борьба за существование между особями одного вида —|Межвидовая;Внутривидовая;Абиотическая;Симбиотическая|1|Внутривидовая борьба самая острая.
+Экология|Какой тип отношений у гриба и водоросли в лишайнике?|Хищничество;Мутуализм;Конкуренция;Паразитизм|1|Взаимовыгодный симбиоз.
+Экология|Основной источник энергии экосистем:|Бактерии;Солнце;Вода;Почва|1|Энергия Солнца.
+Экология|У продуцентов 1000 кДж. Сколько получат консументы II порядка (правило 10%)?|1 кДж;10 кДж;100 кДж;1000 кДж|1|1000 → 100 → 10 кДж.
+Экология|Кто такие консументы I порядка?|Травоядные;Хищники;Редуценты;Продуценты|0|Питаются растениями.
+Экология|Почему агроценоз требует участия человека?|Не способен к саморегуляции;Содержит много видов;Не получает света;Нет продуцентов|0|Мало видов, нет саморегуляции.
+Анатомия|Сердечная мышца образована:|Гладкой тканью;Поперечнополосатой тканью особого типа;Соединительной тканью;Нервной тканью|1|Особый вид поперечнополосатой ткани.
+Анатомия|Какая железа смешанной секреции?|Щитовидная;Поджелудочная;Гипофиз;Надпочечники|1|Выделяет сок и гормоны.
+Анатомия|Какой гормон учащает пульс и повышает давление при стрессе?|Инсулин;Адреналин;Тироксин;Глюкагон|1|Адреналин надпочечников.
+Анатомия|Какие клетки крови участвуют в свёртывании?|Эритроциты;Тромбоциты;Лимфоциты;Моноциты|1|Тромбоциты.
+Анатомия|Где расположен зрительный центр?|Затылочная доля;Лобная доля;Височная доля;Теменная доля|0|Затылочная доля коры.
+Анатомия|Чем кровь отличается от лимфы?|Содержит эритроциты;Не содержит лейкоцитов;Не циркулирует;Нет плазмы|0|В лимфе нет эритроцитов.
+Ботаника|Какая ткань листа осуществляет фотосинтез?|Покровная;Основная (столбчатая);Механическая;Проводящая|1|Хлорофилл в клетках основной ткани.
+Ботаника|Что образуется из семязачатка?|Плод;Семя;Цветок;Побег|1|После оплодотворения — семя.
+Ботаника|Что образуется из завязи?|Семя;Плод;Лист;Корень|1|Плод.
+Ботаника|Какая зона корня поглощает воду?|Деления;Всасывания;Проведения;Чехлик|1|Зона корневых волосков.
+Ботаника|Какое соцветие у подсолнуха?|Колос;Корзинка;Зонтик;Кисть|1|Корзинка.
+Ботаника|Какое растение относится к голосеменным?|Сосна;Яблоня;Папоротник;Мох|0|Сосна.
+Зоология|Какие животные дышат жабрами всю жизнь?|Лягушки;Рыбы;Ящерицы;Птицы|1|Рыбы.
+Зоология|Что характерно для членистоногих?|Хитиновый покров;Хорда;Перья;Диафрагма|0|Хитиновый покров.
+Зоология|Какое животное — моллюск?|Беззубка;Дождевой червь;Паук;Омар|0|Беззубка — двустворчатый моллюск.
+Зоология|Какой класс откладывает яйца с твёрдой скорлупой и имеет четырёхкамерное сердце?|Рептилии;Птицы;Земноводные;Рыбы|1|Птицы.`,p=>Q.push({t:p[0],k:'c',q:p[1],o:p[2].split(';'),a:+p[3],e:p[4]}));
+z_l(`Цитология|Строение хромосомы?|Две хроматиды, центромера, плечи.
+Цитология|Функции ЭПС?|Транспорт, синтез белков (шероховатая), липидов и углеводов (гладкая).
+Цитология|Что такое пиноцитоз?|Захват клеткой капель жидкости.
+Цитология|Что такое фагоцитоз?|Захват клеткой твёрдых частиц.
+Цитология|Что такое клеточный цикл?|Период от деления до деления: интерфаза и митоз.
+Цитология|Амитоз: что это?|Прямое деление без веретена и спирализации хромосом.
+Цитология|Что такое апоптоз?|Запрограммированная гибель клетки.
+Цитология|Что такое симбиогенез?|Гипотеза происхождения митохондрий и пластид от бактерий-симбионтов.
+Молекулярная биология|Какие вещества — липиды?|Жиры, фосфолипиды, стероиды, воска.
+Молекулярная биология|Строение АТФ?|Аденин, рибоза, три остатка фосфорной кислоты.
+Молекулярная биология|Что такое фермент?|Белок-катализатор: ускоряет реакции, специфичен, зависит от pH и температуры.
+Молекулярная биология|Моно- и полисахариды?|Моносахариды — глюкоза; полисахариды — крахмал, гликоген, целлюлоза.
+Молекулярная биология|Что такое репликация?|Удвоение ДНК в S-периоде по принципу комплементарности.
+Молекулярная биология|Что такое транскрипция?|Синтез РНК на матрице ДНК.
+Молекулярная биология|Что такое трансляция?|Синтез белка на рибосоме по иРНК.
+Генетика|Что такое аллели?|Разные формы одного гена.
+Генетика|Гибридологический метод?|Скрещивание форм, отличающихся признаками, и учёт потомства (Мендель).
+Генетика|Что такое чистая линия?|Потомство, не дающее расщепления при скрещивании между собой.
+Генетика|Что такое кодоминирование?|Оба аллеля проявляются в фенотипе (IV группа крови).
+Генетика|Мультифакториальный признак?|Зависит от многих генов и среды, например рост.
+Генетика|Типы мутаций?|Генные, хромосомные, геномные.
+Генетика|Мутагены?|Радиация, химические вещества, некоторые вирусы.
+Генетика|Что такое генная инженерия?|Перенос генов между организмами для получения новых свойств.
+Генетика|Теория Вавилова о центрах?|Около 8 центров происхождения культурных растений.
+Эволюция|Что такое микроэволюция?|Изменение генофонда популяции внутри вида.
+Эволюция|Что такое макроэволюция?|Образование крупных таксонов: родов, семейств, классов.
+Эволюция|Биологический прогресс?|Рост численности, расширение ареала, образование новых видов.
+Эволюция|Формы конкуренции?|Внутривидовая и межвидовая.
+Эволюция|Что такое естественный отбор?|Выживание и размножение наиболее приспособленных.
+Эволюция|Что такое видообразование?|Появление новых видов из популяций существующих.
+Экология|Что такое трофическая цепь?|Последовательность организмов, передающих вещество и энергию.
+Экология|Что такое консументы?|Гетеротрофы, потребляющие готовую органику.
+Экология|Что такое биосфера?|Оболочка Земли, населённая живыми организмами.
+Экология|Роль азота в биосфере?|Фиксируется азотфиксирующими бактериями; нужен для белков и нуклеиновых кислот.
+Экология|Что такое экосистема?|Сообщество организмов и среда обитания с обменом веществ и энергии.
+Анатомия|Строение лёгких?|Бронхи, бронхиолы, альвеолы.
+Анатомия|Фазы работы сердца?|Систола предсердий, систола желудочков, общая диастола.
+Анатомия|Что такое гомеостаз?|Постоянство внутренней среды организма.
+Анатомия|Как регулируется уровень глюкозы?|Инсулин снижает, глюкагон повышает.
+Анатомия|Железы внутренней секреции?|Гипофиз, щитовидная, надпочечники, половые железы.
+Анатомия|Что такое условный рефлекс?|Приобретённый рефлекс, формируется на основе безусловного.
+Ботаника|Фотосинтез и дыхание растений?|Фотосинтез — на свету; дыхание — круглосуточно во всех клетках.
+Ботаника|Что такое транспирация?|Испарение воды листьями через устьица.
+Ботаника|Что такое корневое давление?|Нагнетание воды корнем в сосуды ксилемы.
+Ботаника|Что такое плод?|Орган покрытосеменных из завязи, защищающий семена.
+Зоология|Особенности пресмыкающихся?|Сухая кожа с чешуями, лёгочное дыхание, яйца с оболочками.
+Зоология|Особенности хрящевых рыб?|Хрящевой скелет, жаберные щели без крышек.
+Зоология|Что такое пищевая специализация?|Приспособление к определённому типу корма.
+Зоология|Особенности моллюсков?|Мягкое тело, мантия, часто раковина.
+Зоология|Что такое метаморфоз?|Превращение личинки во взрослую форму.`,p=>C.push(p));
+/* v11: соответствия, последовательности, ещё контента */
+z_l(`Генетика|Какой процент гамет AB образует дигетерозигота AaBb (гены не сцеплены)?|12,5%;25%;50%;100%|1|Четыре типа гамет в равных долях: 25%.
+Генетика|Родитель какого пола определяет пол ребёнка у человека?|Мать;Отец;Оба;Никто|1|Отец даёт X или Y.
+Генетика|Сколько типов гамет у генотипа Aabb?|1;2;4;8|1|Ab и ab.
+Генетика|Какие мутации передаются потомству при половом размножении?|Возникшие в гаметах;Возникшие в любых клетках тела;Только в нервных клетках;Никакие|0|Передаются мутации половых клеток.
+Молекулярная биология|В ДНК 30% гуанина. Сколько в ней аденина?|10%;20%;30%;40%|1|Г = Ц = 30%, А = Т = 20%.
+Молекулярная биология|Какой сахар входит в нуклеотиды РНК?|Дезоксирибоза;Рибоза;Глицерин;Глюкоза|1|В РНК — рибоза.
+Молекулярная биология|Где идёт синтез белка в клетке?|На рибосомах;В ядре;В лизосомах;В вакуоли|0|Трансляция на рибосомах.
+Цитология|Какой органоид называют энергетической станцией клетки?|Митохондрия;Рибосома;Лизосома;Вакуоль|0|В митохондриях синтезируется основная часть АТФ.
+Цитология|Какие структуры образуют клеточный центр?|Центриоли;Рибосомы;Лизосомы;Хромопласты|0|Центриоли.
+Цитология|Сколько хроматид в одной хромосоме после репликации?|1;2;3;4|1|После S-периода хромосома двухроматидная.
+Эволюция|Какая форма отбора действует в постоянных условиях?|Стабилизирующий;Движущий;Дизруптивный;Искусственный|0|Стабилизирующий.
+Эволюция|Что является элементарной единицей эволюции?|Особь;Популяция;Вид;Биосфера|1|Популяция.
+Эволюция|Зародышевое сходство позвоночных — доказательство:|Эмбриологическое;Палеонтологическое;Биогеографическое;Молекулярное|0|Эмбриологическое.
+Экология|Что такое биотоп?|Участок среды обитания биоценоза;Совокупность популяций;Одна популяция;Группа продуцентов|0|Биотоп — место обитания.
+Экология|Какие организмы хемотрофы?|Нитрифицирующие бактерии;Грибы;Зелёные растения;Животные|0|Используют энергию окисления неорганики.
+Экология|Что означает правило 10%?|Около 10% энергии переходит на следующий уровень;10% видов вымирает;10% биомассы — растения;10% света усваивается|0|Остальное теряется.
+Анатомия|Какой гормон вырабатывает гипофиз?|Соматотропин;Инсулин;Адреналин;Тироксин|0|Гормон роста.
+Анатомия|Где находятся рецепторы слуха?|В улитке;В барабанной перепонке;В слуховых косточках;В евстахиевой трубе|0|Волосковые клетки улитки.
+Анатомия|Какую часть плазмы крови составляет вода?|10%;50%;90%;99,9%|2|Около 90%.
+Анатомия|Какой иммунитет создаёт вакцина?|Естественный пассивный;Искусственный активный;Врождённый;Искусственный пассивный|1|Организм сам вырабатывает антитела.
+Анатомия|Для чего нужен витамин D?|Зрение;Усвоение кальция костями;Свёртывание крови;Работа нервов|1|Профилактика рахита.
+Анатомия|Какая доля коры отвечает за слух?|Височная;Затылочная;Лобная;Теменная|0|Слуховая зона в височной доле.
+Ботаника|Какой гормон растений стимулирует рост побега?|Ауксин;Инсулин;Тироксин;Адреналин|0|Ауксин.
+Ботаника|Какая ткань образует древесину?|Ксилема;Флоэма;Камбий;Пробка|0|Ксилема.
+Ботаника|Сколько спермиев участвует в двойном оплодотворении?|1;2;3;4|1|Один — с яйцеклеткой, второй — с центральной клеткой.
+Зоология|Сколько камер в сердце птиц?|2;3;4;1|2|Четыре камеры.
+Зоология|Кто относится к паразитам человека?|Аскарида;Дождевой червь;Беззубка;Планария|0|Аскарида — круглый червь.
+Зоология|Как называют животных, температура тела которых зависит от среды?|Гомойотермные;Пойкилотермные;Теплокровные;Эндотермные|1|Пойкилотермные.
+Зоология|К какому типу относится гидра?|Кишечнополостные;Плоские черви;Моллюски;Членистоногие|0|Кишечнополостные.`,p=>Q.push({t:p[0],k:'c',q:p[1],o:p[2].split(';'),a:+p[3],e:p[4]}));
+z_l(`Цитология|Установите соответствие между признаком и органоидом.|митохондрия;хлоропласт|синтез АТФ при дыхании;фотолиз воды;кристы;граны;цикл Кребса|01010|Митохондрия: АТФ, кристы, цикл Кребса. Хлоропласт: фотолиз, граны.
+Молекулярная биология|Установите соответствие между признаком и нуклеиновой кислотой.|ДНК;РНК|содержит тимин;содержит урацил;дезоксирибоза;одна цепь;хранение наследственной информации|01010|ДНК: тимин, дезоксирибоза, хранение. РНК: урацил, одна цепь.
+Генетика|Установите соответствие между признаком и формой изменчивости.|модификационная;мутационная|изменение окраски кожи при загаре;полиплоидия;изменение массы тела при кормлении;кроссинговер не относится, замена нуклеотида;зависимость от условий среды|10101|Модификации — загар, масса, зависимость от среды. Мутации — полиплоидия и замена нуклеотида.
+Эволюция|Установите соответствие между примером и направлением эволюции.|ароморфоз;идиоадаптация|шипы кактуса;четырёхкамерное сердце;плоское тело камбалы;половое размножение;лёгочное дыхание наземных позвоночных|10100|Идиоадаптации — шипы, плоское тело; остальное — ароморфозы.
+Экология|Установите соответствие между организмом и ролью в экосистеме.|продуцент;консумент;редуцент|ель;заяц;мукор;волк;фитопланктон;бактерии гниения|012102|Ель и фитопланктон — продуценты; заяц и волк — консументы; мукор и бактерии — редуценты.
+Анатомия|Установите соответствие между гормоном и железой.|поджелудочная;щитовидная;надпочечники|инсулин;тироксин;адреналин;глюкагон;кальцитонин|01201|Инсулин и глюкагон — поджелудочная; тироксин и кальцитонин — щитовидная; адреналин — надпочечники.
+Анатомия|Установите соответствие между действием и отделом вегетативной нервной системы.|симпатический;парасимпатический|усиливает перистальтику;учащает сердцебиение;сужает зрачок;расширяет бронхи;замедляет сердцебиение|10101|Парасимпатический — перистальтика, сужение зрачка, замедление пульса.
+Ботаника|Установите соответствие между признаком и отделом растений.|мхи;папоротники;голосеменные|заросток;семя на чешуях шишки;преобладание гаметофита;сорусы со спорангиями;хвоя|12012|Заросток и сорусы — папоротники; семя на чешуях и хвоя — голосеменные; гаметофит преобладает у мхов.
+Зоология|Установите соответствие между признаком и классом.|земноводные;пресмыкающиеся|яйца с плотной оболочкой;голая влажная кожа;роговые чешуи;личинка — головастик;кожное дыхание|10100|Рептилии: яйца с оболочкой, чешуи. Земноводные: голая кожа, головастик, кожное дыхание.
+Цитология|Установите соответствие между событием и делением мейоза.|мейоз I;мейоз II|конъюгация;расхождение гомологичных хромосом;расхождение хроматид;кроссинговер;образование клеток nc|00101|Мейоз I: конъюгация, гомологи, кроссинговер. Мейоз II: хроматиды, nc.
+Молекулярная биология|Установите соответствие между процессом и местом.|ядро;рибосома|трансляция;транскрипция;синтез полипептида;репликация ДНК;созревание иРНК|10100|Ядро: транскрипция, репликация, созревание иРНК. Рибосома: трансляция, синтез полипептида.
+Фотосинтез|Установите соответствие между процессом и фазой фотосинтеза.|световая;тёмная|цикл Кальвина;фотолиз воды;образование АТФ;синтез глюкозы;выделение O₂|10010|Тёмная: цикл Кальвина, глюкоза. Световая: фотолиз, АТФ, O₂.`,p=>Q.push({t:p[0],k:'m',q:p[1],c:p[2].split(';'),r:p[3].split(';'),a:[...p[4]].map(Number),e:p[5]}));
+z_l(`Анатомия|Расположите в порядке прохождения воздуха.|носовая полость;глотка;гортань;трахея;бронхи;альвеолы|Воздух идёт от носа к альвеолам.
+Анатомия|Расположите в порядке движения пищи.|ротовая полость;глотка;пищевод;желудок;тонкая кишка;толстая кишка|Путь пищи по пищеварительному тракту.
+Анатомия|Расположите в порядке движения крови по большому кругу.|левый желудочек;аорта;капилляры тела;полые вены;правое предсердие|Большой круг: от левого желудочка к правому предсердию.
+Эволюция|Расположите этапы антропогенеза в хронологическом порядке.|австралопитек;человек умелый;человек прямоходящий;неандерталец;кроманьонец|От древних форм к современным.
+Экология|Расположите организмы в порядке в пищевой цепи.|трава;кузнечик;лягушка;уж;орёл|Цепь начинается с продуцента.
+Цитология|Расположите периоды клеточного цикла.|G₁;S;G₂;митоз|Интерфаза предшествует митозу.
+Зоология|Расположите стадии развития бабочки.|яйцо;гусеница;куколка;имаго|Развитие с полным превращением.
+Ботаника|Расположите путь воды в растении.|корневой волосок;кора корня;ксилема корня;ксилема стебля;лист|Вода идёт от почвы к листьям.`,p=>Q.push({t:p[0],k:'s',q:p[1],items:p[2].split(';'),e:p[3]}));
+z_l(`Цитология|Что такое пластиды?|Органоиды растений: хлоропласты, хромопласты, лейкопласты.
+Цитология|Что такое тилакоиды?|Мембранные мешочки хлоропласта, место световой фазы.
+Цитология|Что такое матрикс?|Внутреннее содержимое митохондрий, где идёт цикл Кребса.
+Цитология|Функция центромеры?|Соединяет хроматиды; к ней прикрепляются нити веретена.
+Цитология|Что такое гомологичные хромосомы?|Парные хромосомы: одна от отца, другая от матери.
+Цитология|Что такое бивалент?|Пара конъюгировавших гомологичных хромосом в профазе I.
+Молекулярная биология|Что такое пептидная связь?|Связь между карбоксильной группой одной и аминогруппой другой аминокислоты.
+Молекулярная биология|Что такое ПВК?|Пировиноградная кислота — продукт гликолиза.
+Молекулярная биология|Что такое нуклеотид?|Азотистое основание, сахар (рибоза или дезоксирибоза) и остаток фосфорной кислоты.
+Молекулярная биология|Интроны и экзоны?|Интроны — некодирующие участки, вырезаются; экзоны — кодирующие, сшиваются.
+Молекулярная биология|Что такое полисома?|Несколько рибосом на одной иРНК.
+Молекулярная биология|Что такое хемосинтез?|Синтез органики за счёт энергии окисления неорганических веществ (бактерии).
+Генетика|Что такое геном?|Совокупность генов гаплоидного набора.
+Генетика|Наследование, сцепленное с полом?|Гены расположены в половых хромосомах.
+Генетика|Что такое летальный ген?|Ген, вызывающий гибель организма (часто в гомозиготе).
+Генетика|Что такое эпистаз?|Подавление одного гена другим неаллельным геном.
+Генетика|Комплементарность генов?|Признак возникает при взаимодействии двух неаллельных генов.
+Генетика|Что такое полимерия?|Несколько генов влияют на один признак (рост, цвет кожи).
+Генетика|Цель селекции?|Выведение пород, сортов и штаммов с полезными признаками.
+Эволюция|Что такое атавизм?|Возвращение признаков предков у отдельных особей.
+Эволюция|Что такое рудимент?|Недоразвитый орган, утративший функцию (копчик, аппендикс).
+Эволюция|Что такое конвергенция?|Сходство неродственных групп в сходных условиях.
+Эволюция|Что такое дивергенция?|Расхождение признаков родственных групп.
+Эволюция|Что такое адаптация?|Приспособление к среде; всегда относительно.
+Экология|Лимитирующий фактор?|Фактор, наиболее отклонённый от оптимума и ограничивающий жизнь.
+Экология|Экологическая пирамида?|Графическое выражение чисел, биомассы или энергии на уровнях цепи.
+Экология|Типы сукцессии?|Первичная (на голом субстрате) и вторичная.
+Анатомия|Функции лимфы?|Возврат тканевой жидкости в кровь, защита (лимфоциты).
+Анатомия|Антиген и антитело?|Антиген — чужеродное вещество; антитело — белок, связывающий антиген.
+Анатомия|Фагоцитоз у человека?|Захват и переваривание микробов лейкоцитами (макрофагами).
+Анатомия|Нервная и гуморальная регуляция?|Нервная — быстрая, импульсами; гуморальная — гормонами через кровь.
+Ботаника|Что такое камбий?|Образовательная ткань, даёт рост стебля в толщину.
+Ботаника|Что такое тропизмы?|Ростовые движения растений в ответ на раздражитель.
+Ботаника|Типы опыления?|Самоопыление и перекрёстное (ветер, насекомые).
+Зоология|Гомойотермия?|Постоянная температура тела (птицы, млекопитающие).
+Зоология|Пойкилотермия?|Температура тела зависит от среды (рыбы, земноводные, пресмыкающиеся).
+Зоология|Что такое партеногенез?|Развитие организма из неоплодотворённой яйцеклетки.
+Зоология|Что такое гермафродитизм?|Организм имеет и мужские, и женские половые органы.`,p=>C.push(p));
+hdr();go('home');
+</script><script>
+/* ===== v2: новые схемы, анимация большого круга, самооценка части 2, расширение банка ===== */
+const q2e=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+/* --- новые задания (Тема|вопрос|варианты|№ верного|пояснение) --- */
+`Анатомия|Где происходит фильтрация плазмы при образовании первичной мочи?|В проксимальном канальце;В капсуле нефрона (клубочек);В петле Генле;В собирательной трубочке|1|Фильтрация идёт из капилляров клубочка в капсулу Шумлянского — Боумена под давлением крови.
+Анатомия|Где происходит обратное всасывание глюкозы и аминокислот?|Проксимальный каналец;Мочеточник;Капсула нефрона;Мочевой пузырь|0|В проксимальном канальце всасываются глюкоза, аминокислоты, витамины, ионы и большая часть воды.
+Анатомия|Какое вещество содержится в первичной моче, но почти отсутствует во вторичной?|Мочевина;Глюкоза;Эритроциты;Крупные белки|1|Глюкоза полностью реабсорбируется. Эритроциты и крупные белки в первичную мочу не фильтруются.
+Анатомия|Какой отдел нефрона создаёт осмотический градиент для концентрирования мочи?|Петля Генле;Клубочек;Мочеточник;Лоханка|0|Петля Генле — противоточно-поворотная система в мозговом веществе почки.
+Анатомия|Какой отдел сердца выбрасывает кровь в аорту?|Правое предсердие;Левое предсердие;Правый желудочек;Левый желудочек|3|Левый желудочек начинает большой круг кровообращения.
+Анатомия|Какая кровь течёт по лёгочным венам?|Венозная;Артериальная;Смешанная;Лимфа|1|В лёгких кровь обогащается O₂ и по лёгочным венам идёт в левое предсердие.
+Анатомия|Где расположены створчатые клапаны сердца?|Между предсердиями и желудочками;В устье аорты;В полых венах;Между желудочками|0|Створчатые — между предсердиями и желудочками, полулунные — у выхода аорты и лёгочного ствола.
+Анатомия|Какая оболочка глаза содержит фоторецепторы?|Склера;Сосудистая оболочка;Сетчатка;Роговица|2|Палочки и колбочки находятся в сетчатке.
+Анатомия|Какая структура глаза регулирует размер зрачка?|Хрусталик;Радужка;Роговица;Стекловидное тело|1|Мышцы радужки сужают и расширяют зрачок.
+Анатомия|Какие рецепторы сетчатки отвечают за сумеречное зрение?|Колбочки;Палочки;Волосковые клетки;Тельца Пачини|1|Палочки содержат родопсин, работают при слабом свете, цвета не различают.
+Анатомия|Что происходит с хрусталиком при рассматривании близких предметов?|Становится более плоским;Становится более выпуклым;Исчезает;Не меняется|1|Ресничная мышца сокращается, связки расслабляются, кривизна хрусталика растёт (аккомодация).
+Ботаника|Каким набором хромосом обладает заросток папоротника?|2n;n;3n;4n|1|Заросток — гаплоидный гаметофит, развивается из споры.
+Ботаника|В каких структурах папоротника происходит мейоз?|В антеридиях;В архегониях;В спорангиях;В клетках заростка|2|Мейоз идёт в спорангиях на нижней стороне вай, образуются гаплоидные споры.
+Ботаника|Что необходимо папоротнику для оплодотворения?|Капля воды;Насекомые;Ветер;Пыльцевая трубка|0|Сперматозоиды подвижны и плывут к яйцеклетке в архегонии в капле воды.
+Ботаника|Какое поколение преобладает в жизненном цикле папоротника?|Гаметофит;Спорофит;Оба одинаково;Чередования нет|1|Взрослое растение папоротника — спорофит (2n).
+Энергетический обмен|Где в клетке протекает гликолиз?|Матрикс митохондрий;Цитоплазма;Ядро;Рибосома|1|Гликолиз идёт в цитоплазме без участия кислорода.
+Энергетический обмен|Каковы конечные продукты полного окисления глюкозы?|Этанол и CO₂;Молочная кислота;CO₂ и H₂O;ПВК|2|Кислородный этап заканчивается образованием CO₂ и H₂O.
+Энергетический обмен|Что накапливается в мышцах при недостатке кислорода?|Молочная кислота;Этанол;Крахмал;Глицерин|0|Анаэробный гликолиз у животных завершается молочнокислым брожением.
+Фотосинтез|Какой газ выделяется при фотолизе воды?|CO₂;O₂;H₂;N₂|1|Кислород фотосинтеза образуется из воды.
+Фотосинтез|Где расположены фотосистемы?|На мембранах тилакоидов;В строме;В матриксе митохондрий;В ядре|0|Хлорофилл и электрон-транспортные цепи находятся в мембранах тилакоидов.
+Систематика|Какая из систематических единиц самая крупная?|Вид;Род;Семейство;Класс|3|Вид → род → семейство → порядок → класс → тип → царство.
+Вирусы|Из чего состоит простой вирус?|Нуклеиновая кислота и белковый капсид;Ядро и рибосомы;Митохондрии и ядро;Клеточная стенка и ДНК|0|Вирусы неклеточны: ДНК или РНК и белковая оболочка.
+Бактерии|Что характерно для бактериальной клетки?|Оформленное ядро;Нуклеоид с кольцевой ДНК;Митохондрии;Комплекс Гольджи|1|Бактерии — прокариоты: ядра и мембранных органоидов нет.
+Грибы|Какое вещество входит в клеточную стенку грибов?|Целлюлоза;Хитин;Муреин;Лигнин|1|У грибов хитин, у растений целлюлоза, у бактерий муреин.`
+.split('\n').forEach(l=>{const p=l.split('|');Q.push({t:p[0],k:'c',q:p[1],o:p[2].split(';'),a:+p[3],e:p[4]})});
+
+/* --- новые карточки (Тема|вопрос|ответ) --- */
+`Анатомия|Что такое нефрон?|Структурная единица почки: капсула с клубочком, проксимальный каналец, петля Генле, дистальный каналец; впадает в собирательную трубочку.
+Анатомия|Где образуется первичная моча и сколько её в сутки?|Фильтрация в капсуле нефрона, около 150–180 л в сутки.
+Анатомия|Сколько вторичной мочи образуется в сутки?|Около 1,5 л: большая часть воды всасывается обратно.
+Анатомия|Что всасывается обратно в проксимальном канальце?|Глюкоза, аминокислоты, витамины, ионы и большая часть воды.
+Анатомия|Роль петли Генле?|Создаёт осмотический градиент в мозговом веществе, благодаря чему моча концентрируется.
+Анатомия|Роль АДГ?|Антидиуретический гормон усиливает обратное всасывание воды в собирательных трубочках.
+Анатомия|Путь крови по большому кругу?|Левый желудочек → аорта → артерии → капилляры → вены → полые вены → правое предсердие.
+Анатомия|Фазы сердечного цикла?|Систола предсердий 0,1 с, систола желудочков 0,3 с, общая диастола 0,4 с; весь цикл 0,8 с.
+Анатомия|Какие клапаны есть в сердце?|Створчатые между предсердиями и желудочками (слева двустворчатый, справа трёхстворчатый), полулунные у аорты и лёгочного ствола.
+Анатомия|Чем артерии отличаются от вен?|У артерий толстая стенка и нет клапанов, кровь идёт от сердца под высоким давлением. У вен тонкая стенка и клапаны.
+Анатомия|Что характерно для капилляров?|Стенка из одного слоя клеток, самая малая скорость кровотока и самая большая суммарная площадь сечения: идёт обмен веществ.
+Анатомия|Оболочки глаза?|Белочная (склера, спереди роговица), сосудистая (радужка, ресничное тело) и сетчатка.
+Анатомия|Функции колбочек и палочек?|Колбочки: дневное и цветное зрение (жёлтое пятно). Палочки: сумеречное зрение (периферия сетчатки).
+Анатомия|Что такое аккомодация?|Изменение кривизны хрусталика для чёткого изображения на сетчатке при разном расстоянии до предмета.
+Анатомия|Где находится слепое пятно?|В месте выхода зрительного нерва: фоторецепторов там нет.
+Анатомия|Близорукость и дальнозоркость?|Близорукость: изображение перед сетчаткой (вогнутые линзы). Дальнозоркость: за сетчаткой (выпуклые линзы).
+Ботаника|Цикл развития папоротника?|Спорофит 2n → спорангии (мейоз) → споры n → заросток n → гаметы n → зигота 2n → молодой спорофит.
+Ботаника|Где у папоротника образуются споры?|В спорангиях, собранных в сорусы на нижней стороне вай; здесь идёт мейоз.
+Ботаника|Что такое заросток?|Гаплоидный гаметофит папоротника: зелёная сердцевидная пластинка с ризоидами, несёт антеридии и архегонии.
+Ботаника|Какое поколение преобладает у мхов и у папоротников?|У мхов гаметофит, у папоротников спорофит.
+Энергетический обмен|Что такое ПВК?|Пировиноградная кислота (3 атома C) — продукт гликолиза.
+Энергетический обмен|Какие бывают виды брожения?|Молочнокислое и спиртовое (этанол и CO₂); выход 2 АТФ на молекулу глюкозы.
+Фотосинтез|Что такое фотолиз воды?|Расщепление H₂O светом в тилакоидах: выделяются O₂, H⁺ и электроны.
+Фотосинтез|Где синтезируется АТФ в световой фазе?|На мембранах тилакоидов (фотофосфорилирование, АТФ-синтаза).
+Фотосинтез|Что такое хемосинтез?|Синтез органических веществ за счёт энергии окисления неорганических (серо-, железо- и нитрифицирующие бактерии).
+Систематика|Иерархия таксонов от малого к большому?|Вид → род → семейство → порядок (отряд) → класс → тип (отдел) → царство.
+Вирусы|Особенности вирусов?|Неклеточная форма жизни, внутриклеточные паразиты; ДНК или РНК и капсид; размножаются только в клетке хозяина.
+Бактерии|Чем клетка прокариот отличается от эукариотической?|Нет ядра (нуклеоид), кольцевая ДНК, нет мембранных органоидов, мелкие рибосомы, стенка из муреина.
+Грибы|Питание и запасное вещество грибов?|Гетеротрофы (сапротрофы, паразиты, симбионты); запасают гликоген; в стенке хитин.`
+.split('\n').forEach(l=>C.push(l.split('|')));
+
+/* --- схемы для подписей --- */
+const q2l=a=>a.map(([n,x,y,tx,ty])=>`<line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="currentColor" stroke-width="1"/><circle cx="${tx}" cy="${ty}" r="10" fill="var(--cd)" stroke="currentColor"/><text x="${tx}" y="${ty+4}" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">${n}</text>`).join('');
+const q2s=(b,l,a)=>`<svg viewBox="0 0 320 240" width="100%" style="max-width:420px" role="img" aria-label="${a}">${b}${q2l(l)}</svg>`;
+const q2f=(()=>{let s='<circle cx="160" cy="128" r="76" fill="none" stroke="currentColor" stroke-dasharray="5 5" opacity=".35"/>',l=[];const E=['🌿','🟤','💚','⚪','🌱'];
+for(let k=0;k<5;k++){const d=-90+72*k,a=d*Math.PI/180,m=(d+36)*Math.PI/180,c=Math.cos(a),n=Math.sin(a),x=160+76*c,y=128+76*n;
+s+=`<polygon points="0,-7 6,6 -6,6" fill="currentColor" opacity=".6" transform="translate(${(160+76*Math.cos(m)).toFixed(1)},${(128+76*Math.sin(m)).toFixed(1)}) rotate(${d+36+180})"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="20" fill="var(--cd)" stroke="currentColor"/><text x="${x.toFixed(1)}" y="${(y+8).toFixed(1)}" text-anchor="middle" font-size="22">${E[k]}</text>`;
+l.push([k+1,+(160+98*c).toFixed(1),+(128+98*n).toFixed(1),+(160+114*c).toFixed(1),+(128+114*n).toFixed(1)])}
+return[s,l]})();
+const FG=[
+{t:'🫘 Нефрон',a:'Нефрон почки',n:['капсула с клубочком','проксимальный каналец','петля Генле','дистальный каналец','собирательная трубочка'],d:['мочеточник','лоханка'],x:'Капсула с клубочком: фильтрация. Проксимальный каналец: реабсорбция глюкозы, аминокислот, воды. Петля Генле: концентрирование мочи. Дистальный каналец и собирательная трубочка: дополнительное всасывание воды и солей.',
+b:'<path d="M70,76 q-18,12 0,24 q18,12 0,24" fill="none" stroke="#e0a030" stroke-width="6" stroke-linecap="round"/><path d="M70,124 L70,190 Q70,214 100,214 Q130,214 130,190 L130,124" fill="none" stroke="#c97a3c" stroke-width="6"/><path d="M130,124 C150,112 112,98 142,84 L200,70" fill="none" stroke="#8f6bd1" stroke-width="6" stroke-linecap="round"/><path d="M200,36 L200,216" stroke="#3b82a6" stroke-width="10" stroke-linecap="round"/><line x1="20" y1="128" x2="300" y2="128" stroke="currentColor" stroke-dasharray="4 4" opacity=".4"/><g font-size="10" fill="currentColor" opacity=".7" text-anchor="end"><text x="300" y="122">корковое вещество</text><text x="300" y="142">мозговое вещество</text></g><circle cx="70" cy="50" r="26" fill="#f6dcdc" stroke="#b94a4a" stroke-width="2"/><circle cx="70" cy="50" r="13" fill="#e57373"/>',
+l:[[1,52,32,24,20],[2,62,100,24,100],[3,100,214,150,228],[4,170,77,170,30],[5,200,160,255,160]]},
+{t:'❤️ Сердце человека',a:'Сердце',n:['правое предсердие','левое предсердие','правый желудочек','левый желудочек','аорта'],d:['лёгочная артерия','полая вена'],x:'На схеме правая половина сердца слева. Правое предсердие и правый желудочек: венозная кровь, малый круг. Левое предсердие и левый желудочек: артериальная кровь, большой круг. Аорта отходит от левого желудочка.',
+b:'<path d="M160,62 C110,45 60,90 72,140 C85,190 140,222 160,230Z" fill="#9db8ee" stroke="#345" stroke-width="2"/><path d="M160,62 C210,45 260,90 248,140 C235,190 180,222 160,230Z" fill="#ee9d9d" stroke="#345" stroke-width="2"/><line x1="160" y1="62" x2="160" y2="230" stroke="#345" stroke-width="3"/><line x1="72" y1="125" x2="248" y2="125" stroke="#345" stroke-dasharray="5 4"/><path d="M178,66 C178,18 236,8 246,44 L246,88" fill="none" stroke="#c0392b" stroke-width="14" stroke-linecap="round"/><path d="M146,66 C146,34 118,26 98,32" fill="none" stroke="#2563eb" stroke-width="12" stroke-linecap="round"/>',
+l:[[1,100,100,36,100],[2,214,108,284,108],[3,105,170,36,170],[4,215,170,284,170],[5,246,30,290,30]]},
+{t:'👁 Глаз человека',a:'Глаз',n:['роговица','радужка','хрусталик','сетчатка','зрительный нерв'],d:['стекловидное тело','склера'],x:'Роговица преломляет свет, радужка регулирует зрачок, хрусталик фокусирует изображение, в сетчатке находятся палочки и колбочки, зрительный нерв несёт сигнал в мозг.',
+b:'<circle cx="150" cy="120" r="80" fill="#f4efe6" stroke="#8a6d3b" stroke-width="5"/><circle cx="150" cy="120" r="74" fill="#e4f1fa"/><path d="M186,58 A72,72 0 0,1 186,182" fill="none" stroke="#e0a030" stroke-width="5"/><path d="M72,88 Q40,120 72,152" fill="#cfe8f7" fill-opacity=".6" stroke="#4aa" stroke-width="4"/><ellipse cx="102" cy="120" rx="9" ry="24" fill="#cfe8f7" stroke="#4a8" stroke-width="2"/><rect x="96" y="72" width="8" height="24" rx="3" fill="#7a5ad0"/><rect x="96" y="144" width="8" height="24" rx="3" fill="#7a5ad0"/><rect x="226" y="113" width="56" height="14" rx="6" fill="#e8c36a" stroke="#a78629"/>',
+l:[[1,58,110,22,70],[2,100,76,120,24],[3,95,130,26,170],[4,186,170,240,214],[5,260,120,300,80]]},
+{t:'🌿 Цикл развития папоротника',a:'Цикл развития папоротника',n:['взрослый спорофит','спорангий со спорами','заросток','гаметы','молодой спорофит'],d:['семя','цветок'],x:'Спорофит 2n → мейоз в спорангиях → споры n → заросток n (гаметофит) → гаметы n (митоз) → оплодотворение в капле воды → зигота 2n → молодой спорофит.',
+b:q2f[0],l:q2f[1]}];
+V.fig=(f=>()=>f()+`<h2>Новые схемы</h2>`+FG.map((g,i)=>`<div class=card><h3>${g.t}</h3><p><b>Подпишите элементы 1–5.</b></p>${q2s(g.b,g.l,g.a)}<div class=w><table>${g.n.map((_,k)=>`<tr><td>${k+1}</td><td><select id=g${i}_${k}><option value="">—</option>${[...g.n,...g.d].sort().map(x=>`<option>${x}</option>`).join('')}</select></td></tr>`).join('')}</table></div><button class=btn onclick="q2k(${i})">Проверить</button><div id=gr${i}></div></div>`).join(''))(V.fig);
+function q2k(i){const g=FG[i];let n=0;g.n.forEach((x,k)=>{if($(`#g${i}_${k}`).value==x)n++});rec('Рисунки и данные',n==5);$(`#gr${i}`).innerHTML=`<div class=ex>Верно: <b>${n} из 5</b>. ${g.n.map((x,k)=>`${k+1} — ${x}`).join('; ')}.<br>${g.x}</div>`}
+
+/* --- анимация большого круга кровообращения --- */
+const CIR={u:0,run:0},CST=['Левый желудочек сокращается и выталкивает артериальную кровь в аорту: начало большого круга.','Аорта и артерии: кровь богата кислородом, давление высокое, скорость большая.','Капилляры органов: O₂ и питательные вещества уходят в ткани, CO₂ переходит в кровь — кровь становится венозной.','Вены: венозная кровь, давление низкое; кровь движется благодаря клапанам вен и сокращению мышц.','Верхняя и нижняя полые вены впадают в правое предсердие: конец большого круга.'];
+V.lab=(f=>()=>f()+`<div class=card><h3>▶ Большой круг кровообращения</h3><svg viewBox="0 0 320 210" width="100%" style="max-width:480px" role="img" aria-label="Большой круг кровообращения"><path id="ca" d="M168,62 C190,14 262,14 262,62 L262,126" fill="none" stroke="#ef4444" stroke-width="8" opacity=".35" stroke-linecap="round"/><path id="ck" d="M262,126 L242,152 L222,128 L202,152 L182,128 L162,152 L142,128 L122,152 L102,128 L82,152 L62,126" fill="none" stroke="#a855f7" stroke-width="5" opacity=".5" stroke-linejoin="round"/><path id="cv" d="M62,126 L62,62 C62,22 130,14 152,58" fill="none" stroke="#3b82f6" stroke-width="8" opacity=".35" stroke-linecap="round"/><text x="160" y="76" font-size="28" text-anchor="middle">❤️</text><g font-size="11" fill="currentColor"><text x="162" y="180" text-anchor="middle">капилляры органов и тканей</text><text x="252" y="98" text-anchor="end">артерии</text><text x="72" y="98">вены</text></g>${[0,1,2,3,4,5].map(()=>'<circle class="cdot" r="5" cx="0" cy="0" fill="#ef4444" stroke="#fff" stroke-width="1"/>').join('')}</svg><div>${['1. Левый желудочек','2. Аорта и артерии','3. Капилляры','4. Вены','5. Правое предсердие'].map((n,i)=>`<button class=chip id=cs${i} onclick="q2g(${i})">${n}</button>`).join('')}</div><button class=btn id=cpb onclick="q2p()"></button><p class=ex id=cx></p><small>Красные точки — артериальная кровь, синие — венозная.</small></div>`)(V.lab);
+B.lab=()=>{const P=['ca','ck','cv'].map(i=>$('#'+i)),L=P.map(p=>p.getTotalLength());Object.assign(CIR,{P,L,T:L[0]+L[1]+L[2],run:!matchMedia('(prefers-reduced-motion:reduce)').matches});q2d();if(CIR.run){CIR.t=performance.now();requestAnimationFrame(q2a)}q2b()};
+function q2o(u){const{P,L,T}=CIR;let d=(((u%1)+1)%1)*T,k=0;while(k<2&&d>L[k]){d-=L[k];k++}const f=d/L[k],p=P[k].getPointAtLength(Math.min(d,L[k]));return{x:p.x,y:p.y,k,f,c:k==0||(k==1&&f<.5)?'#ef4444':'#3b82f6'}}
+function q2d(){const D=document.querySelectorAll('.cdot');D.forEach((e,i)=>{const o=q2o(CIR.u+i/D.length);e.setAttribute('cx',o.x);e.setAttribute('cy',o.y);e.setAttribute('fill',o.c)});const o=q2o(CIR.u),s=o.k==0?(o.f<.12?0:1):o.k==1?2:(o.f<.8?3:4);for(let i=0;i<5;i++)$('#cs'+i).classList.toggle('u',i!=s);$('#cx').textContent=CST[s]}
+function q2a(t){if(!CIR.run||!$('#cpb'))return CIR.run=0;CIR.u=(CIR.u+(t-CIR.t)/14000)%1;CIR.t=t;q2d();requestAnimationFrame(q2a)}
+function q2b(){$('#cpb').textContent=CIR.run?'⏸ Пауза':'▶ Продолжить'}
+function q2p(){CIR.run=!CIR.run;if(CIR.run){CIR.t=performance.now();requestAnimationFrame(q2a)}q2b()}
+function q2g(s){CIR.run=0;const{L,T}=CIR;CIR.u=[0,.12*L[0],L[0],L[0]+L[1],L[0]+L[1]+.8*L[2]][s]/T+.001;q2d();q2b()}
+
+/* --- часть 2: самооценка по критериям в обычном режиме --- */
+S.p2=S.p2||{};
+const q2n=i=>{const s=S.p2[i];return Math.max(0,Math.min(3,s.c.reduce((a,b)=>a+b,0))-s.e)};
+const q2m=i=>`Найдено элементов: <b>${S.p2[i].c.reduce((a,b)=>a+b,0)} из ${P2[i].el.length}</b>. Оценка: <b>${q2n(i)} из 3</b>. Три балла: 3 и более верных элемента и нет биологических ошибок.`;
+function q2h(i){const s=S.p2[i],t=(s.t||'').toLowerCase();return`<div class=ex><b>Критерии:</b>`+P2[i].el.map((e,j)=>`<label class=op><input type=checkbox data-j=${j} ${s.c[j]?'checked':''} onchange="q2c(${i})"> ${e[1].some(k=>t.includes(k))?'💡 ':''}${e[0]}</label>`).join('')+`<label class=op><input type=checkbox id=pe${i} ${s.e?'checked':''} onchange="q2c(${i})"> В моём ответе есть биологическая ошибка (−1 балл)</label><p id=ps${i}>${q2m(i)}</p><button class=btn onclick="q2v(${i})">Сохранить оценку</button> <small id=pv${i}>${s.h!=null?'Сохранено: '+s.h+' из 3':''}</small></div>`}
+function q2t(i){(S.p2[i]=S.p2[i]||{}).t=$('#t'+i).value;sv()}
+function q2r(i){const s=S.p2[i]=S.p2[i]||{};s.t=$('#t'+i).value;s.c=s.c||P2[i].el.map(()=>0);s.e=s.e||0;s.o=1;sv();$('#pr'+i).innerHTML=q2h(i)}
+function q2c(i){const s=S.p2[i];s.c=[...document.querySelectorAll(`#pr${i} input[data-j]`)].map(x=>+x.checked);s.e=+$('#pe'+i).checked;sv();$('#ps'+i).innerHTML=q2m(i)}
+function q2v(i){const s=S.p2[i];s.h=q2n(i);rec('Часть 2',s.h>=2);$('#pv'+i).textContent='Сохранено: '+s.h+' из 3'}
+V.p2=()=>`<h2>Часть 2: развёрнутые ответы</h2><p>Напиши ответ как на экзамене и нажми «Оценить себя»: появятся критерии. Отмечай только то, что действительно есть в твоём ответе. Знак 💡 — лишь подсказка по ключевым словам. Ответы сохраняются в браузере.</p>`+P2.map((p,i)=>{const s=S.p2[i]||{};return`<div class=card><b>${i+1}. ${p.q}</b><textarea rows=4 id=t${i} oninput="q2t(${i})" placeholder="Твой ответ…">${q2e(s.t||'')}</textarea><button class=btn onclick="q2r(${i})">Оценить себя</button><div id=pr${i}>${s.o?q2h(i):''}</div></div>`}).join('');
+</script>
+<script>
+/* ===== v3: больше теории и «живая биология» ===== */
+TH.push(
+['🧫','Нуклеиновые кислоты и репликация',`<ul><li><b>ДНК</b>: двойная антипараллельная спираль, А=Т (2 водородные связи), Г≡Ц (3). Правило Чаргаффа: А+Г = Т+Ц.</li><li><b>РНК</b>: одна цепь, рибоза, вместо тимина урацил. Виды: иРНК (матрица), тРНК (доставка аминокислот, антикодон), рРНК (основа рибосом).</li><li><b>Репликация</b> (S-период) полуконсервативна: у каждой дочерней ДНК одна старая и одна новая цепь. Хеликаза расплетает, ДНК-полимераза достраивает цепь только в направлении 5'→3'.</li><li>Ведущая цепь строится непрерывно, отстающая — фрагментами Оказаки, их сшивает ДНК-лигаза.</li></ul>`],
+['🦠','Вирусы, бактерии, грибы',`<ul><li><b>Вирусы</b>: неклеточные, ДНК или РНК и белковый капсид, размножаются только в клетке хозяина. ВИЧ — РНК-вирус, обратная транскрипция (РНК → ДНК), поражает Т-лимфоциты.</li><li><b>Бактерии</b> — прокариоты: нуклеоид, кольцевая ДНК, рибосомы, стенка из муреина. Автотрофы (фото- и хемосинтез), гетеротрофы (сапротрофы, паразиты), споры — для переживания неблагоприятных условий.</li><li><b>Грибы</b>: хитин в стенке, гликоген, гетеротрофы. Мицелий из гиф. Дрожжи — одноклеточные, почкование. Лишайник — симбиоз гриба и водоросли, микориза — гриба и корня.</li></ul>`],
+['🌱','Жизненные циклы растений',`<ul><li><b>Мхи</b>: доминирует гаметофит (n); спорофит (2n) — коробочка на ножке, растёт на гаметофите. Оплодотворение только в воде.</li><li><b>Папоротники</b>: доминирует спорофит; споры в спорангиях (мейоз) → заросток (n) → гаметы → зигота → спорофит. Вода нужна для оплодотворения.</li><li><b>Голосеменные</b>: спорофит, голые семязачатки на чешуях шишки, мужской гаметофит — пыльцевое зерно, оплодотворение без воды, есть семя.</li><li><b>Покрытосеменные</b>: цветок, плод. Двойное оплодотворение (Навашин): спермий + яйцеклетка → зигота (2n), спермий + центральная клетка (2n) → эндосперм (3n).</li></ul>`],
+['🧠','Нервная система и ВНД',`<ul><li><b>Рефлекторная дуга</b>: рецептор → чувствительный нейрон → вставочный → двигательный → рабочий орган.</li><li><b>Головной мозг</b>: продолговатый (дыхание, сердцебиение), мост, мозжечок (координация движений), средний (ориентировочные рефлексы), промежуточный (таламус, гипоталамус), большие полушария (кора с зонами).</li><li><b>Вегетативная система</b>: симпатическая учащает пульс и расширяет зрачки, парасимпатическая замедляет пульс и усиливает перистальтику.</li><li><b>ВНД</b>: безусловные рефлексы врождённые, условные приобретаются; торможение (внешнее, внутреннее); сон — фазы медленного и быстрого сна.</li></ul>`],
+['💉','Кровь, иммунитет, гормоны',`<ul><li><b>Кровь</b>: плазма (~55%) и форменные элементы. Эритроциты переносят газы (гемоглобин), лейкоциты защищают, тромбоциты участвуют в свёртывании.</li><li><b>Группы крови АВ0</b>: I — агглютинины α и β; II — β; III — α; IV — нет агглютининов. Резус-фактор — отдельный антиген.</li><li><b>Иммунитет</b>: клеточный (Т-лимфоциты), гуморальный (В-лимфоциты → плазмоциты → антитела). Вакцина — активный искусственный, сыворотка — пассивный.</li><li><b>Гормоны</b>: инсулин снижает, глюкагон повышает сахар; тироксин — обмен веществ; адреналин — стресс; СТГ — рост (карликовость, гигантизм, акромегалия).</li></ul>`],
+['🫁','Пищеварение, дыхание, органы чувств',`<ul><li><b>Пищеварение</b>: амилаза слюны (крахмал), пепсин в кислом желудочном соке (белки), желчь эмульгирует жиры, трипсин и липаза в двенадцатиперстной кишке. Всасывание в тонкой кишке (ворсинки), воды — в толстой.</li><li><b>Дыхание</b>: вдох — сокращение диафрагмы и межрёберных мышц, объём грудной клетки растёт; газообмен диффузией в альвеолах.</li><li><b>Анализатор</b> = рецептор + проводящий путь + зона коры.</li><li><b>Ухо</b>: молоточек, наковальня, стремя — среднее; улитка (слух) и вестибулярный аппарат (равновесие) — внутреннее. <b>Глаз</b>: см. рисунок.</li></ul>`],
+['🐣','Размножение и развитие',`<ul><li><b>Сперматогенез</b>: из одной клетки 4 сперматозоида. <b>Оогенез</b>: 1 яйцеклетка и 3 полярных тельца.</li><li><b>Онтогенез животных</b>: зигота → дробление (бластула) → гаструляция (два, затем три зародышевых листка) → органогенез.</li><li><b>Эктодерма</b>: нервная система, кожный эпителий, органы чувств. <b>Энтодерма</b>: эпителий кишечника, печень, поджелудочная железа, лёгкие. <b>Мезодерма</b>: мышцы, скелет, кровеносная, выделительная и половая системы.</li><li><b>Постэмбрионально</b>: прямое развитие; непрямое — полное (яйцо, личинка, куколка, имаго) и неполное (яйцо, личинка, имаго).</li></ul>`],
+['🧪','Селекция и биотехнология',`<ul><li><b>Вавилов</b>: центры происхождения культурных растений, закон гомологических рядов наследственной изменчивости.</li><li><b>Методы</b>: гибридизация, отбор (массовый, индивидуальный), инбридинг (риск депрессии), гетерозис (мощность гибридов F₁, затухает), полиплоидия (пшеница), отдалённая гибридизация (бесплодие гибридов преодолевают удвоением хромосом).</li><li><b>Генная инженерия</b>: рестриктазы режут ДНК, лигазы сшивают, вектор (плазмида) вводит ген. ПЦР — копирование ДНК. Клонирование: перенос ядра соматической клетки в яйцеклетку без ядра.</li></ul>`],
+['🐒','Эволюция: ароморфозы и антропогенез',`<ul><li><b>Ароморфоз</b> — повышение уровня организации (многоклеточность, четырёхкамерное сердце, цветок). <b>Идиоадаптация</b> — частное приспособление без повышения уровня. <b>Дегенерация</b> — упрощение (паразиты).</li><li><b>Доказательства</b>: палеонтологические (переходные формы), сравнительно-анатомические (гомологичные органы, рудименты, атавизмы), эмбриологические (закон Бэра), молекулярные.</li><li><b>Антропогенез</b>: австралопитек → человек умелый → человек прямоходящий → неандерталец → человек разумный (кроманьонец). Факторы: биологические (изменчивость, отбор) и социальные (труд, речь, мышление).</li></ul>`],
+['🌐','Экосистемы и биосфера',`<ul><li><b>Структура</b>: продуценты, консументы I, II порядков, редуценты. Цепи: пастбищные и детритные. Правило 10%: на следующий уровень переходит около 10% энергии.</li><li><b>Пирамиды</b>: чисел, биомасс (в океане может быть перевёрнутой), энергии (всегда сужается вверх).</li><li><b>Сукцессия</b>: первичная (на голом субстрате) и вторичная (после нарушения), завершается климаксом.</li><li><b>Круговороты</b>: углерод (фотосинтез и дыхание), азот (азотфиксация клубеньковыми бактериями, нитрификация, денитрификация). По Вернадскому: живое, косное, биокосное вещество; ноосфера.</li></ul>`],
+['📐','Формулы: набор хромосом и ДНК',`<ul><li>n — число хромосом, c — количество ДНК. Интерфаза: G₁ 2n2c, после S-периода 2n4c.</li><li><b>Митоз</b>: профаза и метафаза 2n4c, анафаза 4n4c, после телофазы 2n2c в каждой клетке.</li><li><b>Мейоз</b>: профаза I 2n4c, после первого деления n2c, анафаза II 2n2c, гаметы nc.</li><li><b>Сцепление с полом</b>: признаки в X-хромосоме (дальтонизм, гемофилия — рецессивные); у мужчин (XY) проявляются при одном аллеле. <b>Кроссинговер</b> нарушает сцепление, частота пропорциональна расстоянию между генами.</li></ul>`]);
+
+/* --- «живая биология»: сцены, меняются сами --- */
+const q3rm=matchMedia('(prefers-reduced-motion:reduce)').matches,q3w=(b)=>`<svg viewBox="0 0 320 150" width="100%" style="max-width:520px" role="img">${b}</svg>`;
+const SC=[
+['🧬 Двойная спираль ДНК','Две антипараллельные цепи удерживаются водородными связями: А–Т и Г–Ц. Спираль вращается, и видно, как пары оснований лежат «ступеньками».',()=>q3w('<g id="dg"></g>')],
+['⚡ Нервный импульс','Импульс бежит по аксону, перепрыгивая через перехваты Ранвье между участками миелина, а в синапсе вызывает выброс медиатора.',()=>q3w(`<circle cx="38" cy="75" r="20" fill="#c9b6e4" stroke="#6b4f9a" stroke-width="2"/><circle cx="38" cy="75" r="7" fill="#6b4f9a"/><path d="M22,62 L6,48 M20,70 L4,72 M24,88 L8,104 M36,55 L34,36" stroke="#6b4f9a" stroke-width="2" fill="none"/><line x1="58" y1="75" x2="268" y2="75" stroke="#6b4f9a" stroke-width="3"/>${[0,1,2,3].map(i=>`<rect x="${68+i*48}" y="64" width="38" height="22" rx="11" fill="#f0a35e" stroke="#b5651d"/>`).join('')}<circle cx="282" cy="75" r="12" fill="#bfe3f5" stroke="#3b82a6"/>${[0,1,2].map(i=>`<circle cx="${277+i*5}" cy="${72+i*3}" r="2.5" fill="#3b82a6"><animate attributeName="opacity" values="0;1;0" dur="3s" begin="${i*.3}s" repeatCount="indefinite"/></circle>`).join('')}<circle cy="75" r="8" fill="#facc15"><animate attributeName="cx" values="40;87;135;183;231;282" dur="3s" repeatCount="indefinite"/><animate attributeName="r" values="7;11;7" dur=".6s" repeatCount="indefinite"/></circle><g font-size="10" fill="currentColor" text-anchor="middle"><text x="38" y="112">тело клетки</text><text x="160" y="110">миелиновая оболочка</text><text x="282" y="100">синапс</text></g>`)],
+['🌿 Фотосинтез','Свет запускает фотолиз воды: из листа выходит кислород, из воздуха поступает CO₂, а вода идёт из корней. В итоге синтезируется глюкоза.',()=>q3w(`<g transform="translate(40,38)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/><circle r="14" fill="#facc15"/>${[0,1,2,3,4,5,6,7].map(i=>`<line x1="19" y1="0" x2="29" y2="0" stroke="#facc15" stroke-width="3" transform="rotate(${i*45})"/>`).join('')}</g></g><line x1="75" y1="55" x2="140" y2="88" stroke="#facc15" stroke-width="2" stroke-dasharray="6 6"><animate attributeName="stroke-dashoffset" from="24" to="0" dur="1s" repeatCount="indefinite"/></line><path d="M120,118 C140,58 220,58 245,103 C215,133 150,138 120,118Z" fill="#3fa34d" stroke="#2d7a38" stroke-width="2"/><line x1="130" y1="115" x2="235" y2="101" stroke="#2d7a38"/>${[0,1,2,3].map(i=>`<circle cx="${180+i*18}" r="5" fill="#bfe3f5" stroke="#3b82a6"><animate attributeName="cy" from="90" to="12" dur="3s" begin="${i*.7}s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="3s" begin="${i*.7}s" repeatCount="indefinite"/></circle>`).join('')}<text y="142" font-size="12" fill="currentColor">CO₂<animate attributeName="x" from="310" to="235" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></text><text x="268" y="20" font-size="12" fill="currentColor">O₂ ↑</text>`)],
+['🔬 Митоз','Хромосомы выстраиваются по экватору, сестринские хроматиды расходятся к полюсам, затем клетка делится на две.',()=>q3w('<g id="mg"></g><text id="mt" x="160" y="146" font-size="12" text-anchor="middle" fill="currentColor"></text>')],
+['❤️ Сердце и кровоток','Сердце ритмично сокращается и гонит эритроциты по замкнутой системе сосудов; кровь движется в одном направлении благодаря клапанам.',()=>q3w(`<path id="lp" d="M160,22 C300,22 300,128 160,128 C20,128 20,22 160,22Z" fill="none" stroke="#ef4444" stroke-width="6" opacity=".25"/><g transform="translate(160,75)"><text text-anchor="middle" dominant-baseline="middle" font-size="44">❤️<animateTransform attributeName="transform" type="scale" values="1;1.2;1;1.12;1" dur=".9s" repeatCount="indefinite"/></text></g>${[0,1,2,3,4,5,6,7].map(i=>`<circle r="5" fill="${i<4?'#ef4444':'#3b82f6'}" stroke="#fff"><animateMotion dur="8s" begin="-${i}s" repeatCount="indefinite"><mpath href="#lp"/></animateMotion></circle>`).join('')}`)]];
+function q3M(t){const D=2400,s=Math.floor(t/D)%4,f=t%D/D,e=Math.min(1,f/.7),k=e*e*(3-2*e),P=(s,i,j)=>s==0?[125+(i*53)%70+j*7,45+(i*41)%70]:s==1?[157+j*7,35+i*27]:s==2?[160+(j?60:-60),35+i*27]:[160+(j?78:-78),42+i*22],p=s==0?3:s-1;let h='';
+if(s<3)h+=`<ellipse cx="160" cy="75" rx="${100+(s==2?20*k:0)}" ry="62" fill="var(--a2)" stroke="var(--ac)" stroke-width="3"/>`;else h+=[-1,1].map(d=>`<ellipse cx="${160+d*(55+20*k)}" cy="75" rx="60" ry="56" fill="var(--a2)" stroke="var(--ac)" stroke-width="3"/>`).join('');
+for(let i=0;i<4;i++)for(let j=0;j<2;j++){const a=P(p,i,j),b=P(s,i,j);h+=`<rect x="${a[0]+(b[0]-a[0])*k-3}" y="${a[1]+(b[1]-a[1])*k-10}" width="6" height="20" rx="3" fill="${i%2?'#b5651d':'#7a3e9d'}"/>`}
+return[h,['Профаза: хромосомы спирализуются','Метафаза: хромосомы на экваторе','Анафаза: хроматиды расходятся','Телофаза: образуются две клетки'][s]]}
+function q3L(t){const r=$('#lv');if(!r)return;const g=$('#dg');if(g){let h='';for(let i=0;i<17;i++){const x=20+i*17.5,a=t/700+i*.55,y1=75+48*Math.sin(a),y2=150-y1,z=Math.cos(a);h+=`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${i%2?'#f59e0b':'#10b981'}" stroke-width="3" opacity="${.35+.25*(z+1)}"/><circle cx="${x}" cy="${y1}" r="${4+2*z}" fill="#3b82f6"/><circle cx="${x}" cy="${y2}" r="${4-2*z}" fill="#ef4444"/>`}g.innerHTML=h}
+const m=$('#mg');if(m){const[h,n]=q3M(t);m.innerHTML=h;if($('#mt').textContent!=n)$('#mt').textContent=n}
+if(!q3rm)requestAnimationFrame(q3L)}
+let q3k=0,q3tm;
+const q3card=()=>`<div class="card" id="lv"><h3 id="lt"></h3><div id="lsv"></div><p class="ex" id="lc"></p><div>${SC.map((s,i)=>`<button class="chip ld" onclick="q3sw(${i},1)">${s[0].split(' ')[0]}</button>`).join('')}<button class="chip" onclick="q3sw(q3k+1,1)">▶ дальше</button></div></div>`;
+function q3sw(i,man){q3k=(i+SC.length)%SC.length;const s=SC[q3k];$('#lt').textContent=s[0];$('#lc').textContent=s[1];$('#lsv').innerHTML=s[2]();if(q3rm&&$('#lsv svg').pauseAnimations)$('#lsv svg').pauseAnimations();document.querySelectorAll('.ld').forEach((e,k)=>e.classList.toggle('u',k!=q3k));if(man){clearInterval(q3tm);if(!q3rm)q3tm=setInterval(q3nx,9000)}}
+function q3nx(){if(!$('#lv'))return clearInterval(q3tm);q3sw(q3k+1)}
+function q3i(){q3sw(q3k);clearInterval(q3tm);if(!q3rm)q3tm=setInterval(q3nx,9000);requestAnimationFrame(q3L)}
+V.home=(f=>()=>q3card()+f())(V.home);B.home=(f=>()=>{if(f)f();q3i()})(B.home);
+V.lab=(f=>()=>f()+q3card())(V.lab);B.lab=(f=>()=>{if(f)f();q3i()})(B.lab);
+document.head.insertAdjacentHTML('beforeend','<style>@keyframes bob{50%{transform:translateY(-4px)}}.st b{animation:bob 3.2s ease-in-out infinite}#lsv svg{animation:pop .5s}.ld.u{transform:scale(.92)}.th[open]>summary{color:var(--ac)}@media(prefers-reduced-motion:reduce){.st b{animation:none}}</style>');
+</script>
+<style id="anim3d">
+:root{--h:140;--hl:36%}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--hl:68%}}
+:root[data-theme=dark]{--hl:68%}
+[data-e]::before{content:attr(data-e)}
+/* ambient 3D world */
+#amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#amb i{position:absolute;width:var(--s);height:var(--s);border-radius:50%;opacity:.28;translate:0 calc(var(--sy,0)*var(--k)*-1px);background:radial-gradient(circle at 30% 26%,#fffc,hsl(var(--h) 70% 60%) 34%,hsl(var(--h) 80% 36%));box-shadow:inset -10px -14px 26px rgba(0,0,0,.35),0 24px 50px hsl(var(--h) 95% 50%/.4);animation:amf var(--d) ease-in-out infinite alternate}
+@keyframes amf{to{transform:translate3d(var(--x),var(--y),0) scale(1.18) rotate(30deg)}}
+/* volumetric scene */
+.sc3{position:relative;height:124px;margin:4px 0 10px;border-radius:14px;overflow:hidden;perspective:560px;background:radial-gradient(ellipse at 50% 115%,hsl(var(--h) 100% 62%/.65),transparent 65%),linear-gradient(135deg,hsl(var(--h) 75% 20%),hsl(calc(var(--h) + 20) 80% 34%));box-shadow:inset 0 0 30px rgba(0,0,0,.35),0 10px 24px -10px hsl(var(--h) 90% 40%/.7)}
+.sc3::before{content:'';position:absolute;inset:0;background:radial-gradient(2px 2px at 12% 28%,#fff,transparent),radial-gradient(2px 2px at 78% 18%,#fff,transparent),radial-gradient(3px 3px at 88% 70%,#fff,transparent),radial-gradient(2px 2px at 30% 78%,#fff,transparent),radial-gradient(2px 2px at 55% 12%,#fff,transparent);animation:twk 2.4s ease-in-out infinite}
+.sc3::after{content:'';position:absolute;bottom:8px;left:50%;width:170px;height:24px;margin-left:-85px;border-radius:50%;background:radial-gradient(hsl(var(--h) 100% 72%/.65),transparent 70%);animation:pls 3s ease-in-out infinite}
+.sc3.band{height:104px}.sc3.sm{height:80px}.sc3.sm .rig{scale:.72}
+.sc3.mini{position:absolute;right:52px;top:0;width:150px;height:104px;margin:0;background:none;box-shadow:none;overflow:visible;pointer-events:none}
+.mini::before,.mini::after{display:none}.mini .rig{scale:.62}
+.rig{position:absolute;left:50%;top:48%;width:0;height:0;transform-style:preserve-3d;animation:rig 16s linear infinite}
+.rg{position:absolute;left:-84px;top:-84px;width:168px;height:168px;border-radius:50%;border:2px solid hsl(var(--h) 100% 78%/.85);box-shadow:0 0 16px hsl(var(--h) 100% 60%),inset 0 0 16px hsl(var(--h) 100% 60%/.6);transform:rotateX(90deg)}
+.rg.r2{transform:rotateX(90deg) scale(.66);border-style:dashed}
+.core{position:absolute;left:-30px;top:-32px;width:60px;height:60px;display:grid;place-items:center;font-size:46px;font-style:normal;filter:drop-shadow(0 8px 12px hsl(var(--h) 100% 60%));animation:un 16s linear infinite,flt 3s ease-in-out infinite;--a:0deg}
+.ob{position:absolute;left:-22px;top:-22px;width:44px;height:44px;transform-style:preserve-3d;transform:rotateY(var(--a)) translateZ(84px)}
+.ob span{display:grid;place-items:center;width:44px;height:44px;font-size:22px;border-radius:50%;background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.95),rgba(255,255,255,.1) 26%,transparent 28%),radial-gradient(circle at 50% 58%,hsl(var(--h) 95% 66%/.6),hsl(var(--h) 80% 26%/.92));box-shadow:inset -4px -6px 10px rgba(0,0,0,.4),0 0 16px hsl(var(--h) 100% 60%/.8);animation:un 16s linear infinite,flt 2.4s ease-in-out infinite}
+.sc3:not(.vis) *,.sc3:not(.vis)::before{animation-play-state:paused}
+@keyframes rig{from{transform:rotateX(-16deg) rotateY(0)}to{transform:rotateX(-16deg) rotateY(360deg)}}
+@keyframes un{from{transform:rotateY(calc(-1*var(--a)))}to{transform:rotateY(calc(-1*var(--a) - 360deg))}}
+@keyframes flt{50%{translate:0 -9px}}
+@keyframes twk{50%{opacity:.35}}
+@keyframes pls{50%{transform:scaleX(.7);opacity:.6}}
+/* cards: depth, tilt, sheen */
+.card{position:relative;background:linear-gradient(150deg,var(--cd) 55%,hsl(var(--h) 60% 62%/.10));border-color:hsl(var(--h) 60% 60%/.45);box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 3px 0 hsl(var(--h) 55% 62%/.5),0 14px 28px -10px hsl(var(--h) 85% 45%/.5);animation:c3in .8s cubic-bezier(.2,.9,.3,1.15) backwards;transition:transform .25s ease-out,box-shadow .3s}
+.card::before{content:'';position:absolute;top:0;left:16px;right:16px;height:4px;border-radius:0 0 6px 6px;background:linear-gradient(90deg,hsl(var(--h) 95% 58%),hsl(calc(var(--h) + 22) 95% 62%),hsl(var(--h) 95% 58%));background-size:200% 100%;animation:gr 4s linear infinite;pointer-events:none}
+.card:hover{box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 5px 0 hsl(var(--h) 55% 62%/.55),0 22px 36px -12px hsl(var(--h) 90% 45%/.65)}
+.card.tl{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-3px)}
+@keyframes c3in{from{opacity:0;transform:perspective(900px) rotateX(-28deg) translateY(40px) scale(.92)}}
+/* headings */
+h2,h3{background:linear-gradient(90deg,hsl(var(--h) 85% var(--hl)),hsl(calc(var(--h) + 22) 90% var(--hl)),hsl(var(--h) 85% var(--hl)));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gr 6s linear infinite}
+h2::before,h3::before,summary::before{content:'';display:inline-block;width:.8em;height:.8em;margin-right:.5em;vertical-align:-.08em;border-radius:50%;background:conic-gradient(from 30deg,hsl(var(--h) 95% 72%),hsl(calc(var(--h) + 20) 95% 52%),hsl(var(--h) 95% 72%),hsl(calc(var(--h) + 20) 95% 52%),hsl(var(--h) 95% 72%));box-shadow:inset 0 0 0 2px rgba(255,255,255,.55),0 0 12px hsl(var(--h) 100% 60%/.8);-webkit-text-fill-color:initial;animation:coin 2.6s linear infinite}
+h3::before{filter:hue-rotate(12deg)}
+@keyframes coin{from{transform:perspective(90px) rotateY(0)}to{transform:perspective(90px) rotateY(360deg)}}
+header h1{text-shadow:0 1px 0 #1b5a3a,0 2px 0 #1b5a3a,0 3px 0 #164b30,0 8px 14px rgba(0,0,0,.35);animation:bob 3.6s ease-in-out infinite}
+/* topics & subtopics */
+details>summary{list-style:none;position:relative;padding-right:40px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:'▾';position:absolute;right:2px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:15px;background:radial-gradient(circle at 32% 28%,#fff9,hsl(var(--h) 95% 62%) 45%,hsl(var(--h) 80% 36%));box-shadow:inset -3px -4px 6px rgba(0,0,0,.3),0 6px 12px hsl(var(--h) 90% 45%/.5);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+details[open]>summary::after{transform:rotate(180deg) scale(1.15)}
+.th summary{font-weight:700}
+.th ul{list-style:none;padding-left:4px}
+.th li,.th>p{position:relative;padding:8px 10px 8px 38px;margin:6px 0;border-radius:12px;background:linear-gradient(90deg,hsl(var(--h) 90% 60%/.15),transparent 85%);transition:transform .25s,box-shadow .25s}
+.th>p{padding-left:12px;border-left:4px solid hsl(var(--h) 90% 58%)}
+.th li::before{content:'';position:absolute;left:10px;top:12px;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff,hsl(var(--h) 95% 62%) 40%,hsl(var(--h) 85% 34%));box-shadow:inset -2px -3px 4px rgba(0,0,0,.3),0 4px 10px hsl(var(--h) 90% 50%/.6);animation:gem 2.8s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.35s)}
+.th[open] li,.th[open]>p{animation:lif .7s calc(var(--i,0)*80ms + .15s) cubic-bezier(.2,1.2,.3,1) backwards}
+.th li:hover,.th>p:hover{transform:translateX(6px) scale(1.012);box-shadow:0 8px 20px -8px hsl(var(--h) 90% 45%/.6)}
+.th :is(li,p) b{background:linear-gradient(transparent 60%,hsl(var(--h) 100% 55%/.34) 0) no-repeat 0 0/0% 100%;animation:hl .9s calc(var(--i,0)*80ms + .5s) forwards}
+@keyframes lif{from{opacity:0;transform:perspective(600px) rotateX(-70deg) translateY(16px)}}
+@keyframes gem{50%{transform:translateY(-3px) scale(1.12)}}
+@keyframes hl{to{background-size:100% 100%}}
+/* tables, options, chips, buttons, bars */
+tr{animation:rowin .6s calc(var(--i,0)*50ms) backwards}
+@keyframes rowin{from{opacity:0;transform:perspective(500px) rotateX(-60deg) translateY(10px)}}
+th{background:linear-gradient(90deg,hsl(var(--h) 90% 60%/.28),var(--a2))}
+.op{animation:opin .5s calc(var(--i,0)*60ms) backwards}
+.op:has(input:checked){box-shadow:0 0 16px hsl(var(--h) 95% 55%/.55)}
+@keyframes opin{from{opacity:0;transform:translateX(-26px) rotateY(40deg)}}
+.chip{animation:chin .5s calc(var(--i,0)*45ms) backwards;box-shadow:0 3px 0 hsl(var(--h) 60% 55%/.45)}
+.chip:hover{transform:translateY(-3px) rotate(-1.5deg)}
+@keyframes chin{from{opacity:0;transform:scale(.4) rotate(-12deg)}}
+.btn{position:relative;overflow:hidden;margin-bottom:8px;background:linear-gradient(180deg,hsl(var(--h) 70% 58%),hsl(var(--h) 75% 38%));box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 4px 0 hsl(var(--h) 70% 24%),0 10px 18px -6px hsl(var(--h) 90% 40%/.7);transition:transform .12s,box-shadow .12s,filter .15s}
+.btn.g{background:linear-gradient(180deg,var(--cd),var(--a2));box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 4px 0 var(--bd),0 8px 14px -8px rgba(0,0,0,.35)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(4px) scale(.98);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 0 0 transparent}
+.btn:not(.g)::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:swp 3.6s ease-in-out infinite}
+@keyframes swp{0%,60%{left:-60%}100%{left:130%}}
+.bar{height:12px;box-shadow:inset 0 2px 4px rgba(0,0,0,.2)}
+.bar i{background:repeating-linear-gradient(45deg,hsl(var(--h) 80% 52%) 0 10px,hsl(var(--h) 92% 66%) 10px 20px);background-size:28px 28px;box-shadow:inset 0 3px 3px rgba(255,255,255,.45);animation:gw 1s ease-out,stp 1s linear infinite}
+@keyframes stp{to{background-position:28px 0}}
+.ex{border-left:4px solid hsl(var(--h) 90% 55%);box-shadow:0 6px 16px -8px hsl(var(--h) 90% 45%/.5)}
+.st b{background:linear-gradient(90deg,hsl(var(--h) 95% 52%),hsl(calc(var(--h) + 25) 95% 52%));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 4px 4px hsl(var(--h) 90% 45%/.45))}
+/* nav */
+nav button{background:linear-gradient(180deg,var(--cd),hsl(var(--h) 85% 80%/.45));border-color:hsl(var(--h) 70% 55%/.6);box-shadow:0 3px 0 hsl(var(--h) 60% 55%/.5)}
+nav button.on{background:linear-gradient(180deg,hsl(var(--h) 80% 60%),hsl(var(--h) 80% 38%));animation:glw 2.4s ease-in-out infinite}
+@keyframes glw{50%{box-shadow:0 3px 0 hsl(var(--h) 60% 30%),0 0 22px hsl(var(--h) 100% 60%)}}
+.spk{position:fixed;z-index:120;width:9px;height:9px;margin:-4px;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 30% 30%,#fff,hsl(var(--h) 100% 60%));box-shadow:0 0 10px hsl(var(--h) 100% 60%);animation:spk .8s cubic-bezier(.1,.7,.3,1) forwards}
+@keyframes spk{to{transform:translate3d(var(--dx),var(--dy),0) scale(.1);opacity:0}}
+@media(max-width:560px){.sc3.mini{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+<script>
+(function(){
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches,$=s=>document.querySelector(s);
+const KW=[[/деление|митоз/,'🧫 ✂️ 🧬 🔬'],[/химия/,'⚗️ 💧 🧪 🔋'],[/биосинтез/,'🧬 🧶 🏭 🔤'],[/нуклеин|репликац/,'🧬 🔗 🧫 🧪'],[/энергет|фотосинт/,'☀️ 🍃 🔋 💧'],[/формул|набор/,'📐 🧮 ➗ 🧬'],[/селекц/,'🌾 🐄 🧪 🧬'],[/генетик/,'🧬 🎲 🐭 🧫'],[/вирус|бактер/,'🦠 🧫 🍄 💊'],[/цикл|растен/,'🌱 🌸 🍃 🌲'],[/животн|зоолог/,'🐸 🐟 🦋 🐦'],[/нервн/,'🧠 ⚡ 👁️ 💭'],[/кровь|иммун|кровооб/,'🩸 💉 🛡️ ❤️'],[/пищевар|дыхан/,'🫁 🍎 👂 👁️'],[/размнож/,'🐣 🥚 🌸 🍼'],[/антропо|ароморф/,'🐒 🦴 🔥 🧠'],[/эволюц|эколог|экосист/,'🌍 🦎 🌳 ♻️'],[/человек|анатом/,'🫀 🧠 🫁 🦴'],[/клетк|органоид|цитолог/,'🦠 🔬 🧫 ⚛️'],[/карточк/,'🃏 🧠 ⭐ 🔁'],[/тренаж|тест|вариант/,'🎯 ⏱️ ✅ 📝'],[/част|ответ/,'✍️ 📝 💡 ✅'],[/рисунк|схем/,'🖼️ 🔍 📊 🧬'],[/прогресс|план|ошиб/,'📈 🔥 🏆 ⭐'],[/лаборат|разбор|движен/,'🧪 🔬 ⚙️ ✨']];
+const pick=t=>{t=t.toLowerCase();for(const[r,s]of KW)if(r.test(t))return s.split(' ');return'✨ 🧬 🔬 🌿'.split(' ')};
+const TAB={th:'📚',lab:'🧪',cards:'🃏',tab:'⚖️',quiz:'🎯',p2:'✍️',gen:'🧬',fig:'🖼️',var:'⏱️',prog:'📈',err:'🚨',plan:'🗓️',fv:'🏁',an:'🎬',sr:'🔎'};
+const scene=(core,list,h,cls='')=>`<div class="sc3 ${cls}" aria-hidden="true" style="--h:${h}"><div class="rig"><i class="rg"></i><i class="rg r2"></i><i class="core" data-e="${core}"></i>${list.map((e,k)=>`<i class="ob" style="--a:${k*360/list.length}deg"><span data-e="${e}" style="--h:${h+k*10}"></span></i>`).join('')}</div></div>`;
+const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('vis',e.isIntersecting)),{rootMargin:'80px'});
+const watch=r=>r.querySelectorAll('.sc3:not([data-io])').forEach(s=>{s.dataset.io=1;io.observe(s)});
+let hn=0;
+function deco(){
+ const m=$('#m');if(!m)return;
+ m.querySelectorAll('.card,details').forEach(e=>{
+  if(e.dataset.z)return;e.dataset.z=1;const h=140+(hn++*11)%40;e.style.setProperty('--h',h);
+  if(e.classList.contains('th')){
+   const s=e.querySelector('summary'),t=s.textContent.trim(),ic=t.split(' ')[0];
+   s.insertAdjacentHTML('afterend',scene(ic,pick(t.slice(ic.length)),h));
+   let k=0;e.querySelectorAll('li,:scope>p').forEach(x=>{x.style.setProperty('--i',k);x.style.setProperty('--h',h+k*5);k++});
+  }
+ });
+ m.querySelectorAll(':scope>h2,:scope>h3').forEach(e=>{
+  if(e.dataset.z)return;e.dataset.z=1;const h=140+(hn++*11)%40,big=e.tagName=='H2';
+  e.style.setProperty('--h',h);
+  e.insertAdjacentHTML('afterend',scene(big?(TAB[cur]||'✨'):'✨',pick(e.textContent),h,big?'band':'band sm'));
+ });
+ m.querySelectorAll('tr:not([data-z])').forEach(r=>{r.dataset.z=1;r.style.setProperty('--i',Math.min(r.rowIndex,12))});
+ m.querySelectorAll('.op:not([data-z]),.chip:not([data-z])').forEach(r=>{r.dataset.z=1;r.style.setProperty('--i',[...r.parentNode.children].indexOf(r)%10)});
+ watch(document);
+}
+let to=0,mo;
+const run=()=>{const m=$('#m');if(!m)return;mo.disconnect();deco();mo.observe(m,{childList:true,subtree:true})};
+mo=new MutationObserver(()=>{clearTimeout(to);to=setTimeout(run,30)});
+/* nav hues */
+document.head.insertAdjacentHTML('beforeend','<style>'+Array.from({length:16},(_,i)=>`nav button:nth-child(${i+1}){--h:${140+(i*9)%36}}`).join('')+'</style>');
+/* ambient orbs + header scene */
+document.body.insertAdjacentHTML('afterbegin','<div id="amb" aria-hidden="true">'+[[8,12,150,150,40,30,.06],[72,6,110,165,-30,40,.1],[84,52,170,155,-50,-20,.05],[4,60,90,175,30,-40,.12],[46,78,130,145,-40,-30,.08],[60,30,70,170,30,50,.14],[24,38,60,160,-20,30,.09]].map(([l,t,s,h,x,y,k],i)=>`<i style="left:${l}%;top:${t}%;--s:${s}px;--h:${h};--x:${x}px;--y:${y}px;--k:${k};--d:${9+i*2}s"></i>`).join('')+'</div>');
+const hd=$('header');if(hd)hd.insertAdjacentHTML('beforeend',scene('🧬',['🌿','🔬','🫀','🦠'],155,'mini'));
+if(!rm){
+ const amb=$('#amb');addEventListener('scroll',()=>amb.style.setProperty('--sy',scrollY),{passive:true});
+ let tc=null;const clr=()=>{if(tc){tc.classList.remove('tl');tc=null}};
+ document.addEventListener('pointermove',e=>{
+  if(e.pointerType=='touch')return;
+  const c=e.target.closest&&e.target.closest('main .card');
+  if(!c||c.querySelector('textarea,input,select')||c.matches('.th[open]'))return clr();
+  if(tc!==c){clr();tc=c;c.classList.add('tl')}
+  const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+  c.style.setProperty('--rx',((.5-y)*6).toFixed(2)+'deg');c.style.setProperty('--ry',((x-.5)*8).toFixed(2)+'deg');
+ },{passive:true});
+ document.addEventListener('pointerleave',clr,true);
+ document.addEventListener('pointerdown',e=>{
+  const t=e.target.closest&&e.target.closest('.btn,.chip,nav button,summary,.op');if(!t)return;
+  const h=+getComputedStyle(t).getPropertyValue('--h')||140;
+  for(let k=0;k<10;k++){const s=document.createElement('i'),a=k/10*6.283+Math.random()*.5,d=40+Math.random()*50;
+   s.className='spk';s.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d}px;--h:${h+k*4}`;
+   document.body.appendChild(s);setTimeout(()=>s.remove(),800)}
+ },true);
+}
+const m0=$('#m');if(m0){run()}
+})();
+</script>
+<style id="intro3d">
+#intro{position:fixed;inset:0;z-index:300;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#0f5c4a 0,#073b30 45%,#04201a 100%);color:#fff;cursor:pointer;text-align:center}
+#intro.out{animation:inout .8s ease-in forwards}
+@keyframes inout{to{opacity:0;transform:scale(1.15);filter:blur(6px);visibility:hidden}}
+#intro .rays{position:absolute;inset:-20%;background:repeating-conic-gradient(from 0deg at 50% -8%,rgba(150,255,210,.12) 0 5deg,transparent 5deg 16deg);animation:insway 7s ease-in-out infinite alternate;-webkit-mask:linear-gradient(#000,transparent 75%);mask:linear-gradient(#000,transparent 75%)}
+@keyframes insway{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+#intro .bb{position:absolute;bottom:-50px;border-radius:50%;border:2px solid rgba(160,255,210,.5);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.4),transparent 60%);animation:inbb var(--d) linear infinite}
+@keyframes inbb{to{transform:translateY(-115vh) translateX(24px)}}
+#intro .lf{position:absolute;top:-40px;font-style:normal;font-size:24px;opacity:.55;animation:inlf var(--d) linear infinite}
+@keyframes inlf{25%{transform:translate(30px,28vh) rotate(90deg)}50%{transform:translate(-20px,58vh) rotate(200deg)}to{transform:translate(20px,115vh) rotate(360deg)}}
+#intro .stage{position:relative;display:flex;flex-direction:column;align-items:center}
+#intro .dnaw{position:relative;width:200px;height:230px;perspective:800px}
+#intro .dna{position:absolute;left:50%;top:6px;transform-style:preserve-3d;animation:inspin 8s linear infinite}
+@keyframes inspin{from{transform:rotateZ(18deg) rotateY(0)}to{transform:rotateZ(18deg) rotateY(360deg)}}
+#intro .rn{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;transform:translateY(calc(var(--k)*11px)) rotateY(calc(var(--k)*24deg))}
+#intro .rn>i{position:absolute;display:block;animation:insc .5s calc(var(--k)*70ms) backwards}
+@keyframes insc{from{scale:0;opacity:0}}
+#intro .l{left:-46px;top:-1px;width:92px;height:2px;background:linear-gradient(90deg,#6af0b4,#35d0d0)}
+#intro .a,#intro .b{width:13px;height:13px;margin:-6px;border-radius:50%;box-shadow:0 0 12px var(--c)}
+#intro .a{--c:#6af0b4;left:-46px;top:0;background:radial-gradient(circle at 32% 28%,#fff,#6af0b4 45%,#0a6a58)}
+#intro .b{--c:#35d0d0;left:46px;top:0;background:radial-gradient(circle at 32% 28%,#fff,#35d0d0 45%,#0a5a6a)}
+#intro .tt{font-size:clamp(46px,15vw,86px);font-weight:800;line-height:1;letter-spacing:.02em;perspective:600px;filter:drop-shadow(0 5px 0 #0a5a45) drop-shadow(0 14px 18px rgba(0,0,0,.45))}
+#intro .tt span{display:inline-block;animation:intt .9s calc(.3s + var(--i)*.1s) cubic-bezier(.2,1.4,.4,1) backwards}
+#intro .t1{background:linear-gradient(180deg,#d8ffe9,#5fe0a0);-webkit-background-clip:text;background-clip:text;color:transparent}
+#intro .t2{color:#fff}
+@keyframes intt{from{opacity:0;transform:rotateX(-100deg) translateY(40px) scale(.6)}}
+#intro .sb{margin:10px 0 0;font-size:clamp(15px,4.4vw,20px);letter-spacing:.06em;color:#c9f5e0;animation:insb 1s 1.1s ease-out backwards}
+@keyframes insb{from{clip-path:inset(0 100% 0 0);opacity:0}to{clip-path:inset(0 0 0 0)}}
+#intro .cell{margin-top:12px;animation:insb .8s 1.5s backwards}
+#intro .c1{animation:inc1 3.2s ease-in-out infinite}
+#intro .c2{animation:inc2 3.2s ease-in-out infinite}
+#intro .n1{animation:inc1 3.2s ease-in-out infinite}
+#intro .n2{animation:inc2 3.2s ease-in-out infinite}
+@keyframes inc1{0%,15%{transform:translateX(0)}60%,100%{transform:translateX(-52px)}}
+@keyframes inc2{0%,15%{transform:translateX(0)}60%,100%{transform:translateX(52px)}}
+#intro .cp{margin:2px 0 0;height:22px;font-size:15px;color:#7af0c2;animation:insb .6s 1.7s backwards}
+#intro .pb{width:min(260px,70vw);height:8px;margin-top:8px;border-radius:6px;background:rgba(255,255,255,.15);overflow:hidden}
+#intro .pb i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#3fd08a,#7af0c2);box-shadow:0 0 12px #5fe0a0;animation:inpb 4.6s cubic-bezier(.3,.6,.3,1) forwards}
+@keyframes inpb{to{width:100%}}
+#intro .sk{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:0;right:0;font-size:13px;color:rgba(255,255,255,.55);animation:insb .8s 1.4s backwards}
+#ft{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:8px 16px calc(28px + env(safe-area-inset-bottom,0px));text-align:center}
+@media(max-height:640px){#intro .dnaw{zoom:.7}}
+</style>
+<script>
+(function(){
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function play(){
+if(document.getElementById('intro'))return;
+const d=document.createElement('div');d.id='intro';d.setAttribute('role','presentation');
+let rn='',bb='',lf='';
+for(let k=0;k<20;k++)rn+=`<i class="rn" style="--k:${k}"><i class="l"></i><i class="a"></i><i class="b"></i></i>`;
+for(let k=0;k<16;k++){const s=8+Math.random()*30;bb+=`<i class="bb" style="left:${Math.random()*100}%;width:${s}px;height:${s}px;--d:${5+Math.random()*6}s;animation-delay:${-Math.random()*8}s"></i>`}
+for(let k=0;k<6;k++)lf+=`<i class="lf" style="left:${8+k*17}%;--d:${7+k}s;animation-delay:${-k*1.3}s">🍃</i>`;
+d.innerHTML=`<div class="rays"></div>${bb}${lf}<div class="stage"><div class="dnaw"><div class="dna">${rn}</div></div><div class="tt">${[...'БиоЕГЭ'].map((c,i)=>`<span class="${i<3?'t1':'t2'}" style="--i:${i}">${c}</span>`).join('')}</div><p class="sb">подготовка к ЕГЭ по биологии</p><svg class="cell" viewBox="0 0 220 80" width="220" height="80" aria-hidden="true"><defs><filter id="ingoo"><feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9"/></filter></defs><g filter="url(#ingoo)"><circle class="c1" cx="110" cy="40" r="25" fill="#5fe0a0"/><circle class="c2" cx="110" cy="40" r="25" fill="#5fe0a0"/></g><circle class="n1" cx="110" cy="40" r="9" fill="#0b6b55"/><circle class="n2" cx="110" cy="40" r="9" fill="#0b6b55"/></svg><p class="cp" id="icp">Клетка</p><div class="pb"><i></i></div></div><small class="sk">Нажмите, чтобы пропустить</small>`;
+document.body.appendChild(d);
+const prev=document.body.style.overflow;document.body.style.overflow='hidden';
+const W=['Клетка','Ген','Белок','Организм','Экосистема'];let w=0;
+const iv=setInterval(()=>{w=(w+1)%W.length;const c=document.getElementById('icp');if(c)c.textContent=W[w]},900);
+let done=0;
+function close(){if(done)return;done=1;clearInterval(iv);removeEventListener('keydown',close);d.classList.add('out');setTimeout(()=>{d.remove();document.body.style.overflow=prev},850)}
+d.addEventListener('click',close);addEventListener('keydown',close);
+setTimeout(close,5000);
+}
+if(rm)return;
+const mn=document.querySelector('main');
+if(mn){const f=document.createElement('footer');f.id='ft';f.innerHTML='<button class="btn" id="replay" type="button">▶ Анимация приветствия</button>';mn.insertAdjacentElement('afterend',f);f.firstChild.onclick=play}
+play();
+})();
+</script>
+</body></html>
